@@ -37,3 +37,15 @@ sudo apt-get install php5-mysql -y
 # server is upgraded to 16.04, we can use PHP7.
 #sudo apt-get install php5 -y
 sudo apt-get install libapache2-mod-php5 -y
+
+# 5. Install node and npm
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# 6. Install Gulp globally
+sudo npm install --global gulp
+
+# 7. Install dev dependencies
+# Note that running "npm install laravel-elixir" is enough. The other
+# dependencies come straight from Laravel's fresh installation.
+cd /var/www/ref-au/ && npm install

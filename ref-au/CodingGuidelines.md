@@ -18,6 +18,9 @@
 - HTTP errors should never be thrown from logic classes. It is the task of the controller to throw them back to the client.
 - Logic classes should throw Exceptions for fatal failures (e.g. user is not authorized), but not for non=fatal failures (no comments found for post).
 
+# Controllers
+- Each page typically has their own controller class (named respectively).
+
 # CSS
 - Always use BEM and limit nesting to at most 3 levels deep.
 
