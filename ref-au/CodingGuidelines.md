@@ -20,10 +20,34 @@
 
 # Controllers
 - Each page typically has their own controller class (named respectively).
+- Page JS variables must be registered through Service called `SitePageService`
+
+# Front end
+- HTML, CSS and JS are divided into 3 groups: Page, Component, Library
+- *Page* (HTML, CSS and JS) are those files that relates to the specific single website page (e.g. view picquote page, view forum thread page)
+- *Component* (HTML, CSS and JS) are page components that can be reused by multiple pages. A bit like library but is meaningful and useful only within the context of the website being built. This component is site specific and custom made.
+- *Library* (HTML, CSS and JS) are generic (typically external or 3rd party) components that can be used in multiple pages of the website. Examples include: jQuery, Tooltipster, Handlebars, iCheck, Select2, etc.
+- HTML, CSS and JS that belong to the same component should be named identically. This is the only identifier that they belong to the same component.
+
+# Javascript
+- Do not write inline JS not write JS code within a template file. This is may be annoying to write and not compressable.
+- Page JS are located at `resources/assets/js/page/`
+- Component JS are located at `resources/assets/js/component`
+- Library JS are located at `resources/assets/js/lib`
+- Page JS variables that need to be taken from the backend server will be passed in by a Service (`SitePageService`) in a variable called `PageArgs`
+- Each page should only have 1 combined and minified JS, which can consist of Page JS, Component JS and Library JS, on top of the single common/shared JS file
+- All JS code within a file must be isolated as: `(function () {  ...code...  })()`. This is to prevent scope clashes and to ensure that exported interfaces/variables are explicit and consciously done.
+- Exported JS interfaces and variables should be contained within a single `window` variable (e.g. `window.Timeline`). This is typically only relevant when writing Component JS that may have to talk to one another and be used by Page JS.
 
 # CSS
 - Always use BEM and limit nesting to at most 3 levels deep.
+- Page CSS are located at `resources/assets/sass/page/`
+- Component CSS are located at `resources/assets/sass/component`
+- Library CSS are located at `resources/assets/sass/lib`
+- Each page should *only have 1* combined and minified CSS, which can consist of Page CSS, Component CSS and Library CSS, on top of the single common/shared CSS file
 
 # HTML
 - Classes and IDs should always use kebab-case (or spinal-case, if you prefer to call it that way).
 - Classes that are used for JS manipulations should be prefixed with `js-`. Exceptions would be classes that defines behavior set by CSS, e.g. `hidden`.
+- Page HTML are located at `resources/views/page`
+- Component HTML are located at `resources/views/component`
