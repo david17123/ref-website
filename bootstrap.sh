@@ -46,6 +46,6 @@ sudo apt-get install -y nodejs
 sudo npm install --global gulp
 
 # 7. Install dev dependencies
-# Note that running "npm install laravel-elixir" is enough. The other
+# Note that running "npm install laravel-elixir" should be enough. The other
 # dependencies come straight from Laravel's fresh installation.
 cd /var/www/ref-au/ && npm install
