@@ -1,0 +1,20 @@
+.site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: table;
+    table-layout: fixed;
+    width: 700px;
+    margin: auto;
+}
+.site-header__link {
+    display: table-cell;
+    border: solid 1px black;
+    text-align: center;
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+}
