@@ -6,15 +6,19 @@
 
 .slice__content-container {
   position: relative;
+  width: 1024px;
   margin: auto; }
 
 .slice--welcome {
   background-image: url(/img/page/mainHome/HomepageBackground.jpg);
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  position: relative;
+  box-shadow: #000000 0 0 25px 0;
+  -webkit-box-shadow: #000000 0 0 25px 0;
+  -moz-box-shadow: #000000 0 0 25px 0; }
   .slice--welcome .slice__content-container {
-    height: 100%;
-    width: 1024px; }
+    height: 100%; }
   .slice--welcome .club-identity {
     position: absolute;
     top: -130px;
@@ -49,5 +53,42 @@
     border: solid 2px #000000;
     margin-top: 13px;
     padding: 3px 5px; }
+
+.slice--quote {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; }
+  .slice--quote.slice--first-quote {
+    background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg); }
+    .slice--quote.slice--first-quote .slice__content-container {
+      width: 500px; }
+  .slice--quote.slice--second-quote {
+    background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg); }
+    .slice--quote.slice--second-quote .slice__content-container {
+      width: 740px; }
+  .slice--quote .slice__content-container {
+    display: table;
+    height: 100%; }
+  .slice--quote .quote {
+    display: table-cell;
+    vertical-align: middle; }
+  .slice--quote .quote--light .quote__author, .slice--quote .quote--light .quote__content {
+    color: #ffffff;
+    text-shadow: #000000 0 0 3px; }
+  .slice--quote .quote__author, .slice--quote .quote__content {
+    text-align: center;
+    padding: 8px 0;
+    color: #000000;
+    text-shadow: #ffffff 0 0 3px; }
+  .slice--quote .quote__author {
+    font-size: 18px; }
+  .slice--quote .quote__content {
+    font-size: 16px;
+    line-height: 20px; }
+
+.slice--university {
+  height: 200px;
+  border-bottom: solid 1px red; }
 
 /*# sourceMappingURL=mainHome.css.map */

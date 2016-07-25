@@ -1,0 +1,118 @@
+@import 'https://fonts.googleapis.com/css?family=Amiri|Raleway:400,600';
+/**
+ * Eric Meyer's browser reset CSS, taken from:
+ * http://meyerweb.com/eric/thoughts/2007/04/14/reworked-reset/
+ * accessed at 23 July 2016 7:35am
+ */
+/* Don't forget to set a foreground and background color
+   on the 'html' or 'body' element! */
+html, body, div, span,
+applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dd, dl, dt, li, ol, ul,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  line-height: 1;
+  font-family: inherit;
+  text-align: left;
+  vertical-align: baseline; }
+
+a img, :link img, :visited img {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+ol, ul {
+  list-style: none; }
+
+q:before, q:after,
+blockquote:before, blockquote:after {
+  content: ""; }
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: table;
+  table-layout: fixed;
+  width: 910px;
+  height: 55px;
+  margin: auto;
+  z-index: 100; }
+
+.site-header__link {
+  display: table-cell;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  vertical-align: middle;
+  font-size: 18px; }
+  .site-header__link a {
+    color: #000000;
+    text-decoration: none; }
+
+.site-header__link--emphasized {
+  font-size: 25px;
+  font-weight: 600; }
+
+.site-footer {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 30px 0; }
+
+.site-footer__section {
+  display: table-cell;
+  border-right: solid 3px #000000;
+  text-align: center; }
+  .site-footer__section:first-child .site-footer__section__content {
+    padding-top: 0; }
+  .site-footer__section:last-child {
+    border-right: none; }
+
+.site-footer__section:first-child {
+  padding-top: 0; }
+
+.site-footer__section__header {
+  font-family: "Amiri";
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px; }
+
+.site-footer__section__content {
+  display: inline-table;
+  width: 200px;
+  padding: 10px 0;
+  font-family: "Raleway";
+  color: #7b7b7b;
+  font-size: 14px; }
+  .site-footer__section__content p {
+    text-align: center;
+    line-height: 18px; }
+  .site-footer__section__content form {
+    text-align: center; }
+  .site-footer__section__content input[type=text] {
+    display: inline-block;
+    font-family: "Raleway";
+    width: 200px;
+    height: 25px;
+    padding: 2px 8px; }
+  .site-footer__section__content .social-link {
+    display: table-cell;
+    text-align: center; }
+
+/*# sourceMappingURL=base.css.map */

@@ -1,9 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
+@import 'https://fonts.googleapis.com/css?family=Amiri|Raleway:400,600';
 
 @import "lib/browserReset";
 
 @import "component/variables";
+@import "component/mixins";
 @import "component/header";
 @import "component/footer";
