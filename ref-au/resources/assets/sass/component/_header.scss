@@ -5,16 +5,25 @@
     right: 0;
     display: table;
     table-layout: fixed;
-    width: 700px;
+    width: 910px;
+    height: 55px;
     margin: auto;
+    z-index: $zPageHeader;
 }
 .site-header__link {
     display: table-cell;
-    border: solid 1px black;
     text-align: center;
+    text-transform: uppercase;
+    font-family: $primaryFont;
+    vertical-align: middle;
+    font-size: 18px;
 
     a {
         color: #000000;
         text-decoration: none;
     }
+}
+.site-header__link--emphasized {
+    font-size: 25px;
+    font-weight: 600;
 }

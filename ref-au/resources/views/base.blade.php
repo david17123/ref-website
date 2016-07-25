@@ -2,9 +2,11 @@
 <html>
     <head>
         <title>REF AU</title>
-        <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+        <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
 
         <link rel="stylesheet" type="text/css" href="{{ elixir('css/base.css') }}"/>
+        @stack('css')
+        @stack('js')
     </head>
     <body>
         @yield('content')

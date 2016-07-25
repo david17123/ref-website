@@ -12,6 +12,13 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('base.scss')
-       .version('css/base.css');
+    mix.sass('base.scss', 'public/css/base.css');
+
+    // Page specific CSS
+    mix.sass('page/mainHome.scss', 'public/css/page/mainHome.css');
+
+    // Use asset versioning
+    mix.version([
+        'css/**/*.css'
+    ]);
 });

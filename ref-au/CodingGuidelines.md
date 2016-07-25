@@ -55,4 +55,5 @@
 - Classes that are used for JS manipulations should be prefixed with `js-`. Exceptions would be classes that defines behavior set by CSS, e.g. `hidden`.
 - Template variables are treated as if they are PHP variable, hence use `camelCase`.
 - Page HTML are located at `resources/views/page`
+- View names are in camelCase
 - Component HTML are located at `resources/views/component`

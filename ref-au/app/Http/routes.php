@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('page/home');
+    return view('page/mainHome');
 });

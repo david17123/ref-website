@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,600);
 /**
  * Eric Meyer's browser reset CSS, taken from:
  * http://meyerweb.com/eric/thoughts/2007/04/14/reworked-reset/
@@ -46,15 +47,24 @@ blockquote:before, blockquote:after {
   right: 0;
   display: table;
   table-layout: fixed;
-  width: 700px;
-  margin: auto; }
+  width: 910px;
+  height: 55px;
+  margin: auto;
+  z-index: 100; }
 
 .site-header__link {
   display: table-cell;
-  border: solid 1px black;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  vertical-align: middle;
+  font-size: 18px; }
   .site-header__link a {
     color: #000000;
     text-decoration: none; }
+
+.site-header__link--emphasized {
+  font-size: 25px;
+  font-weight: 600; }
 
 /*# sourceMappingURL=base.css.map */
