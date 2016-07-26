@@ -4,6 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{{ elixir('css/page/mainHome.css') }}"/>
 @endpush
 
+@push('js')
+    <script type="text/javascript" src="{{ elixir('js/page/mainHome.js') }}"></script>
+@endpush
+
 @section('pageContent')
     <div class="slice slice--fill-height slice--welcome">
         <div class="slice__content-container">
@@ -42,6 +46,11 @@
 
     <div class="slice slice--university slice--melbourne-uni">
         <div class="slice__content-container">
+            <div class="test-slick">
+              <div class="slide-entry">Lorem ipsum</div>
+              <div class="slide-entry">dolow sit amet</div>
+              <div class="slide-entry">adipiscing elit</div>
+            </div>
         </div>
     </div>
     <div class="slice slice--university slice--monash-uni">

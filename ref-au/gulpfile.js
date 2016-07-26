@@ -15,10 +15,20 @@ elixir(function(mix) {
     mix.sass('base.scss', 'public/css/base.css');
 
     // Page specific CSS
-    mix.sass('page/mainHome.scss', 'public/css/page/mainHome.css');
+    mix.sass([
+        'lib/slick/slick.scss',
+        'page/mainHome.scss'
+    ], 'public/css/page/mainHome.css');
+
+    // Page specific JS
+    mix.scripts([
+        'lib/slick/slick.js',
+        'page/mainHome.js'
+    ], 'public/js/page/mainHome.js');
 
     // Use asset versioning
     mix.version([
-        'css/**/*.css'
+        'css/**/*.css',
+        'js/**/*.js'
     ]);
 });

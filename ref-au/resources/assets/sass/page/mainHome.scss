@@ -120,3 +120,17 @@
     height: 200px;
     border-bottom: solid 1px red;
 }
+
+
+
+
+
+
+.test-slick {
+    border: solid 1px black;
+    width: 400px;
+    .slide-entry {
+        height: 100px;
+        background-color: wheat;
+    }
+}
