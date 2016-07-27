@@ -9,7 +9,7 @@
             <p>+61 405 059 466 (Kenneth Hartanto)</p>
         </div>
     </div>
-    <div class="site-footer__section">
+    {{-- <div class="site-footer__section">
         <div class="site-footer__section__header">
             Search Our Articles
         </div>
@@ -18,13 +18,13 @@
                 <input type="text" name="article" value="" />
             </form>
         </div>
-    </div>
+    </div> --}}
     <div class="site-footer__section">
         <div class="site-footer__section__header">
             Subscribe
         </div>
         <div class="site-footer__section__content">
-            <form class="" action="index.html" method="post">
+            <form class="" action="blah.html" method="post">
                 <input type="text" name="email" value="" placeholder="Your Email Address..." />
             </form>
         </div>
@@ -35,13 +35,13 @@
         </div>
         <div class="site-footer__section__content">
             <a class="social-link social-link--facebook" href="#">
-                <i class="material-icons">&#xE84E;</i>
+                <img class="social-link__icon" alt="Facebook" src="/img/component/footer/Facebook.png" />
             </a>
             <a class="social-link social-link--youtube" href="#">
-                <i class="material-icons">&#xE84E;</i>
+                <img class="social-link__icon" alt="Youtube" src="/img/component/footer/Youtube.png" />
             </a>
             <a class="social-link social-link--instagram" href="#">
-                <i class="material-icons">&#xE84E;</i>
+                <img class="social-link__icon" alt="Instagram" src="/img/component/footer/Instagram.png" />
             </a>
         </div>
     </div>

@@ -114,5 +114,8 @@ blockquote:before, blockquote:after {
   .site-footer__section__content .social-link {
     display: table-cell;
     text-align: center; }
+  .site-footer__section__content .social-link__icon {
+    width: 30px;
+    height: 30px; }
 
 /*# sourceMappingURL=base.css.map */
