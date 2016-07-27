@@ -118,7 +118,154 @@
 }
 .slice--university {
     height: 200px;
-    border-bottom: solid 1px red;
+    border-bottom: solid 1px #e5e5e5;
+
+    .university {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .university__details,
+    .university__photos,
+    .university__logo-placeholder {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .university__details {
+        width: 30%;
+        background-color: #f4ede5;
+        @include box-shadow(#cdcdcd 0 0 19px inset);
+
+        p {
+            text-align: center;
+            font-family: $secondaryFont;
+            font-size: 14px;
+            line-height: 18px;
+            margin: 17px 0;
+        }
+    }
+
+    .university__photos {
+        width: 40%;
+    }
+    .university__photos__container {
+        height: 200px;
+        background-color: #1b1b1b;
+        text-align: center;
+
+        img {
+            height: 100%;
+            display: inline;
+        }
+    }
+
+    .university__logo-placeholder {
+        width: 30%;
+    }
+
+    $arrow-width: 65px;
+    .slice-cover {
+        @include transition(width 400ms ease);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        cursor: pointer;
+        // text-align: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-top: solid 100px transparent;
+            border-bottom: solid 100px transparent;
+        }
+    }
+    .slice-cover--open-right {
+        right: 0;
+
+        &::before {
+            left: -$arrow-width;
+            border-right: solid $arrow-width #ffffff;
+        }
+    }
+    .slice-cover--open-left {
+        left: 0;
+
+        &::before {
+            right: -$arrow-width;
+            border-left: solid $arrow-width #ffffff;
+        }
+    }
+    .slice-cover--opened {
+        width: 30%;
+    }
+    .slice-cover__content-container {
+        text-align: center;
+        // display: inline-block;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .slice-cover__image {
+        height: 100px;
+    }
+    .slice-cover__text {
+        text-transform: uppercase;
+        text-align:center;
+        font-family: $secondaryFont;
+        font-size: 28px;
+    }
+
+    .slick-dots {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+
+        li {
+            display: inline-block;
+        }
+
+        button {
+            cursor: pointer;
+            display: block;
+            width: 16px;
+            height: 16px;
+            font-size: 0;
+            line-height: 0;
+            border: none;
+            background: none;
+            position: relative;
+            outline: none;
+
+            &::before {
+                background-color: #848484;
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+            }
+        }
+
+        .slick-active button::before {
+            background-color: #ffffff;
+        }
+    }
 }
 
 

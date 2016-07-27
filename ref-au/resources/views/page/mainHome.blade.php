@@ -46,19 +46,92 @@
 
     <div class="slice slice--university slice--melbourne-uni">
         <div class="slice__content-container">
-            <div class="test-slick">
-              <div class="slide-entry">Lorem ipsum</div>
-              <div class="slide-entry">dolow sit amet</div>
-              <div class="slide-entry">adipiscing elit</div>
+            <div class="university">
+                <div class="university__details">
+                    <p>John Medley Building Room 114<br>Tuesday, 12.30 PM</p>
+                    <p>+61 405 059 466</p>
+                </div>
+                <div class="university__photos">
+                    <div class="university__photos__carousel js-photos-carousel">
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="university__logo-placeholder"></div>
+            </div>
+            <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--melbourne-uni">
+                <div class="slice-cover__content-container">
+                    <img class="slice-cover__image" src="/img/page/mainHome/MelbourneUniLogo.png" alt="Melbourne University Logo" />
+                    <p class="slice-cover__text">University of<br>Melbourne</p>
+                </div>
             </div>
         </div>
     </div>
     <div class="slice slice--university slice--monash-uni">
         <div class="slice__content-container">
+            <div class="university">
+                <div class="university__logo-placeholder"></div>
+                <div class="university__photos">
+                    <div class="university__photos__carousel js-photos-carousel">
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="university__details">
+                    <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
+                    <p>+61 405 059 466</p>
+                </div>
+            </div>
+            <div class="slice-cover slice-cover--open-left js-slice-cover-toggle" data-target="slice--monash-uni">
+                <div class="slice-cover__content-container">
+                    <img class="slice-cover__image" src="/img/page/mainHome/MonashLogo.png" alt="Monash University Logo" />
+                    <p class="slice-cover__text">Monash<br>University</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="slice slice--university slice--rmit-uni">
         <div class="slice__content-container">
+            <div class="university">
+                <div class="university__details">
+                    <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
+                    <p>+61 405 059 466</p>
+                </div>
+                <div class="university__photos">
+                    <div class="university__photos__carousel js-photos-carousel">
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
+                        </div>
+                        <div class="university__photos__container">
+                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="university__logo-placeholder"></div>
+            </div>
+            <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--rmit-uni">
+                <div class="slice-cover__content-container">
+                    <img class="slice-cover__image" src="/img/page/mainHome/RMITLogo.png" alt="RMIT University Logo" />
+                    <p class="slice-cover__text">RMIT<br>University</p>
+                </div>
+            </div>
         </div>
     </div>
 

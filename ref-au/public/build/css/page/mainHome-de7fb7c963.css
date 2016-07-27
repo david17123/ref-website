@@ -157,7 +157,117 @@
 
 .slice--university {
   height: 200px;
-  border-bottom: solid 1px red; }
+  border-bottom: solid 1px #e5e5e5; }
+  .slice--university .university {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+  .slice--university .university__details,
+  .slice--university .university__photos,
+  .slice--university .university__logo-placeholder {
+    display: table-cell;
+    vertical-align: middle; }
+  .slice--university .university__details {
+    width: 30%;
+    background-color: #f4ede5;
+    box-shadow: #cdcdcd 0 0 19px inset;
+    -webkit-box-shadow: #cdcdcd 0 0 19px inset;
+    -moz-box-shadow: #cdcdcd 0 0 19px inset; }
+    .slice--university .university__details p {
+      text-align: center;
+      font-family: "Montserrat";
+      font-size: 14px;
+      line-height: 18px;
+      margin: 17px 0; }
+  .slice--university .university__photos {
+    width: 40%; }
+  .slice--university .university__photos__container {
+    height: 200px;
+    background-color: #1b1b1b;
+    text-align: center; }
+    .slice--university .university__photos__container img {
+      height: 100%;
+      display: inline; }
+  .slice--university .university__logo-placeholder {
+    width: 30%; }
+  .slice--university .slice-cover {
+    transition: width 400ms ease;
+    -webkit-transition: width 400ms ease;
+    -moz-transition: width 400ms ease;
+    -o-transition: width 400ms ease;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    cursor: pointer; }
+    .slice--university .slice-cover::before {
+      content: '';
+      display: block;
+      position: absolute;
+      border-top: solid 100px transparent;
+      border-bottom: solid 100px transparent; }
+  .slice--university .slice-cover--open-right {
+    right: 0; }
+    .slice--university .slice-cover--open-right::before {
+      left: -65px;
+      border-right: solid 65px #ffffff; }
+  .slice--university .slice-cover--open-left {
+    left: 0; }
+    .slice--university .slice-cover--open-left::before {
+      right: -65px;
+      border-left: solid 65px #ffffff; }
+  .slice--university .slice-cover--opened {
+    width: 30%; }
+  .slice--university .slice-cover__content-container {
+    text-align: center;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto; }
+  .slice--university .slice-cover__image {
+    height: 100px; }
+  .slice--university .slice-cover__text {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 28px; }
+  .slice--university .slick-dots {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    text-align: center; }
+    .slice--university .slick-dots li {
+      display: inline-block; }
+    .slice--university .slick-dots button {
+      cursor: pointer;
+      display: block;
+      width: 16px;
+      height: 16px;
+      font-size: 0;
+      line-height: 0;
+      border: none;
+      background: none;
+      position: relative;
+      outline: none; }
+      .slice--university .slick-dots button::before {
+        background-color: #848484;
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 6px;
+        height: 6px;
+        border-radius: 100%; }
+    .slice--university .slick-dots .slick-active button::before {
+      background-color: #ffffff; }
 
 .test-slick {
   border: solid 1px black;
