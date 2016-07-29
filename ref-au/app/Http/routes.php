@@ -11,6 +11,25 @@
 |
 */
 
+// Note, this route group is temporary in nature. Delete this once the new site
+// is properly launched and update the route defined by: Route::get('/').
+Route::group([
+    'domain' => 'new.ref-au.{tld}'
+], function () {
+    Route::get('/', function () {
+        return view('page/mainHome');
+    });
+});
+
+Route::group([
+    'domain' => '{university}.ref-au.{tld}'
+], function () {
+    Route::get('/', function ($university) {
+        // return view('page/uniHome');
+    });
+});
+
 Route::get('/', function () {
-    return view('page/mainHome');
+    // return view('page/mainHome');
+    return redirect('https://reformedevangelicalfellowship.wordpress.com');
 });

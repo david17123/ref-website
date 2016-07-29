@@ -68,7 +68,7 @@
             </div>
             <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--melbourne-uni">
                 <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/page/mainHome/MelbourneUniLogo.png" alt="Melbourne University Logo" />
+                    <img class="slice-cover__image" src="/img/component/university/MelbourneUniLogo.png" alt="Melbourne University Logo" />
                     <p class="slice-cover__text">University of<br>Melbourne</p>
                 </div>
             </div>
@@ -98,7 +98,7 @@
             </div>
             <div class="slice-cover slice-cover--open-left js-slice-cover-toggle" data-target="slice--monash-uni">
                 <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/page/mainHome/MonashLogo.png" alt="Monash University Logo" />
+                    <img class="slice-cover__image" src="/img/component/university/MonashLogo.png" alt="Monash University Logo" />
                     <p class="slice-cover__text">Monash<br>University</p>
                 </div>
             </div>
@@ -128,7 +128,7 @@
             </div>
             <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--rmit-uni">
                 <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/page/mainHome/RMITLogo.png" alt="RMIT University Logo" />
+                    <img class="slice-cover__image" src="/img/component/university/RMITLogo.png" alt="RMIT University Logo" />
                     <p class="slice-cover__text">RMIT<br>University</p>
                 </div>
             </div>

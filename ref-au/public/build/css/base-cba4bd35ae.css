@@ -75,9 +75,8 @@ blockquote:before, blockquote:after {
     color: #000000;
     text-decoration: none; }
 
-.site-header__link--emphasized {
-  font-size: 25px;
-  font-weight: 600; }
+.site-header__site-logo {
+  height: 35px; }
 
 .site-footer {
   display: table;
