@@ -41,16 +41,28 @@ blockquote:before, blockquote:after {
   content: ""; }
 
 .site-header {
-  position: absolute;
+  transition: all 200ms ease;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100; }
+
+.site-header--opaque {
+  background-color: #ffffff;
+  box-shadow: #949494 0 0 10px;
+  -webkit-box-shadow: #949494 0 0 10px;
+  -moz-box-shadow: #949494 0 0 10px; }
+
+.site-header__container {
   display: table;
   table-layout: fixed;
   width: 910px;
   height: 55px;
-  margin: auto;
-  z-index: 100; }
+  margin: auto; }
 
 .site-header__link {
   display: table-cell;

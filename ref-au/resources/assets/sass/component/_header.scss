@@ -1,14 +1,21 @@
 .site-header {
-    position: absolute;
+    @include transition(all 200ms ease);
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    z-index: $zPageHeader;
+}
+.site-header--opaque {
+    background-color: #ffffff;
+    @include box-shadow(#949494 0 0 10px);
+}
+.site-header__container {
     display: table;
     table-layout: fixed;
     width: 910px;
     height: 55px;
     margin: auto;
-    z-index: $zPageHeader;
 }
 .site-header__link {
     display: table-cell;
