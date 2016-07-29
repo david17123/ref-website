@@ -19,17 +19,33 @@ elixir(function(mix) {
         'component/footer.js'
     ], 'public/js/base.js');
 
+
+
     // Page specific CSS
     mix.sass([
         'lib/slick/slick.scss',
         'page/mainHome.scss'
     ], 'public/css/page/mainHome.css');
 
+    mix.sass([
+        'lib/slick/slick.scss',
+        'page/uniHome.scss'
+    ], 'public/css/page/uniHome.css');
+
+
+
     // Page specific JS
     mix.scripts([
         'lib/slick/slick.js',
         'page/mainHome.js'
     ], 'public/js/page/mainHome.js');
+
+    mix.scripts([
+        'lib/slick/slick.js',
+        'page/uniHome.js'
+    ], 'public/js/page/uniHome.js');
+
+
 
     // Use asset versioning
     mix.version([

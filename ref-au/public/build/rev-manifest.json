@@ -1,6 +1,8 @@
 {
   "css/base.css": "css/base-cba4bd35ae.css",
-  "css/page/mainHome.css": "css/page/mainHome-b65f799a5c.css",
+  "css/page/mainHome.css": "css/page/mainHome-0149249562.css",
+  "css/page/uniHome.css": "css/page/uniHome-d42b200673.css",
   "js/base.js": "js/base-57f4112114.js",
-  "js/page/mainHome.js": "js/page/mainHome-e8ea62d8d8.js"
+  "js/page/mainHome.js": "js/page/mainHome-e8ea62d8d8.js",
+  "js/page/uniHome.js": "js/page/uniHome-012ac28d13.js"
 }

@@ -24,9 +24,7 @@ Route::group([
 Route::group([
     'domain' => '{university}.ref-au.{tld}'
 ], function () {
-    Route::get('/', function ($university) {
-        // return view('page/uniHome');
-    });
+    Route::get('/', 'UniversityHomePageController@displayHome');
 });
 
 Route::get('/', function () {
