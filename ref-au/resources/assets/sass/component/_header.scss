@@ -1,0 +1,35 @@
+.site-header {
+    @include transition(all 200ms ease);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $zPageHeader;
+}
+.site-header--opaque {
+    background-color: #ffffff;
+    @include box-shadow(#949494 0 0 10px);
+}
+.site-header__container {
+    display: table;
+    table-layout: fixed;
+    width: 910px;
+    height: 55px;
+    margin: auto;
+}
+.site-header__link {
+    display: table-cell;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $primaryFont;
+    vertical-align: middle;
+    font-size: 18px;
+
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+}
+.site-header__site-logo {
+    height: 35px;
+}

@@ -1,0 +1,309 @@
+// TODO Remove commented-out code
+
+@import "../component/variables";
+@import "../component/mixins";
+
+.slice {
+    font-family: $primaryFont;
+}
+.slice--fill-height {
+    height: 100vh;
+}
+.slice__content-container {
+    position: relative;
+    width: 1024px;
+    margin: auto;
+}
+.slice--welcome {
+    background-image: url(/img/page/mainHome/HomepageBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    .slice__content-container {
+        height: 100%;
+    }
+
+    .club-identity {
+        position: absolute;
+        top: -130px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 470px;
+        height: 150px;
+        margin: auto;
+    }
+    .club-identity__logo {
+        font-size: 130px;
+        text-align: center;
+    }
+    .club-identity__subtitle {
+        text-align: center;
+        font-size: 28px;
+    }
+
+    .about-snippet {
+        position: absolute;
+        right: 0;
+        bottom: 80px;
+        width: 450px;
+        text-align: right;
+    }
+    .about-snippet__quote {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: right;
+    }
+    .about-snippet__button-link {
+        text-transform: uppercase;
+        color: #000000;
+        text-decoration: none;
+        font-size: 24px;
+        display: inline-block;
+        border: solid 2px #000000;
+        margin-top: 13px;
+        padding: 3px 5px;
+    }
+}
+.slice--quote {
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    @include box-shadow(#000000 0 20px 20px -20px inset);
+
+    &.slice--first-quote {
+        background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg);
+
+        .slice__content-container {
+            width: 500px;
+        }
+    }
+
+    &.slice--second-quote {
+        background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg);
+
+        .slice__content-container {
+            width: 740px;
+        }
+    }
+
+    .slice__content-container {
+        display: table;
+        height: 100%;
+    }
+
+    .quote {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .quote--light {
+        .quote__author, .quote__content {
+            color: #ffffff;
+            text-shadow: #000000 0 0 3px;
+        }
+    }
+    .quote__author, .quote__content {
+        text-align: center;
+        padding: 8px 0;
+        color: #000000;
+        text-shadow: #ffffff 0 0 3px;
+    }
+    .quote__author {
+        font-size: 18px;
+    }
+    .quote__content {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+.slice--university {
+    height: 200px;
+    border-bottom: solid 1px #e5e5e5;
+    overflow: hidden;
+
+    .university {
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100vw;
+            height: 100%;
+            position: absolute;
+            background-color: #f4ede5;
+        }
+    }
+    .university--details-at-left::before {
+        left: calc(-100vw + 3px);
+    }
+    .university--details-at-right::before {
+        right: calc(-100vw + 3px);
+    }
+
+    .university__details,
+    .university__photos,
+    .university__logo-placeholder {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .university__details {
+        width: 30%;
+        background-color: #f4ede5;
+        // @include box-shadow(#cdcdcd 0 0 19px inset);
+
+        p {
+            text-align: center;
+            font-family: $secondaryFont;
+            font-size: 14px;
+            line-height: 18px;
+            margin: 17px 0;
+        }
+    }
+
+    .university__photos {
+        width: 40%;
+    }
+    .university__photos__container {
+        height: 200px;
+        background-color: #1b1b1b;
+        text-align: center;
+
+        img {
+            height: 100%;
+            display: inline;
+        }
+    }
+
+    .university__logo-placeholder {
+        width: 30%;
+    }
+
+    $arrow-width: 65px;
+    .slice-cover {
+        @include transition(all 400ms ease);
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        background-color: #ffffff;
+        cursor: pointer;
+        // text-align: center;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-top: solid 100px transparent;
+            border-bottom: solid 100px transparent;
+        }
+    }
+    .slice-cover--open-right {
+        right: calc(50% - 50vw);
+
+        &.slice-cover--opened {
+            right: 0;
+        }
+
+        &::before {
+            left: -$arrow-width;
+            border-right: solid $arrow-width #ffffff;
+        }
+    }
+    .slice-cover--open-left {
+        left: calc(50% - 50vw);
+
+        &.slice-cover--opened {
+            left: 0;
+        }
+
+        &::before {
+            right: -$arrow-width;
+            border-left: solid $arrow-width #ffffff;
+        }
+    }
+    .slice-cover--opened {
+        width: 30%;
+    }
+    .slice-cover__content-container {
+        text-align: center;
+        // display: inline-block;
+        height: 160px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .slice-cover__image {
+        height: 100px;
+    }
+    .slice-cover__text {
+        text-transform: uppercase;
+        text-align:center;
+        font-family: $secondaryFont;
+        font-size: 28px;
+    }
+
+    .slick-dots {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+
+        li {
+            display: inline-block;
+        }
+
+        button {
+            cursor: pointer;
+            display: block;
+            width: 16px;
+            height: 16px;
+            font-size: 0;
+            line-height: 0;
+            border: none;
+            background: none;
+            position: relative;
+            outline: none;
+
+            &::before {
+                background-color: #848484;
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 6px;
+                height: 6px;
+                border-radius: 100%;
+            }
+        }
+
+        .slick-active button::before {
+            background-color: #ffffff;
+        }
+    }
+}
+
+
+
+
+
+
+.test-slick {
+    border: solid 1px black;
+    width: 400px;
+    .slide-entry {
+        height: 100px;
+        background-color: wheat;
+    }
+}
