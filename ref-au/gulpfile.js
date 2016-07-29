@@ -13,6 +13,11 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.sass('base.scss', 'public/css/base.css');
+    mix.scripts([
+        'component/utils.js',
+        'component/header.js',
+        'component/footer.js'
+    ], 'public/js/base.js');
 
     // Page specific CSS
     mix.sass([

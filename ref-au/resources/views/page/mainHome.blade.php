@@ -44,9 +44,9 @@
         </div>
     </div>
 
-    <div class="slice slice--university slice--melbourne-uni">
+    <div id="universities" class="slice slice--university slice--melbourne-uni">
         <div class="slice__content-container">
-            <div class="university">
+            <div class="university university--details-at-left">
                 <div class="university__details">
                     <p>John Medley Building Room 114<br>Tuesday, 12.30 PM</p>
                     <p>+61 405 059 466</p>
@@ -76,7 +76,7 @@
     </div>
     <div class="slice slice--university slice--monash-uni">
         <div class="slice__content-container">
-            <div class="university">
+            <div class="university university--details-at-right">
                 <div class="university__logo-placeholder"></div>
                 <div class="university__photos">
                     <div class="university__photos__carousel js-photos-carousel">
@@ -106,7 +106,7 @@
     </div>
     <div class="slice slice--university slice--rmit-uni">
         <div class="slice__content-container">
-            <div class="university">
+            <div class="university university--details-at-left">
                 <div class="university__details">
                     <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
                     <p>+61 405 059 466</p>

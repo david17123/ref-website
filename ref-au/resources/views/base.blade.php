@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{ elixir('css/base.css') }}"/>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ elixir('js/base.js') }}"></script>
 
         {{-- Additional custom JS and CSS to be included based on page requirements --}}
         @stack('css')
