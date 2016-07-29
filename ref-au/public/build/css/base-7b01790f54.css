@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Montserrat|Amiri|Raleway:400,600';
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Amiri:400,400italic|Raleway:400,600,800';
 /**
  * Eric Meyer's browser reset CSS, taken from:
  * http://meyerweb.com/eric/thoughts/2007/04/14/reworked-reset/
@@ -82,12 +82,15 @@ blockquote:before, blockquote:after {
   display: table;
   width: 100%;
   table-layout: fixed;
-  padding: 30px 0; }
+  padding: 30px 0;
+  background-image: url(/img/component/footer/FooterBackground.jpg);
+  background-size: 23px; }
 
 .site-footer__section {
   display: table-cell;
-  border-right: solid 3px #000000;
-  text-align: center; }
+  border-right: solid 3px #a2a2a2;
+  text-align: center;
+  padding-bottom: 80px; }
   .site-footer__section:first-child .site-footer__section__content {
     padding-top: 0; }
   .site-footer__section:last-child {
@@ -106,7 +109,7 @@ blockquote:before, blockquote:after {
 
 .site-footer__section__content {
   display: inline-table;
-  width: 200px;
+  width: 250px;
   padding: 10px 0;
   font-family: "Raleway";
   color: #7b7b7b;
@@ -121,12 +124,30 @@ blockquote:before, blockquote:after {
     font-family: "Raleway";
     width: 200px;
     height: 25px;
-    padding: 2px 8px; }
+    padding: 5px 10px; }
+  .site-footer__section__content .subscribe-form {
+    display: table; }
+  .site-footer__section__content .subscribe-form__text-field {
+    display: table-cell;
+    vertical-align: middle; }
+  .site-footer__section__content .subscribe-form__submit {
+    display: table-cell;
+    background-color: #ff950b;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle; }
   .site-footer__section__content .social-link {
     display: table-cell;
     text-align: center; }
   .site-footer__section__content .social-link__icon {
     width: 30px;
     height: 30px; }
+
+.site-footer__section--social .site-footer__section__content {
+  width: 170px; }
 
 /*# sourceMappingURL=base.css.map */

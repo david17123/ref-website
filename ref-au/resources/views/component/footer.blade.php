@@ -21,15 +21,16 @@
     </div> --}}
     <div class="site-footer__section">
         <div class="site-footer__section__header">
-            Subscribe
+            Keep Me Updated
         </div>
         <div class="site-footer__section__content">
-            <form class="" action="blah.html" method="post">
-                <input type="text" name="email" value="" placeholder="Your Email Address..." />
+            <form class="subscribe-form" action="blah.html" method="post">
+                <input class="subscribe-form__text-field" type="text" name="email" value="" placeholder="Your Email Address..." />
+                <a class="subscribe-form__submit" href="#">Subscribe</a>
             </form>
         </div>
     </div>
-    <div class="site-footer__section">
+    <div class="site-footer__section site-footer__section--social">
         <div class="site-footer__section__header">
             Follow Us
         </div>

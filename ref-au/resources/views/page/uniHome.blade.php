@@ -34,6 +34,14 @@
         </div>
     </div>
 
+    <div class="slice slice--link-to-page">
+        <div class="slice__content-container">
+            <p class="pre-header">Our</p>
+            <p class="header">Weekly Sermon</p>
+            <a class="button-link" href="#">Read</a>
+        </div>
+    </div>
+
     <div class="slice slice--quote slice--second-quote">
         <div class="slice__content-container">
             <div class="quote quote--light">
@@ -47,6 +55,20 @@
                     Paul Washer
                 </p>
             </div>
+        </div>
+    </div>
+
+    <div class="slice slice--link-to-page">
+        <div class="slice__content-container">
+            <p class="pre-header">Our</p>
+            <p class="header">Articles</p>
+            <a class="button-link" href="#">Read</a>
+        </div>
+    </div>
+
+    <div class="slice slice--other-universities">
+        <div class="slice__content-container">
+            <a class="button-link" href="{{ env('APP_URL') }}/#universities">Other Universities &gt;</a>
         </div>
     </div>
 @endsection

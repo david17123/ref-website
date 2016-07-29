@@ -158,4 +158,48 @@
     font-size: 16px;
     line-height: 20px; }
 
+.slice--link-to-page {
+  background-color: #f4ede5; }
+  .slice--link-to-page .slice__content-container {
+    text-align: center;
+    padding: 100px 0 120px; }
+  .slice--link-to-page .pre-header {
+    font-family: "Amiri";
+    font-style: italic;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 40px; }
+  .slice--link-to-page .header {
+    font-family: "Raleway";
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px; }
+  .slice--link-to-page .button-link {
+    font-family: "Raleway";
+    font-size: 27px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    background-color: #ec1b2e;
+    padding: 9px 40px;
+    margin-top: 35px; }
+
+.slice--other-universities {
+  background-image: url(/img/page/uniHome/OtherUniversities.jpg);
+  background-size: cover;
+  background-position: center; }
+  .slice--other-universities .slice__content-container {
+    text-align: center;
+    padding: 60px 0; }
+  .slice--other-universities .button-link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    background: #ff950b;
+    display: inline-block;
+    padding: 7px 20px;
+    font-size: 18px; }
+
 /*# sourceMappingURL=uniHome.css.map */
