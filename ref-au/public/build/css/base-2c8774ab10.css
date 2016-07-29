@@ -40,6 +40,15 @@ q:before, q:after,
 blockquote:before, blockquote:after {
   content: ""; }
 
+.input-text {
+  border: solid 1px #cacaca;
+  outline: none; }
+  .input-text:focus {
+    border-color: #676767; }
+
+.input-text--error {
+  border: solid 1px #ff3434; }
+
 .site-header {
   transition: all 200ms ease;
   -webkit-transition: all 200ms ease;
@@ -127,6 +136,8 @@ blockquote:before, blockquote:after {
     padding: 5px 10px; }
   .site-footer__section__content .subscribe-form {
     display: table; }
+  .site-footer__section__content .subscribe-form--hidden {
+    display: none; }
   .site-footer__section__content .subscribe-form__text-field {
     display: table-cell;
     vertical-align: middle; }
@@ -140,6 +151,19 @@ blockquote:before, blockquote:after {
     padding-left: 10px;
     padding-right: 10px;
     vertical-align: middle; }
+  .site-footer__section__content .subscribe-form__submit--disabled {
+    background-color: #cacaca;
+    cursor: default; }
+  .site-footer__section__content .success {
+    text-align: center;
+    color: #0cab0c; }
+  .site-footer__section__content .success--hidden {
+    display: none; }
+  .site-footer__section__content .success__icon {
+    vertical-align: middle; }
+  .site-footer__section__content .success__text {
+    vertical-align: middle;
+    margin-left: 3px; }
   .site-footer__section__content .social-link {
     display: table-cell;
     text-align: center; }

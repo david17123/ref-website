@@ -24,10 +24,14 @@
             Keep Me Updated
         </div>
         <div class="site-footer__section__content">
-            <form class="subscribe-form" action="blah.html" method="post">
-                <input class="subscribe-form__text-field" type="text" name="email" value="" placeholder="Your Email Address..." />
-                <a class="subscribe-form__submit" href="#">Subscribe</a>
+            <form class="subscribe-form js-subscribe-form">
+                <input class="subscribe-form__text-field input-text js-subscribe-email" type="text" name="email" value="" placeholder="Your Email Address..." />
+                <a class="subscribe-form__submit js-subscribe-button" href="#">Subscribe</a>
             </form>
+            <div class="success success--hidden js-success-indicator">
+                <i class="material-icons success__icon">&#xE86C;</i>
+                <span class="success__text">Subscribed!</span>
+            </div>
         </div>
     </div>
     <div class="site-footer__section site-footer__section--social">

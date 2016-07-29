@@ -1,0 +1,11 @@
+.input-text {
+    border: solid 1px $inputBorderColor;
+    outline: none;
+
+    &:focus {
+        border-color: $inputBorderColorFocused;
+    }
+}
+.input-text--error {
+    border: solid 1px $errorColor;
+}

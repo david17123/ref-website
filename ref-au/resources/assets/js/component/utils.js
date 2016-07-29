@@ -59,4 +59,14 @@
             scrollTop: $el.offset().top
         }, duration, easing, callback);
     };
+
+    /**
+     * Checks if email address is valid. Regex is taken from:
+     * http://jsfiddle.net/ghvj4gy9/embedded/result,js/ as pointed by:
+     * http://stackoverflow.com/a/46181
+     */
+    $.validateEmail = function (email) {
+        var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return emailRegex.test(email);
+    };
 })(jQuery);
