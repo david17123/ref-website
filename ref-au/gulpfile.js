@@ -32,6 +32,10 @@ elixir(function(mix) {
         'page/uniHome.scss'
     ], 'public/css/page/uniHome.css');
 
+    mix.sass([
+        'page/articlesList.scss'
+    ], 'public/css/page/articlesList.css');
+
 
 
     // Page specific JS

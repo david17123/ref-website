@@ -1,7 +1,8 @@
 {
-  "css/base.css": "css/base-2c8774ab10.css",
-  "css/page/mainHome.css": "css/page/mainHome-6fe59cd21a.css",
-  "css/page/uniHome.css": "css/page/uniHome-3dc0b700da.css",
+  "css/base.css": "css/base-ca01c0986b.css",
+  "css/page/articlesList.css": "css/page/articlesList-47f9fecf2a.css",
+  "css/page/mainHome.css": "css/page/mainHome-789efcbcd5.css",
+  "css/page/uniHome.css": "css/page/uniHome-f27d328ca1.css",
   "js/base.js": "js/base-d808b9bfa1.js",
   "js/page/mainHome.js": "js/page/mainHome-e8ea62d8d8.js",
   "js/page/uniHome.js": "js/page/uniHome-012ac28d13.js"

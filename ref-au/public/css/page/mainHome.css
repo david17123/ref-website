@@ -124,9 +124,7 @@
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  box-shadow: #000000 0 20px 20px -20px inset;
-  -webkit-box-shadow: #000000 0 20px 20px -20px inset;
-  -moz-box-shadow: #000000 0 20px 20px -20px inset; }
+  box-shadow: #000000 0 20px 20px -20px inset; }
   .slice--quote.slice--first-quote {
     background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg); }
     .slice--quote.slice--first-quote .slice__content-container {
@@ -200,10 +198,8 @@
   .slice--university .university__logo-placeholder {
     width: 30%; }
   .slice--university .slice-cover {
-    transition: all 400ms ease;
     -webkit-transition: all 400ms ease;
-    -moz-transition: all 400ms ease;
-    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
     position: absolute;
     top: 0;
     width: 100vw;

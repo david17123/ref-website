@@ -1,0 +1,73 @@
+body {
+  background-color: #f4ede5;
+  width: 1024px;
+  margin: auto;
+  margin-top: 150px; }
+
+.page-header {
+  font-family: "Raleway";
+  text-transform: uppercase;
+  font-size: 40px;
+  text-align: center; }
+
+.articles-container {
+  margin-top: 20px; }
+
+.article-list-entry {
+  display: inline-block;
+  width: 30%;
+  margin: 15px;
+  box-sizing: border-box;
+  -webkit-transition: all linear 100ms;
+  transition: all linear 100ms;
+  background-color: #ffffff; }
+  .article-list-entry:hover {
+    box-shadow: #cacaca 0 0 18px 0; }
+
+.article-list-entry__snippet-content {
+  padding: 20px;
+  padding-bottom: 10px; }
+
+.article-list-entry__hero {
+  height: 170px;
+  background-size: cover;
+  background-position: center; }
+
+.article-list-entry__title {
+  font-family: "Montserrat";
+  font-size: 20px;
+  line-height: 24px; }
+
+.article-list-entry__subtitle {
+  font-family: "Montserrat";
+  font-size: 15px;
+  margin: 10px 0; }
+
+.article-list-entry__snippet {
+  font-family: "Raleway";
+  font-size: 14px;
+  line-height: 18px; }
+
+.article-list-entry__read-more {
+  text-align: right;
+  font-family: "Montserrat";
+  margin-top: 8px; }
+
+.article-list-entry__read-more__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ff950b;
+  font-size: 14px; }
+  .article-list-entry__read-more__link:hover {
+    color: #ffbd66; }
+
+.article-list-entry__footer {
+  text-align: right;
+  margin-top: 25px; }
+
+.article-list-entry__date-created {
+  display: inline-block;
+  font-family: "Montserrat";
+  font-size: 14px; }
+
+/*# sourceMappingURL=articlesList.css.map */

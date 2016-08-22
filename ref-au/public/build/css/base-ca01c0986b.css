@@ -50,10 +50,8 @@ blockquote:before, blockquote:after {
   border: solid 1px #ff3434; }
 
 .site-header {
-  transition: all 200ms ease;
   -webkit-transition: all 200ms ease;
-  -moz-transition: all 200ms ease;
-  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
   position: fixed;
   top: 0;
   left: 0;
@@ -62,9 +60,7 @@ blockquote:before, blockquote:after {
 
 .site-header--opaque {
   background-color: #ffffff;
-  box-shadow: #949494 0 0 10px;
-  -webkit-box-shadow: #949494 0 0 10px;
-  -moz-box-shadow: #949494 0 0 10px; }
+  box-shadow: #949494 0 0 10px; }
 
 .site-header__container {
   display: table;
