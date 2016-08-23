@@ -9,7 +9,7 @@ use App\University;
 
 class ArticlePageController extends Controller
 {
-    public function listArticles($university)
+    public function listArticles(University $university)
     {
         $viewVars = [
             'articles' => []

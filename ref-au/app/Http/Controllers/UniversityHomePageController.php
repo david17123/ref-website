@@ -13,7 +13,7 @@ class UniversityHomePageController extends Controller
      * @param string $university Name of university as used in the sub-domain
      * @return Response
      */
-    public function displayHome($university)
+    public function displayHome(University $university)
     {
         // TODO Fetch uni specific contents
 
