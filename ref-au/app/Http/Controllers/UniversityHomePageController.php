@@ -15,8 +15,6 @@ class UniversityHomePageController extends Controller
      */
     public function displayHome($university)
     {
-        $univeresity = University::where('name', $university)->firstOrFail();
-
         // TODO Fetch uni specific contents
 
         return view('page/uniHome');

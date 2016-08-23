@@ -22,7 +22,7 @@ Route::group([
 });
 
 Route::group([
-    'domain' => '{university}.ref-au.{tld}'
+    'domain' => '{universityName}.ref-au.{tld}'
 ], function () {
     Route::get('/', 'UniversityHomePageController@displayHome');
     Route::get('article', 'ArticlePageController@listArticles');

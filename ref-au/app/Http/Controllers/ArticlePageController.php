@@ -11,7 +11,6 @@ class ArticlePageController extends Controller
 {
     public function listArticles($university)
     {
-        $univeresity = University::where('name', $university)->firstOrFail();
         $viewVars = [
             'articles' => []
         ];

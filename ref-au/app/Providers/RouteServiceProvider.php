@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
+use App\University;
+
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -24,9 +26,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
-
         parent::boot($router);
+
+        $router->bind('universityName', function ($value) {
+            return University::where('name', $value)->firstOrFail();
+        });
     }
 
     /**
