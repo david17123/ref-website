@@ -17,17 +17,75 @@ body {
 
 .articles-container {
     margin-top: 20px;
+    text-align: center;
 }
 
+$articleListEntryWidth: 30%;
+$articleListEntryMargin: 15px;
 .article-list-entry {
+    position: relative;
     display: inline-block;
-    width: 30%;
-    margin: 15px;
+    width: $articleListEntryWidth;
+    margin: $articleListEntryMargin;
     @include box-sizing(border-box);
     @include transition(all linear 100ms);
     background-color: #ffffff;
     &:hover {
         @include box-shadow(#cacaca 0 0 18px 0);
+    }
+}
+.article-list-entry--highlight {
+    width: calc(3 * #{$articleListEntryWidth} + 4 * #{$articleListEntryMargin});
+    height: 350px;
+
+    .article-list-entry__snippet-content {
+        position: relative;
+    }
+
+    .article-list-entry__hero {
+        display: inline-block;
+        width: 65%;
+        height: 100%;
+    }
+
+    .article-list-entry__snippet-content {
+        display: inline-block;
+        width: 35%;
+        height: 100%;
+        float: right;
+        @include box-sizing(border-box);
+    }
+
+    .article-list-entry__footer {
+        position: absolute;
+        width: calc(100% - 40px);
+        margin-top: 0;
+        bottom: 10px;
+        right: 20px;
+    }
+}
+.article-list-entry__flag {
+    $flagWidth: 21px;
+    $flagHeight: 18px;
+    display: inline-block;
+    position: absolute;
+    background-color: #ff0000;
+    color: white;
+    text-transform: uppercase;
+    padding: 7px 40px;
+    left: -$flagWidth;
+    top: 30px;
+    font-family: $primaryFont;
+    font-weight: 600;
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-right: solid $flagWidth #bf0000;
+        border-bottom: solid $flagHeight transparent;
+        left: 0;
+        bottom: -$flagHeight;
     }
 }
 .article-list-entry__snippet-content {

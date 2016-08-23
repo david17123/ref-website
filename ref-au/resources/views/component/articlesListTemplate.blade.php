@@ -1,6 +1,9 @@
-<div class="article-list-entry">
-    <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
-    <div class="article-list-entry__snippet-content">
+<div class="article-list-entry article-list-entry--highlight">
+    <div class="article-list-entry__flag">
+        This week
+    </div>
+    <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>{{--
+--}}<div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
             How does God Answer Job?
         </h1>
@@ -19,13 +22,13 @@
             </p>
         </div>
     </div>
-</div>
+</div><!--
 
 
 
 
 
-<div class="article-list-entry">
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
@@ -46,8 +49,8 @@
             </p>
         </div>
     </div>
-</div>
-<div class="article-list-entry">
+</div><!--
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
@@ -68,8 +71,8 @@
             </p>
         </div>
     </div>
-</div>
-<div class="article-list-entry">
+</div><!--
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
@@ -90,8 +93,8 @@
             </p>
         </div>
     </div>
-</div>
-<div class="article-list-entry">
+</div><!--
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
@@ -112,8 +115,8 @@
             </p>
         </div>
     </div>
-</div>
-<div class="article-list-entry">
+</div><!--
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
@@ -134,8 +137,8 @@
             </p>
         </div>
     </div>
-</div>
-<div class="article-list-entry">
+</div><!--
+--><div class="article-list-entry">
     <div class="article-list-entry__hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
     <div class="article-list-entry__snippet-content">
         <h1 class="article-list-entry__title">
