@@ -11,6 +11,18 @@
 |
 */
 
+// Idea taken from: http://ryantablada.com/post/multi-tld-routing-in-laravel (accessed at 24 Aug 2016 06:29:45 AEDT)
+if ( !isset($tld) )
+{
+    $matches = array();
+    preg_match('/(?:[a-zA-Z]+:\/\/)?(?:[a-zA-Z-]+\.)?ref-au\.([^\/]+)/', Request::root(), $matches);
+    $tld = $matches[1];
+}
+else
+{
+    error_log('The variable `$tld` is set by someone else. This may break routing!');
+}
+
 // Note, this route group is temporary in nature. Delete this once the new site
 // is properly launched and update the route defined by: Route::get('/').
 Route::group([
@@ -22,7 +34,7 @@ Route::group([
 });
 
 Route::group([
-    'domain' => '{universityName}.ref-au.{tld}'
+    'domain' => '{universityName}.ref-au.'.$tld
 ], function () {
     Route::get('/', 'UniversityHomePageController@displayHome');
     Route::get('article', 'ArticlePageController@listArticles');
