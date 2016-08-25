@@ -35,8 +35,11 @@
         margin: auto;
     }
     .club-identity__logo {
-        font-size: 130px;
-        text-align: center;
+        width: 470px;
+        height: 130px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .club-identity__subtitle {
         text-align: center;

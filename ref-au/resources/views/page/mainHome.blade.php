@@ -12,9 +12,7 @@
     <div class="slice slice--fill-height slice--welcome">
         <div class="slice__content-container">
             <div class="club-identity">
-                <div class="club-identity__logo">
-                    REF
-                </div>
+                <div class="club-identity__logo" style="background-image: url(img/page/mainHome/REFLogo.png)"></div>
                 <div class="club-identity__subtitle">
                     Reformed Evangelical Fellowship
                 </div>
