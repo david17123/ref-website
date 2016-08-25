@@ -100,10 +100,10 @@ body {
 .article-list-entry__read-more__link {
   text-transform: uppercase;
   text-decoration: none;
-  color: #ff950b;
+  color: #964800;
   font-size: 14px; }
   .article-list-entry__read-more__link:hover {
-    color: #ffbd66; }
+    color: #bd600a; }
 
 .article-list-entry__footer {
   text-align: right;

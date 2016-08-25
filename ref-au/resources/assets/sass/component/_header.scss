@@ -8,7 +8,7 @@
 }
 .site-header--opaque {
     background-color: #ffffff;
-    @include box-shadow(#949494 0 0 10px);
+    @include boxShadow(#949494 0 0 10px);
 }
 .site-header__container {
     display: table;

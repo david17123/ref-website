@@ -5,7 +5,7 @@
          */
         var updateStyle = function () {
             var $header = $('.js-site-header');
-            var scrollTop = $('body').scrollTop();
+            var scrollTop = $('body').scrollTop() || $('html').scrollTop();
             var headerHeight = $header.height();
 
             if (scrollTop >= headerHeight)

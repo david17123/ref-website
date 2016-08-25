@@ -71,7 +71,7 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    @include box-shadow(#000000 0 20px 20px -20px inset);
+    @include boxShadow(#000000 0 20px 20px -20px inset);
 
     &.slice--first-quote {
         background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg);
@@ -154,7 +154,7 @@
     .university__details {
         width: 30%;
         background-color: $cream;
-        // @include box-shadow(#cdcdcd 0 0 19px inset);
+        // @include boxShadow(#cdcdcd 0 0 19px inset);
 
         p {
             text-align: center;

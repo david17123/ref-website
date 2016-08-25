@@ -2891,7 +2891,7 @@
 
 }));
 
-(function mainHome($) {
+(function uniHome($) {
     $(document).ready(function () {
         $('.js-posters-carousel').slick({
             arrows: false,

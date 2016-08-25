@@ -27,11 +27,11 @@ $articleListEntryMargin: 15px;
     display: inline-block;
     width: $articleListEntryWidth;
     margin: $articleListEntryMargin;
-    @include box-sizing(border-box);
+    @include boxSizing(border-box);
     @include transition(all linear 100ms);
     background-color: #ffffff;
     &:hover {
-        @include box-shadow(#cacaca 0 0 18px 0);
+        @include boxShadow(#cacaca 0 0 18px 0);
     }
 }
 .article-list-entry--highlight {
@@ -53,7 +53,7 @@ $articleListEntryMargin: 15px;
         width: 35%;
         height: 100%;
         float: right;
-        @include box-sizing(border-box);
+        @include boxSizing(border-box);
     }
 
     .article-list-entry__footer {
@@ -120,10 +120,10 @@ $articleListEntryMargin: 15px;
 .article-list-entry__read-more__link {
     text-transform: uppercase;
     text-decoration: none;
-    color: $orange;
+    color: $gold;
     font-size: 14px;
     &:hover {
-        color: $lightOrange;
+        color: $lightGold;
     }
 }
 .article-list-entry__footer {

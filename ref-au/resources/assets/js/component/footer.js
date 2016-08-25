@@ -1,4 +1,4 @@
-(function mainHome($) {
+(function footer($) {
     $(document).ready(function () {
         $('.js-subscribe-button').click(function (e) {
             e.preventDefault();

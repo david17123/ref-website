@@ -36,6 +36,10 @@ elixir(function(mix) {
         'page/articlesList.scss'
     ], 'public/css/page/articlesList.css');
 
+    mix.sass([
+        'page/readArticle.scss'
+    ], 'public/css/page/readArticle.css');
+
 
 
     // Page specific JS
@@ -48,6 +52,11 @@ elixir(function(mix) {
         'lib/slick/slick.js',
         'page/uniHome.js'
     ], 'public/js/page/uniHome.js');
+
+    mix.scripts([
+        'lib/marked/marked.js',
+        'page/readArticle.js'
+    ], 'public/js/page/readArticle.js');
 
 
 

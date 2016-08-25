@@ -1,4 +1,4 @@
-@mixin box-shadow($args...) {
+@mixin boxShadow($args...) {
     -webkit-box-shadow: $args;
     -moz-box-shadow: $args;
     box-shadow: $args;
@@ -11,8 +11,22 @@
     transition: $args;
 }
 
-@mixin box-sizing($arg) {
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -o-transform: $args;
+    -ms-transform: $args;
+    transform: $args;
+}
+
+@mixin boxSizing($arg) {
     -webkit-box-sizing: $arg;
     -moz-box-sizing: $arg;
     box-sizing: $arg;
+}
+
+@mixin displayFlex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
 }

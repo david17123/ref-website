@@ -37,6 +37,7 @@ Route::group([
     'domain' => '{universityName}.ref-au.'.$tld
 ], function () {
     Route::get('/', 'UniversityHomePageController@displayHome');
+    Route::get('article/{article}', 'ArticlePageController@readArticle');
     Route::get('article', 'ArticlePageController@listArticles');
 });
 
