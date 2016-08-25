@@ -26,21 +26,35 @@ else
 // Note, this route group is temporary in nature. Delete this once the new site
 // is properly launched and update the route defined by: Route::get('/').
 Route::group([
-    'domain' => 'new.ref-au.{tld}'
+    'domain' => 'new.ref-au.'.$tld
 ], function () {
-    Route::get('/', function () {
+    Route::get('/', ['as' => 'mainHome', function () {
         return view('page/mainHome');
-    });
+    }]);
 });
 
 Route::group([
     'domain' => '{universityName}.ref-au.'.$tld
 ], function () {
-    Route::get('/', 'UniversityHomePageController@displayHome');
-    Route::get('article/{article}', 'ArticlePageController@readArticle');
-    Route::get('article', 'ArticlePageController@listArticles');
-    Route::get('sermon/{sermonSummary}', 'SermonSummaryPageController@readSermonSummary');
-    Route::get('sermon', 'SermonSummaryPageController@listSermonSummaries');
+    Route::get('/', [
+        'as' => 'uniHome',
+        'uses' => 'UniversityHomePageController@displayHome']);
+    Route::get('article/{article}', [
+        'as' => 'readArticle',
+        'uses' => 'ArticlePageController@readArticle'
+    ]);
+    Route::get('article', [
+        'as' => 'articlesList',
+        'uses' => 'ArticlePageController@listArticles'
+    ]);
+    Route::get('sermon/{sermonSummary}', [
+        'as' => 'readSermon',
+        'uses' => 'SermonSummaryPageController@readSermonSummary'
+    ]);
+    Route::get('sermon', [
+        'as' => 'sermonSummariesList',
+        'uses' => 'SermonSummaryPageController@listSermonSummaries'
+    ]);
 });
 
 
