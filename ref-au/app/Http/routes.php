@@ -39,6 +39,8 @@ Route::group([
     Route::get('/', 'UniversityHomePageController@displayHome');
     Route::get('article/{article}', 'ArticlePageController@readArticle');
     Route::get('article', 'ArticlePageController@listArticles');
+    Route::get('sermon/{sermonSummary}', 'SermonSummaryPageController@readSermonSummary');
+    Route::get('sermon', 'SermonSummaryPageController@listSermonSummaries');
 });
 
 

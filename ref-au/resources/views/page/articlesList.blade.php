@@ -5,8 +5,10 @@
 @endpush
 
 @section('pageContent')
-    <h1 class="page-header">Articles</h1>
-    <div class="articles-container">
-        @include('component.articlesListTemplate', ['articles' => $articles])
+    <div class="page-content-container">
+        <h1 class="page-header">Articles</h1>
+        <div class="articles-container">
+            @include('component.articlesListTemplate', ['articles' => $articles])
+        </div>
     </div>
 @endsection

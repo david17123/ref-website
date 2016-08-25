@@ -1,0 +1,256 @@
+@import "../component/variables";
+@import "../component/mixins";
+
+body {
+    background-color: $cream;
+}
+
+.page-content-container {
+    width: 1024px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 35px;
+}
+
+.sermon-summary-hero {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
+    @include boxShadow(#cacaca 0 0 18px 0);
+}
+
+.sermon-summary-content {
+    @include boxShadow(#cacaca 0 0 18px 0);
+    @include boxSizing(border-box);
+    background-color: #ffffff;
+    width: 70%;
+    padding: 20px 25px 50px;
+    position: relative;
+}
+.sermon-summary-content__title {
+    font-family: $secondaryFont;
+    font-size: 34px;
+    text-align: center;
+    color: $gold;
+    margin-bottom: 12px;
+}
+.sermon-summary-content__subtitle {
+    text-align: center;
+    font-family: $secondaryFont;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+.sermon-summary-content__text-container {
+    font-family: $primaryFont;
+    font-size: 14px;
+
+    p {
+        line-height: 24px;
+        margin-bottom: 24px;
+    }
+}
+.sermon-summary-content__footer {
+    @include boxSizing(border-box);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 25px 20px;
+}
+.sermon-summary-content__date-created {
+    display: inline-block;
+    float: right;
+    font-family: $secondaryFont;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.other-sermon-summaries-positioner {
+    width: calc(30% - 20px);
+}
+
+.other-sermon-summaries {
+    @include boxShadow(#cacaca 0 0 18px 0);
+    @include boxSizing(border-box);
+    background-color: #ffffff;
+    padding: 25px 12px;
+}
+.other-sermon-summaries__heading {
+    text-transform: uppercase;
+    font-family: $secondaryFont;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+.other-sermon-summaries__entry {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    display: table;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.other-sermon-summaries__entry:hover {
+    .other-sermon-summaries__entry__positioner {
+        background-color: rgba(0,0,0, 0.5);
+    }
+    .other-sermon-summaries__entry__read-button {
+        display: inline-block;
+    }
+}
+.other-sermon-summaries__entry:first-of-type {
+    height: 300px;
+}
+.other-sermon-summaries__entry__positioner {
+    @include transition(background-color ease 250ms);
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #ffffff;
+}
+.other-sermon-summaries__entry__title {
+    text-shadow: #5a5a5a 0 0 5px;
+    font-family: $secondaryFont;
+    font-size: 22px;
+    padding: 0 20px;
+    text-align: center;
+}
+.other-sermon-summaries__entry__read-button {
+    display: none;
+    color: #ffffff;
+    text-shadow: #5a5a5a 0 0 5px;
+    font-family: $secondaryFont;
+    font-size: 22px;
+    border: solid 1px #ffffff;
+    padding: 3px 8px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.other-sermon-summaries__view-more {
+    display: inline-block;
+    font-family: $primaryFont;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 33px;
+    color: #ffffff;
+    background-color: $red;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 18px;
+}
+.other-sermon-summaries__view-more:hover {
+    background-color: $lightRed;
+}
+
+.sermon-summary-layouter {
+    @include displayFlex();
+    justify-content: space-between;
+}
+
+.prev-next-sermon-summaries {
+    margin-top: 35px;
+}
+.prev-next-sermon-summaries__entry {
+    @include boxSizing(border-box);
+    display: inline-block;
+    position: relative;
+    width: calc(50% - 12px);
+    height: 300px;
+    vertical-align: top;
+    cursor: pointer;
+    padding-top: 10px;
+}
+.prev-next-sermon-summaries__entry:first-of-type {
+    margin-right: 12px;
+}
+.prev-next-sermon-summaries__entry:last-of-type {
+    margin-left: 12px;
+}
+.prev-next-sermon-summaries__entry:hover {
+    .prev-next-sermon-summaries__entry__chin-button {
+        background-color: $lightRed;
+    }
+
+    .prev-next-sermon-summaries__entry__background .background-image {
+        @include transform(scale(1.1));
+    }
+}
+.prev-next-sermon-summaries__entry__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include transition(all ease 500ms);
+    }
+    .background-gradient{
+        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+.prev-next-sermon-summaries__entry__title {
+    position: relative;
+    font-family: $secondaryFont;
+    color: #ffffff;
+    text-shadow: #5a5a5a 0 0 5px;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+}
+.prev-next-sermon-summaries__entry__date-created {
+    position: relative;
+    font-family: $secondaryFont;
+    color: #ffffff;
+    text-shadow: #5a5a5a 0 0 5px;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 4px;
+}
+.prev-next-sermon-summaries__entry__chin-button {
+    position: absolute;
+    bottom: 0;
+    background-color: $red;
+    color: #ffffff;
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    padding: 13px 0;
+
+    .chin-button__arrow {
+        border-top: solid 9px transparent;
+        border-bottom: solid 9px transparent;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .chin-button__arrow--left {
+        border-right: solid 11px #ffffff;
+    }
+    .chin-button__arrow--right {
+        border-left: solid 11px #ffffff;
+    }
+
+    .chin-button__text {
+        vertical-align: middle;
+    }
+}

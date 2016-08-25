@@ -40,6 +40,14 @@ elixir(function(mix) {
         'page/readArticle.scss'
     ], 'public/css/page/readArticle.css');
 
+    mix.sass([
+        'page/sermonSummariesList.scss'
+    ], 'public/css/page/sermonSummariesList.css');
+
+    mix.sass([
+        'page/readSermonSummary.scss'
+    ], 'public/css/page/readSermonSummary.css');
+
 
 
     // Page specific JS
@@ -57,6 +65,11 @@ elixir(function(mix) {
         'lib/marked/marked.js',
         'page/readArticle.js'
     ], 'public/js/page/readArticle.js');
+
+    mix.scripts([
+        'lib/marked/marked.js',
+        'page/readSermonSummary.js'
+    ], 'public/js/page/readSermonSummary.js');
 
 
 
