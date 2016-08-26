@@ -44,5 +44,9 @@ class HeaderComposer
                 $view->with('uniLogo', '/img/component/university/MonashLogo.png');
             }
         }
+        else
+        {
+            $view->with('uniLogo', '/img/page/mainHome/REFLogo.png');
+        }
     }
 }
