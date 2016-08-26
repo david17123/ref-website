@@ -15,7 +15,7 @@ class SermonSummaryPageController extends Controller
     public function listSermonSummaries(University $university)
     {
         $viewVars = [
-            'sermonSummaries' => SermonSummary::all()
+            'sermonSummaries' => SermonSummary::orderBy('created_at', 'desc')->get()
         ];
 
         return view('page/sermonSummariesList', $viewVars);

@@ -14,7 +14,7 @@ class ArticlePageController extends Controller
     public function listArticles(University $university)
     {
         $viewVars = [
-            'articles' => Article::all()
+            'articles' => Article::orderBy('created_at', 'desc')->get()
         ];
 
         return view('page/articlesList', $viewVars);
