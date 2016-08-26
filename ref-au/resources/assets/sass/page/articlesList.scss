@@ -26,7 +26,6 @@ body {
 $articleListEntryWidth: 30%;
 $articleListEntryMargin: 15px;
 .article-list-entry {
-    cursor: pointer;
     position: relative;
     display: inline-block;
     width: $articleListEntryWidth;
@@ -36,6 +35,9 @@ $articleListEntryMargin: 15px;
     background-color: #ffffff;
     &:hover {
         @include boxShadow(#cacaca 0 0 18px 0);
+        .article-list-entry__read-more__text {
+            color: $lightGold;
+        }
     }
 }
 .article-list-entry--highlight {
@@ -64,6 +66,15 @@ $articleListEntryMargin: 15px;
         bottom: 10px;
         right: 20px;
     }
+}
+.article-list-entry__link-overlay {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
 }
 .article-list-entry__flag {
     $flagWidth: 21px;
@@ -118,14 +129,11 @@ $articleListEntryMargin: 15px;
     font-family: $secondaryFont;
     margin-top: 8px;
 }
-.article-list-entry__read-more__link {
+.article-list-entry__read-more__text {
     text-transform: uppercase;
     text-decoration: none;
     color: $gold;
     font-size: 14px;
-    &:hover {
-        color: $lightGold;
-    }
 }
 .article-list-entry__footer {
     text-align: right;

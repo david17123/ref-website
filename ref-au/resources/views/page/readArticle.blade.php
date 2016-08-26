@@ -14,7 +14,11 @@
         <div class="article-layouter">
             <div class="article-content">
                 <h1 class="article-content__title">{{ $article->title }}</h1>
-                <p class="article-content__subtitle">Job 1:1-10</p>
+                <p class="article-content__subtitle">
+                    @if ($article->subtitle)
+                        {{ $article->subtitle }}
+                    @endif
+                </p>
                 <div class="article-content__text-container js-article-text-container"></div>
                 <div class="article-content__footer">
                     <p class="article-content__date-created">

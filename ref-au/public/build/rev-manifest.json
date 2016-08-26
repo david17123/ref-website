@@ -1,16 +1,16 @@
 {
   "css/base.css": "css/base-cc5e17341b.css",
-  "css/page/articlesList.css": "css/page/articlesList-665d4ee391.css",
+  "css/page/articlesList.css": "css/page/articlesList-f35d168e18.css",
   "css/page/mainHome.css": "css/page/mainHome-a4ac8cf3c8.css",
   "css/page/readArticle.css": "css/page/readArticle-9445e40f6a.css",
   "css/page/readSermonSummary.css": "css/page/readSermonSummary-e3da136c13.css",
   "css/page/sermonSummariesList.css": "css/page/sermonSummariesList-128fe39fa1.css",
   "css/page/uniHome.css": "css/page/uniHome-f27d328ca1.css",
   "js/base.js": "js/base-b58f62a9bd.js",
-  "js/page/articlesList.js": "js/page/articlesList-d9a64eef50.js",
+  "js/page/articlesList.js": "js/page/articlesList-856d7e39b1.js",
   "js/page/mainHome.js": "js/page/mainHome-e8ea62d8d8.js",
   "js/page/readArticle.js": "js/page/readArticle-91b87aeec7.js",
   "js/page/readSermonSummary.js": "js/page/readSermonSummary-ace02fad59.js",
-  "js/page/sermonSummariesList.js": "js/page/sermonSummariesList-ba782cdc20.js",
+  "js/page/sermonSummariesList.js": "js/page/sermonSummariesList-583a48c039.js",
   "js/page/uniHome.js": "js/page/uniHome-b057b13b17.js"
 }

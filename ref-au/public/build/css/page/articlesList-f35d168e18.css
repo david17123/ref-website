@@ -17,7 +17,6 @@ body {
   text-align: center; }
 
 .article-list-entry {
-  cursor: pointer;
   position: relative;
   display: inline-block;
   width: 30%;
@@ -28,6 +27,8 @@ body {
   background-color: #ffffff; }
   .article-list-entry:hover {
     box-shadow: #cacaca 0 0 18px 0; }
+    .article-list-entry:hover .article-list-entry__read-more__text {
+      color: #bd600a; }
 
 .article-list-entry--highlight {
   width: calc(3 * 30% + 4 * 15px);
@@ -49,6 +50,15 @@ body {
     margin-top: 0;
     bottom: 10px;
     right: 20px; }
+
+.article-list-entry__link-overlay {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999; }
 
 .article-list-entry__flag {
   display: inline-block;
@@ -99,13 +109,11 @@ body {
   font-family: "Montserrat";
   margin-top: 8px; }
 
-.article-list-entry__read-more__link {
+.article-list-entry__read-more__text {
   text-transform: uppercase;
   text-decoration: none;
   color: #964800;
   font-size: 14px; }
-  .article-list-entry__read-more__link:hover {
-    color: #bd600a; }
 
 .article-list-entry__footer {
   text-align: right;

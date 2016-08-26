@@ -1,7 +1,7 @@
 <!--
 @foreach ($articles as $i=>$article)
---><div class="article-list-entry js-article-entry @if ($i === 0) article-list-entry--highlight @endif "
-         data-url="{{ route('readArticle', ['universityName' => 'rmit', 'article' => $article->id]) }}">
+--><div class="article-list-entry @if ($i === 0) article-list-entry--highlight @endif ">
+        <a href="{{ route('readArticle', ['universityName' => 'rmit', 'article' => $article->id]) }}" class="article-list-entry__link-overlay"></a>
         @if ($i === 0)
             <div class="article-list-entry__flag">
                 Recent
@@ -14,14 +14,16 @@
             </h1>
 
             <p class="article-list-entry__subtitle">
-                Job 1:1-10
+                @if ($article->subtitle)
+                    {{ $article->subtitle }}
+                @endif
             </p>
             <p class="article-list-entry__snippet">
                 {{-- Idea from: http://stackoverflow.com/a/79986 --}}
                 {{ substr($article->content, 0, strpos(wordwrap($article->content, 300, '#delim#'), '#delim#')) }}&hellip;
             </p>
             <p class="article-list-entry__read-more">
-                <a href="{{ route('readArticle', ['universityName' => 'rmit', 'article' => $article->id]) }}" class="article-list-entry__read-more__link">Read more&hellip;</a>
+                <span class="article-list-entry__read-more__text">Read more&hellip;</span>
             </p>
             <div class="article-list-entry__footer">
                 <p class="article-list-entry__date-created">
