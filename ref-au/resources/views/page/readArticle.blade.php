@@ -13,12 +13,12 @@
         <div class="article-hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
         <div class="article-layouter">
             <div class="article-content">
-                <h1 class="article-content__title">How Does God Answer Job?</h1>
+                <h1 class="article-content__title">{{ $article->title }}</h1>
                 <p class="article-content__subtitle">Job 1:1-10</p>
                 <div class="article-content__text-container js-article-text-container"></div>
                 <div class="article-content__footer">
                     <p class="article-content__date-created">
-                        March 12, 2016
+                        {{ $article->created_at->format('F j, Y') }}
                     </p>
                 </div>
             </div>

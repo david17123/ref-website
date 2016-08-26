@@ -50,13 +50,14 @@
      * @param jQueryCollection $el
      * @param int duration
      */
-    $.scrollWindowTo = function ($el, duration, easing, callback) {
+    $.scrollWindowTo = function ($el, duration, easing, callback, respectHeader) {
         duration = typeof(duration) !== 'number' ? 1000 : duration;
         easing = typeof(easing) !== 'string' || easing === '' ? 'swing' : easing;
         callback = typeof(callback) !== 'function' ? (function () {}) : callback;
+        respectHeader = typeof(respectHeader) === 'boolean' ? respectHeader : true;
 
         $('html, body').animate({
-            scrollTop: $el.offset().top
+            scrollTop: $el.offset().top - (respectHeader ? $('.js-site-header').outerHeight() : 0)
         }, duration, easing, callback);
     };
 

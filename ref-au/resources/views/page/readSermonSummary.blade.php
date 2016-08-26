@@ -13,12 +13,12 @@
         <div class="sermon-summary-hero" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
         <div class="sermon-summary-layouter">
             <div class="sermon-summary-content">
-                <h1 class="sermon-summary-content__title">How Does God Answer Job?</h1>
+                <h1 class="sermon-summary-content__title">{{ $sermonSummary->title }}</h1>
                 <p class="sermon-summary-content__subtitle">Job 1:1-10</p>
                 <div class="sermon-summary-content__text-container js-sermon-summary-text-container"></div>
                 <div class="sermon-summary-content__footer">
                     <p class="sermon-summary-content__date-created">
-                        March 12, 2016
+                        {{ $sermonSummary->created_at->format('F j, Y') }}
                     </p>
                 </div>
             </div>
