@@ -75,6 +75,7 @@ body {
   margin-bottom: 25px; }
 
 .other-articles__entry {
+  position: relative;
   width: 100%;
   height: 150px;
   background-size: cover;
@@ -83,7 +84,11 @@ body {
   cursor: pointer;
   margin-bottom: 12px; }
 
-.other-articles__entry:hover .other-articles__entry__positioner {
+.other-articles__entry:hover .other-articles__entry__background .background-image {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.other-articles__entry:hover .other-articles__entry__background .background-shadow {
   background-color: rgba(0, 0, 0, 0.5); }
 
 .other-articles__entry:hover .other-articles__entry__read-button {
@@ -92,9 +97,32 @@ body {
 .other-articles__entry:first-of-type {
   height: 300px; }
 
+.other-articles__entry__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden; }
+  .other-articles__entry__background .background-image {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 500ms;
+    transition: all ease 500ms; }
+  .other-articles__entry__background .background-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all ease 500ms;
+    transition: all ease 500ms; }
+
 .other-articles__entry__positioner {
   -webkit-transition: background-color ease 250ms;
   transition: background-color ease 250ms;
+  position: relative;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -167,6 +195,9 @@ body {
   -webkit-transform: scale(1.1);
   transform: scale(1.1); }
 
+.prev-next-articles__entry:hover .prev-next-articles__entry__background .background-gradient {
+  background-color: rgba(0, 0, 0, 0.5); }
+
 .prev-next-articles__entry__background {
   position: absolute;
   top: 0;
@@ -183,16 +214,11 @@ body {
     -webkit-transition: all ease 500ms;
     transition: all ease 500ms; }
   .prev-next-articles__entry__background .background-gradient {
-    /* FF3.6-15 */
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
-    /* Chrome10-25,Safari5.1-6 */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 );
-    /* IE6-9 */
     position: absolute;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    -webkit-transition: all ease 500ms;
+    transition: all ease 500ms; }
 
 .prev-next-articles__entry__title {
   position: relative;

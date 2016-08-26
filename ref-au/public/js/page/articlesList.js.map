@@ -1,0 +1,1 @@
+{"version":3,"sources":["articlesList.js"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"articlesList.js","sourcesContent":["(function articlesList($) {\n    $(document).ready(function () {\n        // Set PageHeader parameter\n        SiteHeader.dynamicHeader = false;\n        SiteHeader.updateStyle();\n    });\n})(jQuery);\n"],"sourceRoot":"/source/"}

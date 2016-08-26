@@ -62,9 +62,17 @@ elixir(function(mix) {
     ], 'public/js/page/uniHome.js');
 
     mix.scripts([
+        'page/articlesList.js'
+    ], 'public/js/page/articlesList.js');
+
+    mix.scripts([
         'lib/marked/marked.js',
         'page/readArticle.js'
     ], 'public/js/page/readArticle.js');
+
+    mix.scripts([
+        'page/articlesList.js'
+    ], 'public/js/page/sermonSummariesList.js');
 
     mix.scripts([
         'lib/marked/marked.js',

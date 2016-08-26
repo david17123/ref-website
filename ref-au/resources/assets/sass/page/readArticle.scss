@@ -85,6 +85,7 @@ body {
     margin-bottom: 25px;
 }
 .other-articles__entry {
+    position: relative;
     width: 100%;
     height: 150px;
     background-size: cover;
@@ -94,8 +95,13 @@ body {
     margin-bottom: 12px;
 }
 .other-articles__entry:hover {
-    .other-articles__entry__positioner {
-        background-color: rgba(0,0,0, 0.5);
+    .other-articles__entry__background {
+        .background-image {
+            @include transform(scale(1.1));
+        }
+        .background-shadow {
+            background-color: rgba(0,0,0, 0.5);
+        }
     }
     .other-articles__entry__read-button {
         display: inline-block;
@@ -104,8 +110,32 @@ body {
 .other-articles__entry:first-of-type {
     height: 300px;
 }
+.other-articles__entry__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include transition(all ease 500ms);
+    }
+    .background-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include transition(all ease 500ms);
+    }
+}
 .other-articles__entry__positioner {
     @include transition(background-color ease 250ms);
+    position: relative;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -176,8 +206,13 @@ body {
         background-color: $lightRed;
     }
 
-    .prev-next-articles__entry__background .background-image {
-        @include transform(scale(1.1));
+    .prev-next-articles__entry__background {
+        .background-image {
+            @include transform(scale(1.1));
+        }
+        .background-gradient {
+            background-color: rgba(0,0,0, 0.5);
+        }
     }
 }
 .prev-next-articles__entry__background {
@@ -196,14 +231,11 @@ body {
         height: 100%;
         @include transition(all ease 500ms);
     }
-    .background-gradient{
-        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    .background-gradient {
         position: absolute;
         width: 100%;
         height: 100%;
+        @include transition(all ease 500ms);
     }
 }
 .prev-next-articles__entry__title {

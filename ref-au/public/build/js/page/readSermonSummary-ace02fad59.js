@@ -1285,11 +1285,15 @@ if (typeof module !== 'undefined' && typeof exports === 'object') {
   return this || (typeof window !== 'undefined' ? window : global);
 }());
 
-(function readArticle($) {
+(function readSermonSummary($) {
     $(document).ready(function () {
-        // Set article content
-        $('.js-article-text-container').html(marked(PageVars.articleContent));
+        // Set sermon-summary content
+        $('.js-sermon-summary-text-container').html(marked(PageVars.sermonSummaryContent));
+
+        // Set PageHeader parameter
+        SiteHeader.dynamicHeader = false;
+        SiteHeader.updateStyle();
     });
 })(jQuery);
 
-//# sourceMappingURL=readArticle.js.map
+//# sourceMappingURL=readSermonSummary.js.map

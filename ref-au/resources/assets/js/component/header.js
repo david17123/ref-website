@@ -1,22 +1,27 @@
 (function header($) {
-    $(document).ready(function () {
-        /**
-         * Updates the style of header based on scroll position
-         */
-        var updateStyle = function () {
-            var $header = $('.js-site-header');
-            var scrollTop = $('body').scrollTop() || $('html').scrollTop();
-            var headerHeight = $header.height();
+    window.SiteHeader = {
+        dynamicHeader: true
+    };
 
-            if (scrollTop >= headerHeight)
-            {
-                $header.addClass('site-header--opaque');
-            }
-            else
-            {
-                $header.removeClass('site-header--opaque');
-            }
-        };
+    /**
+    * Updates the style of header based on scroll position
+    */
+    SiteHeader.updateStyle = function () {
+        var $header = $('.js-site-header');
+        var scrollTop = $('body').scrollTop() || $('html').scrollTop();
+        var headerHeight = $header.height();
+
+        if (!SiteHeader.dynamicHeader || scrollTop >= headerHeight)
+        {
+            $header.addClass('site-header--opaque');
+        }
+        else
+        {
+            $header.removeClass('site-header--opaque');
+        }
+    };
+
+    $(document).ready(function () {
 
         // Universities header link
         $('.js-site-header-link').click(function (e) {
@@ -48,10 +53,10 @@
 
         // Header on scroll
         $(document).on('scroll', function () {
-            updateStyle();
+            SiteHeader.updateStyle();
         });
 
         // Init
-        updateStyle();
+        SiteHeader.updateStyle();
     });
 })(jQuery);
