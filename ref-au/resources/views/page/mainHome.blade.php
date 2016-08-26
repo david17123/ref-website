@@ -48,7 +48,7 @@
                 <div class="university__details">
                     <p>John Medley Building Room 114<br>Tuesday, 12.30 PM</p>
                     <p>+61 405 059 466</p>
-                    <a href="#" class="university__details__visit-button">
+                    <a href="{{ route('uniHome', ['univeristyName' => 'unimelb']) }}" class="university__details__visit-button">
                         <span class="text">Visit</span>
                         <span class="arrow"></span>
                     </a>
@@ -96,7 +96,7 @@
                 <div class="university__details">
                     <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
                     <p>+61 405 059 466</p>
-                    <a href="#" class="university__details__visit-button">
+                    <a href="{{ route('uniHome', ['univeristyName' => 'monash']) }}" class="university__details__visit-button">
                         <span class="text">Visit</span>
                         <span class="arrow"></span>
                     </a>
@@ -116,7 +116,7 @@
                 <div class="university__details">
                     <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
                     <p>+61 405 059 466</p>
-                    <a href="#" class="university__details__visit-button">
+                    <a href="{{ route('uniHome', ['univeristyName' => 'rmit']) }}" class="university__details__visit-button">
                         <span class="text">Visit</span>
                         <span class="arrow"></span>
                     </a>

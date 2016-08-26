@@ -34,11 +34,13 @@
         </div>
     </div>
 
-    <div class="slice slice--link-to-page">
+    <div class="slice slice--sermon-summaries">
         <div class="slice__content-container">
-            <p class="pre-header">Our</p>
-            <p class="header">Weekly Sermon</p>
-            <a class="button-link" href="#">Read</a>
+            <p class="slice--sermon-summaries__header">Weekly Sermon</p>
+            <div class="slice--sermon-summaries__container">
+                @include('component.sermonSummariesListTemplate', ['sermonSummaries' => $sermonSummaries])
+            </div>
+            <a class="slice--sermon-summaries__button-link" href="{{ route('sermonSummariesList', ['universityName' => $universityName]) }}">Read More</a>
         </div>
     </div>
 

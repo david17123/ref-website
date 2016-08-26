@@ -1,5 +1,6 @@
 @import "../component/variables";
 @import "../component/mixins";
+@import "../component/sermonSummariesListTemplate";
 
 .slice {
     font-family: $primaryFont;
@@ -125,6 +126,41 @@
         line-height: 20px;
     }
 }
+.slice--sermon-summaries {
+    background-color: $cream;
+
+    .slice__content-container {
+        padding: 40px 0 30px;
+    }
+}
+.slice--sermon-summaries__header {
+    font-family: $primaryFont;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.slice--sermon-summaries__container {
+    text-align: center;
+}
+.slice--sermon-summaries__button-link {
+    font-family: $primaryFont;
+    font-size: 27px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    background-color: $red;
+    width: 100%;
+    padding: 9px 40px;
+    margin-top: 15px;
+
+    &:hover {
+        background-color: $lightRed;
+    }
+}
 .slice--link-to-page {
     background-color: $cream;
 
@@ -159,6 +195,10 @@
         background-color: $red;
         padding: 9px 40px;
         margin-top: 35px;
+
+        &:hover {
+            background-color: $lightRed;
+        }
     }
 }
 .slice--other-universities {
