@@ -157,7 +157,7 @@
     line-height: 20px; }
 
 .slice--university {
-  height: 200px;
+  height: 250px;
   border-bottom: solid 1px #a2a2a2;
   overflow: hidden; }
   .slice--university .university {
@@ -182,17 +182,39 @@
     vertical-align: middle; }
   .slice--university .university__details {
     width: 30%;
-    background-color: #f4ede5; }
+    background-color: #f4ede5;
+    text-align: center; }
     .slice--university .university__details p {
       text-align: center;
       font-family: "Montserrat";
       font-size: 14px;
       line-height: 18px;
       margin: 17px 0; }
+  .slice--university .university__details__visit-button {
+    display: inline-block;
+    padding: 10px 80px;
+    font-family: "Raleway";
+    font-size: 22px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ec1b2e; }
+    .slice--university .university__details__visit-button:hover {
+      background-color: #fa4251; }
+    .slice--university .university__details__visit-button .text {
+      vertical-align: middle; }
+    .slice--university .university__details__visit-button .arrow {
+      border-top: solid 9px transparent;
+      border-bottom: solid 9px transparent;
+      border-left: solid 11px #ffffff;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px; }
   .slice--university .university__photos {
     width: 40%; }
   .slice--university .university__photos__container {
-    height: 200px;
+    height: 250px;
     background-color: #1b1b1b;
     text-align: center; }
     .slice--university .university__photos__container img {
