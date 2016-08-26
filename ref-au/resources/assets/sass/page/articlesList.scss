@@ -26,6 +26,7 @@ body {
 $articleListEntryWidth: 30%;
 $articleListEntryMargin: 15px;
 .article-list-entry {
+    cursor: pointer;
     position: relative;
     display: inline-block;
     width: $articleListEntryWidth;

@@ -14,7 +14,7 @@ class ArticlePageController extends Controller
     public function listArticles(University $university)
     {
         $viewVars = [
-            'articles' => []
+            'articles' => Article::all()
         ];
 
         return view('page/articlesList', $viewVars);
