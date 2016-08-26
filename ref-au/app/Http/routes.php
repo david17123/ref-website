@@ -48,7 +48,7 @@ Route::group([
         'uses' => 'ArticlePageController@listArticles'
     ]);
     Route::get('sermon/{sermonSummary}', [
-        'as' => 'readSermon',
+        'as' => 'readSermonSummary',
         'uses' => 'SermonSummaryPageController@readSermonSummary'
     ]);
     Route::get('sermon', [

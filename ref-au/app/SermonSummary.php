@@ -18,6 +18,11 @@ class SermonSummary extends Model
     ];
 
     // Relationships
+    public function heroImage()
+    {
+        return $this->belongsTo('App\Asset', 'hero_image_id');
+    }
+
     public function preacher()
     {
         return $this->belongsTo('App\Author', 'preacher_id');

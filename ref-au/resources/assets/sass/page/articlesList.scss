@@ -28,6 +28,7 @@ $articleListEntryMargin: 15px;
 .article-list-entry {
     position: relative;
     display: inline-block;
+    vertical-align: top;
     width: $articleListEntryWidth;
     margin: $articleListEntryMargin;
     @include boxSizing(border-box);
@@ -103,6 +104,9 @@ $articleListEntryMargin: 15px;
 .article-list-entry__snippet-content {
     padding: 20px;
     padding-bottom: 10px;
+    position: relative;
+    height: 322px;
+    @include boxSizing(border-box);
 }
 .article-list-entry__hero {
     height: 170px;
@@ -137,7 +141,10 @@ $articleListEntryMargin: 15px;
 }
 .article-list-entry__footer {
     text-align: right;
-    margin-top: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
 }
 .article-list-entry__date-created {
     display: inline-block;

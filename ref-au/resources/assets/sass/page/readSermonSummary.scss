@@ -67,24 +67,25 @@ body {
     text-transform: uppercase;
 }
 
-.other-sermon-summaries-positioner {
+.articles-positioner {
     width: calc(30% - 20px);
 }
 
-.other-sermon-summaries {
+.articles {
     @include boxShadow(#cacaca 0 0 18px 0);
     @include boxSizing(border-box);
     background-color: #ffffff;
     padding: 25px 12px;
 }
-.other-sermon-summaries__heading {
+.articles__heading {
     text-transform: uppercase;
     font-family: $secondaryFont;
     text-align: center;
     font-size: 22px;
     margin-bottom: 25px;
 }
-.other-sermon-summaries__entry {
+.articles__entry {
+    position: relative;
     width: 100%;
     height: 150px;
     background-size: cover;
@@ -93,32 +94,70 @@ body {
     cursor: pointer;
     margin-bottom: 12px;
 }
-.other-sermon-summaries__entry:hover {
-    .other-sermon-summaries__entry__positioner {
-        background-color: rgba(0,0,0, 0.5);
+.articles__entry:hover {
+    .articles__entry__background {
+        .background-image {
+            @include transform(scale(1.1));
+        }
+        .background-shadow {
+            background-color: rgba(0,0,0, 0.5);
+        }
     }
-    .other-sermon-summaries__entry__read-button {
+    .articles__entry__read-button {
         display: inline-block;
     }
 }
-.other-sermon-summaries__entry:first-of-type {
+.articles__entry:first-of-type {
     height: 300px;
 }
-.other-sermon-summaries__entry__positioner {
+.articles__entry__link-overlay {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+.articles__entry__background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    .background-image {
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include transition(all ease 500ms);
+    }
+    .background-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @include transition(all ease 500ms);
+    }
+}
+.articles__entry__positioner {
     @include transition(background-color ease 250ms);
+    position: relative;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
     color: #ffffff;
 }
-.other-sermon-summaries__entry__title {
+.articles__entry__title {
     text-shadow: #5a5a5a 0 0 5px;
     font-family: $secondaryFont;
     font-size: 22px;
     padding: 0 20px;
     text-align: center;
 }
-.other-sermon-summaries__entry__read-button {
+.articles__entry__read-button {
     display: none;
     color: #ffffff;
     text-shadow: #5a5a5a 0 0 5px;
@@ -130,7 +169,7 @@ body {
     text-transform: uppercase;
 }
 
-.other-sermon-summaries__view-more {
+.articles__view-more {
     display: inline-block;
     font-family: $primaryFont;
     text-decoration: none;
@@ -143,7 +182,7 @@ body {
     padding: 20px 0;
     margin-top: 18px;
 }
-.other-sermon-summaries__view-more:hover {
+.articles__view-more:hover {
     background-color: $lightRed;
 }
 
@@ -176,9 +215,23 @@ body {
         background-color: $lightRed;
     }
 
-    .prev-next-sermon-summaries__entry__background .background-image {
-        @include transform(scale(1.1));
+    .prev-next-sermon-summaries__entry__background {
+        .background-image {
+            @include transform(scale(1.1));
+        }
+        .background-shadow {
+            background-color: rgba(0,0,0, 0.5);
+        }
     }
+}
+.prev-next-sermon-summaries__entry__link-overlay {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
 }
 .prev-next-sermon-summaries__entry__background {
     position: absolute;
@@ -196,14 +249,11 @@ body {
         height: 100%;
         @include transition(all ease 500ms);
     }
-    .background-gradient{
-        background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+    .background-shadow{
         position: absolute;
         width: 100%;
         height: 100%;
+        @include transition(all ease 500ms);
     }
 }
 .prev-next-sermon-summaries__entry__title {

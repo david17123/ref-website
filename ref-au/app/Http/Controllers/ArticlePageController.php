@@ -22,8 +22,14 @@ class ArticlePageController extends Controller
 
     public function readArticle(University $university, Article $article)
     {
+        $otherArticles = Article::where('id', '<>', $article->id)
+                            ->inRandomOrder()
+                            ->take(5)
+                            ->get();
+
         $viewVars = [
-            'article' => $article
+            'article' => $article,
+            'otherArticles' => $otherArticles
         ];
 
         $sitePage = app(SitePageService::class);

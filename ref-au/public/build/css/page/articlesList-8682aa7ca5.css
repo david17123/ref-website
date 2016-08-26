@@ -12,44 +12,56 @@ body {
   font-size: 40px;
   text-align: center; }
 
-.sermon-summaries-container {
+.articles-container {
   margin-top: 20px;
   text-align: center; }
 
-.sermon-summary-list-entry {
+.article-list-entry {
   position: relative;
   display: inline-block;
+  vertical-align: top;
   width: 30%;
   margin: 15px;
   box-sizing: border-box;
   -webkit-transition: all linear 100ms;
   transition: all linear 100ms;
   background-color: #ffffff; }
-  .sermon-summary-list-entry:hover {
+  .article-list-entry:hover {
     box-shadow: #cacaca 0 0 18px 0; }
+    .article-list-entry:hover .article-list-entry__read-more__text {
+      color: #bd600a; }
 
-.sermon-summary-list-entry--highlight {
+.article-list-entry--highlight {
   width: calc(3 * 30% + 4 * 15px);
   height: 350px; }
-  .sermon-summary-list-entry--highlight .sermon-summary-list-entry__hero {
+  .article-list-entry--highlight .article-list-entry__hero {
     display: inline-block;
     width: 65%;
     height: 100%; }
-  .sermon-summary-list-entry--highlight .sermon-summary-list-entry__snippet-content {
+  .article-list-entry--highlight .article-list-entry__snippet-content {
     position: relative;
     display: inline-block;
     width: 35%;
     height: 100%;
     float: right;
     box-sizing: border-box; }
-  .sermon-summary-list-entry--highlight .sermon-summary-list-entry__footer {
+  .article-list-entry--highlight .article-list-entry__footer {
     position: absolute;
     width: calc(100% - 40px);
     margin-top: 0;
     bottom: 10px;
     right: 20px; }
 
-.sermon-summary-list-entry__flag {
+.article-list-entry__link-overlay {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 9999; }
+
+.article-list-entry__flag {
   display: inline-block;
   position: absolute;
   background-color: #ff0000;
@@ -60,7 +72,7 @@ body {
   top: 30px;
   font-family: "Raleway";
   font-weight: 600; }
-  .sermon-summary-list-entry__flag::after {
+  .article-list-entry__flag::after {
     content: '';
     display: block;
     position: absolute;
@@ -69,50 +81,54 @@ body {
     left: 0;
     bottom: -18px; }
 
-.sermon-summary-list-entry__snippet-content {
+.article-list-entry__snippet-content {
   padding: 20px;
-  padding-bottom: 10px; }
+  padding-bottom: 10px;
+  position: relative;
+  height: 322px;
+  box-sizing: border-box; }
 
-.sermon-summary-list-entry__hero {
+.article-list-entry__hero {
   height: 170px;
   background-size: cover;
   background-position: center; }
 
-.sermon-summary-list-entry__title {
+.article-list-entry__title {
   font-family: "Montserrat";
   font-size: 20px;
   line-height: 24px; }
 
-.sermon-summary-list-entry__subtitle {
+.article-list-entry__subtitle {
   font-family: "Montserrat";
   font-size: 15px;
   margin: 10px 0; }
 
-.sermon-summary-list-entry__snippet {
+.article-list-entry__snippet {
   font-family: "Raleway";
   font-size: 14px;
   line-height: 18px; }
 
-.sermon-summary-list-entry__read-more {
+.article-list-entry__read-more {
   text-align: right;
   font-family: "Montserrat";
   margin-top: 8px; }
 
-.sermon-summary-list-entry__read-more__link {
+.article-list-entry__read-more__text {
   text-transform: uppercase;
   text-decoration: none;
   color: #964800;
   font-size: 14px; }
-  .sermon-summary-list-entry__read-more__link:hover {
-    color: #bd600a; }
 
-.sermon-summary-list-entry__footer {
+.article-list-entry__footer {
   text-align: right;
-  margin-top: 25px; }
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  right: 20px; }
 
-.sermon-summary-list-entry__date-created {
+.article-list-entry__date-created {
   display: inline-block;
   font-family: "Montserrat";
   font-size: 14px; }
 
-/*# sourceMappingURL=sermonSummariesList.css.map */
+/*# sourceMappingURL=articlesList.css.map */

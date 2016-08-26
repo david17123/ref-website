@@ -28,6 +28,7 @@ $articleListEntryMargin: 15px;
 .sermon-summary-list-entry {
     position: relative;
     display: inline-block;
+    vertical-align: top;
     width: $articleListEntryWidth;
     margin: $articleListEntryMargin;
     @include boxSizing(border-box);
@@ -64,6 +65,15 @@ $articleListEntryMargin: 15px;
         right: 20px;
     }
 }
+.sermon-summary-list-entry__link-overlay {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+}
 .sermon-summary-list-entry__flag {
     $flagWidth: 21px;
     $flagHeight: 18px;
@@ -91,6 +101,9 @@ $articleListEntryMargin: 15px;
 .sermon-summary-list-entry__snippet-content {
     padding: 20px;
     padding-bottom: 10px;
+    position: relative;
+    height: 322px;
+    @include boxSizing(border-box);
 }
 .sermon-summary-list-entry__hero {
     height: 170px;
@@ -128,7 +141,10 @@ $articleListEntryMargin: 15px;
 }
 .sermon-summary-list-entry__footer {
     text-align: right;
-    margin-top: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    right: 20px;
 }
 .sermon-summary-list-entry__date-created {
     display: inline-block;

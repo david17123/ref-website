@@ -110,6 +110,15 @@ body {
 .other-articles__entry:first-of-type {
     height: 300px;
 }
+.other-articles__entry__link-overlay {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9999;
+}
 .other-articles__entry__background {
     position: absolute;
     top: 0;
@@ -180,109 +189,4 @@ body {
 .article-layouter {
     @include displayFlex();
     justify-content: space-between;
-}
-
-.prev-next-articles {
-    margin-top: 35px;
-}
-.prev-next-articles__entry {
-    @include boxSizing(border-box);
-    display: inline-block;
-    position: relative;
-    width: calc(50% - 12px);
-    height: 300px;
-    vertical-align: top;
-    cursor: pointer;
-    padding-top: 10px;
-}
-.prev-next-articles__entry:first-of-type {
-    margin-right: 12px;
-}
-.prev-next-articles__entry:last-of-type {
-    margin-left: 12px;
-}
-.prev-next-articles__entry:hover {
-    .prev-next-articles__entry__chin-button {
-        background-color: $lightRed;
-    }
-
-    .prev-next-articles__entry__background {
-        .background-image {
-            @include transform(scale(1.1));
-        }
-        .background-gradient {
-            background-color: rgba(0,0,0, 0.5);
-        }
-    }
-}
-.prev-next-articles__entry__background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-
-    .background-image {
-        background-size: cover;
-        background-position: center;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        @include transition(all ease 500ms);
-    }
-    .background-gradient {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        @include transition(all ease 500ms);
-    }
-}
-.prev-next-articles__entry__title {
-    position: relative;
-    font-family: $secondaryFont;
-    color: #ffffff;
-    text-shadow: #5a5a5a 0 0 5px;
-    font-size: 30px;
-    line-height: 36px;
-    text-align: center;
-}
-.prev-next-articles__entry__date-created {
-    position: relative;
-    font-family: $secondaryFont;
-    color: #ffffff;
-    text-shadow: #5a5a5a 0 0 5px;
-    font-size: 18px;
-    text-align: center;
-    margin-top: 4px;
-}
-.prev-next-articles__entry__chin-button {
-    position: absolute;
-    bottom: 0;
-    background-color: $red;
-    color: #ffffff;
-    font-family: $primaryFont;
-    text-transform: uppercase;
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-    font-size: 24px;
-    padding: 13px 0;
-
-    .chin-button__arrow {
-        border-top: solid 9px transparent;
-        border-bottom: solid 9px transparent;
-        display: inline-block;
-        vertical-align: middle;
-    }
-    .chin-button__arrow--left {
-        border-right: solid 11px #ffffff;
-    }
-    .chin-button__arrow--right {
-        border-left: solid 11px #ffffff;
-    }
-
-    .chin-button__text {
-        vertical-align: middle;
-    }
 }

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Http\Request;
 
 class ComposerServiceProvider extends ServiceProvider
 {
@@ -11,10 +12,13 @@ class ComposerServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(Request $request)
     {
         view()->composer(
             'component.header', 'App\Http\ViewComposers\HeaderComposer'
+        );
+        view()->composer(
+            '*', 'App\Http\ViewComposers\SiteComposer'
         );
     }
 

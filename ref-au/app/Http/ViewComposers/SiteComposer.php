@@ -4,9 +4,8 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use App\University;
 
-class HeaderComposer
+class SiteComposer
 {
     /**
      * @var Route
@@ -33,16 +32,11 @@ class HeaderComposer
      */
     public function compose(View $view)
     {
+        $uniName = '';
         if ($this->route->hasParameter('universityName'))
         {
-            $uniName = strtolower( $this->route->getParameter('universityName')->name );
-            $university = University::where('name', $uniName)->first();
-            if ( $university )
-            {
-                // TODO Do this properly
-                // $view->with('uniLogo', $university->siteLogo());
-                $view->with('uniLogo', '/img/component/university/MonashLogo.png');
-            }
+            $uniName = $this->route->getParameter('universityName')->name;
         }
+        $view->with('universityName', $uniName);
     }
 }

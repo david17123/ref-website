@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     // Relationships
+    public function heroImage()
+    {
+        return $this->belongsTo('App\Asset', 'hero_image_id');
+    }
+
     public function author()
     {
         return $this->belongsTo('App\Author', 'author_id');
