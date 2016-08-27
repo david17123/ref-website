@@ -235,8 +235,8 @@
       content: '';
       display: block;
       position: absolute;
-      border-top: solid 100px transparent;
-      border-bottom: solid 100px transparent; }
+      border-top: solid 125px transparent;
+      border-bottom: solid 125px transparent; }
   .slice--university .slice-cover--open-right {
     right: calc(50% - 50vw); }
     .slice--university .slice-cover--open-right.slice-cover--opened {
