@@ -31,6 +31,13 @@ class AuthController extends Controller
     protected $redirectTo = '/';
 
     /**
+     * Where to redirect users after logout.
+     *
+     * @var string
+     */
+    protected $redirectAfterLogout = '/';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
@@ -38,6 +45,9 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+
+        $this->redirectTo = route('adminHome');
+        $this->redirectAfterLogout = route('mainHome');
     }
 
     /**

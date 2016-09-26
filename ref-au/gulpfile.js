@@ -14,10 +14,19 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.sass('base.scss', 'public/css/base.css');
     mix.scripts([
-        'component/utils.js',
+        'component/utils.js'
+    ], 'public/js/base.js');
+
+    // Layout specific files
+    mix.sass('defaultLayout.scss', 'public/css/defaultLayout.css');
+    mix.scripts([
         'component/header.js',
         'component/footer.js'
-    ], 'public/js/base.js');
+    ], 'public/js/defaultLayout.js');
+
+    // mix.sass('adminLayout.scss', 'public/css/adminLayout.css');
+    // mix.scripts([
+    // ], 'public/js/adminLayout.js');
 
 
 

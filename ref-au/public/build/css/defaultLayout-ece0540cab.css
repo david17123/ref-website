@@ -1,0 +1,131 @@
+.input-text {
+  border: solid 1px #cacaca;
+  outline: none; }
+  .input-text:focus {
+    border-color: #676767; }
+
+.input-text--error {
+  border: solid 1px #ff3434; }
+
+.site-header {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; }
+
+.site-header--opaque {
+  background-color: #ffffff;
+  box-shadow: #949494 0 0 10px; }
+
+.site-header__container {
+  display: table;
+  table-layout: fixed;
+  width: 910px;
+  height: 55px;
+  margin: auto; }
+
+.site-header__link {
+  display: table-cell;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  vertical-align: middle;
+  font-size: 15px; }
+  .site-header__link a {
+    color: #000000;
+    text-decoration: none; }
+
+.site-header__site-logo {
+  height: 35px; }
+
+.site-footer {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding: 30px 0;
+  background-image: url(/img/component/footer/FooterBackground.jpg);
+  background-size: 23px; }
+
+.site-footer__section {
+  display: table-cell;
+  border-right: solid 3px #a2a2a2;
+  text-align: center;
+  padding-bottom: 80px; }
+  .site-footer__section:first-child .site-footer__section__content {
+    padding-top: 0; }
+  .site-footer__section:last-child {
+    border-right: none; }
+
+.site-footer__section:first-child {
+  padding-top: 0; }
+
+.site-footer__section__header {
+  font-family: "Amiri";
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 15px; }
+
+.site-footer__section__content {
+  display: inline-table;
+  width: 250px;
+  padding: 10px 0;
+  font-family: "Raleway";
+  color: #7b7b7b;
+  font-size: 14px; }
+  .site-footer__section__content p {
+    text-align: center;
+    line-height: 18px; }
+  .site-footer__section__content form {
+    text-align: center; }
+  .site-footer__section__content input[type=text] {
+    display: inline-block;
+    font-family: "Raleway";
+    width: 200px;
+    height: 25px;
+    padding: 5px 10px; }
+  .site-footer__section__content .subscribe-form {
+    display: table; }
+  .site-footer__section__content .subscribe-form--hidden {
+    display: none; }
+  .site-footer__section__content .subscribe-form__text-field {
+    display: table-cell;
+    vertical-align: middle; }
+  .site-footer__section__content .subscribe-form__submit {
+    display: table-cell;
+    background-color: #ff950b;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    vertical-align: middle; }
+  .site-footer__section__content .subscribe-form__submit--disabled {
+    background-color: #cacaca;
+    cursor: default; }
+  .site-footer__section__content .success {
+    text-align: center;
+    color: #0cab0c; }
+  .site-footer__section__content .success--hidden {
+    display: none; }
+  .site-footer__section__content .success__icon {
+    vertical-align: middle; }
+  .site-footer__section__content .success__text {
+    vertical-align: middle;
+    margin-left: 3px; }
+  .site-footer__section__content .social-link {
+    display: table-cell;
+    text-align: center; }
+  .site-footer__section__content .social-link__icon {
+    width: 30px;
+    height: 30px; }
+
+.site-footer__section--social .site-footer__section__content {
+  width: 170px; }
+
+/*# sourceMappingURL=defaultLayout.css.map */

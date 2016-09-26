@@ -23,6 +23,8 @@ else
     error_log('The variable `$tld` is set by someone else. This may break routing!');
 }
 
+Route::auth();
+
 // Note, this route group is temporary in nature. Delete this once the new site
 // is properly launched and update the route defined by: Route::get('/').
 Route::group([
@@ -30,6 +32,15 @@ Route::group([
 ], function () {
     Route::get('/', ['as' => 'mainHome', function () {
         return view('page/mainHome');
+    }]);
+});
+
+Route::group([
+    'domain' => 'admin.ref-au.'.$tld,
+    'middleware' => 'auth'
+], function () {
+    Route::get('/', ['as' => 'adminHome', function () {
+        return view('page/admin/home');
     }]);
 });
 
