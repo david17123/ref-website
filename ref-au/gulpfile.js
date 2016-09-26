@@ -32,6 +32,10 @@ elixir(function(mix) {
 
     // Page specific CSS
     mix.sass([
+        'auth/login.scss'
+    ], 'public/css/auth/login.css');
+
+    mix.sass([
         'lib/slick/slick.scss',
         'page/mainHome.scss'
     ], 'public/css/page/mainHome.css');

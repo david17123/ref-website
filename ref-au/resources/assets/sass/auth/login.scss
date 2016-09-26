@@ -1,0 +1,65 @@
+@import "../component/variables";
+@import "../component/mixins";
+@import "../component/inputs";
+
+.login-form {
+    width: 400px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-element {
+    font-family: $primaryFont;
+    margin-bottom: 14px;
+}
+.form-element__label {
+    display: block;
+    width: 120px;
+    margin-bottom: 5px;
+}
+.form-element__input-field {
+    input {
+        width: 100%;
+    }
+}
+.form-element__error-message {
+    display: inline-block;
+    margin-top: 5px;
+    width: 100%;
+    color: $errorColor;
+    font-size: 14px;
+    line-height: 18px;
+}
+.form-element__remember-checkbox,
+.form-element__remember-label {
+    display: inline-block;
+    vertical-align: middle;
+}
+.form-element--buttons-container {
+    margin-top: 28px;
+}
+.form-element__button {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: $red;
+    border: none;
+    display: block;
+    margin: auto;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover {
+        background-color: $lightRed;
+    }
+}
+.form-element__link {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    &:hover {
+        text-decoration: underline;
+    }
+}

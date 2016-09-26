@@ -1,6 +1,13 @@
+@import "mixins";
+
 .input-text {
+    @include boxSizing(border-box);
+    display: inline-block;
     border: solid 1px $inputBorderColor;
     outline: none;
+    padding: 5px 10px;
+    height: 37px;
+    font-family: $primaryFont;
 
     &:focus {
         border-color: $inputBorderColorFocused;

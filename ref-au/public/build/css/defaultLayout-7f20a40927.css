@@ -1,6 +1,11 @@
 .input-text {
+  box-sizing: border-box;
+  display: inline-block;
   border: solid 1px #cacaca;
-  outline: none; }
+  outline: none;
+  padding: 5px 10px;
+  height: 37px;
+  font-family: "Raleway"; }
   .input-text:focus {
     border-color: #676767; }
 
@@ -83,11 +88,7 @@
   .site-footer__section__content form {
     text-align: center; }
   .site-footer__section__content input[type=text] {
-    display: inline-block;
-    font-family: "Raleway";
-    width: 200px;
-    height: 25px;
-    padding: 5px 10px; }
+    width: 220px; }
   .site-footer__section__content .subscribe-form {
     display: table; }
   .site-footer__section__content .subscribe-form--hidden {
