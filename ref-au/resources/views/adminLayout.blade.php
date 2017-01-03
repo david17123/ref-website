@@ -9,5 +9,6 @@
 @endpush --}}
 
 @section('content')
+    @include('component.admin.header')
     @yield('pageContent')
 @endsection

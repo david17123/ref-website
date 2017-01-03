@@ -33,10 +33,10 @@ class SiteComposer
     public function compose(View $view)
     {
         $uniName = '';
-        if ($this->route->hasParameter('universityName'))
+        if ($this->route->hasParameter('uniUrl'))
         {
-            $uniName = $this->route->getParameter('universityName')->name;
+            $uniName = $this->route->getParameter('uniUrl')->subdomain;
         }
-        $view->with('universityName', $uniName);
+        $view->with('uniUrl', $uniName);
     }
 }

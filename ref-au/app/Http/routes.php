@@ -39,17 +39,28 @@ Route::group([
     'domain' => 'admin.ref-au.'.$tld,
     'middleware' => 'auth'
 ], function () {
-    Route::get('/', ['as' => 'adminHome', function () {
-        return view('page/admin/home');
-    }]);
+    Route::get('/', [
+        'as' => 'adminHome',
+        'uses' => 'Admin\AdminLandingController@index'
+    ]);
+    Route::get('uni/{uniUrl}', [
+        'as' => 'manageUniSite',
+        'uses' => 'Admin\UniversityController@index'
+    ]);
+
+    Route::post('uni/{uniUrl}', [
+        'as' => 'submitUniSiteData',
+        'uses' => 'Admin\UniversityController@saveSiteDetails'
+    ]);
 });
 
 Route::group([
-    'domain' => '{universityName}.ref-au.'.$tld
+    'domain' => '{uniUrl}.ref-au.'.$tld
 ], function () {
     Route::get('/', [
         'as' => 'uniHome',
-        'uses' => 'UniversityHomePageController@displayHome']);
+        'uses' => 'UniversityHomePageController@displayHome'
+    ]);
     Route::get('article/{article}', [
         'as' => 'readArticle',
         'uses' => 'ArticlePageController@readArticle'

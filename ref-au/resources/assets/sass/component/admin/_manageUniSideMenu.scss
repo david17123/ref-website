@@ -1,0 +1,24 @@
+.admin-manage-uni-side-menu {
+    padding-right: 12px;
+    border-right: solid 1px $borderColor;
+
+    .side-menu-entry {
+        display: block;
+        text-decoration: none;
+        color: $textGrey;
+        border-bottom: solid 1px $borderColor;
+        padding: 12px 5px;
+        font-family: $primaryFont;
+        font-size: 14px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    .side-menu-entry__selected {
+        background-color: $cyan;
+        pointer-events: none;
+        color: #000000;
+        font-weight: 600;
+    }
+}

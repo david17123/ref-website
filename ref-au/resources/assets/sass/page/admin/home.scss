@@ -1,0 +1,47 @@
+@import "../../component/variables";
+@import "../../component/mixins";
+
+.page-content-container {
+    width: 960px;
+    margin: auto;
+}
+.section-header {
+    font-family: $secondaryFont;
+    margin-bottom: 10px;
+}
+.manage-unis {
+    .uni {
+        display: inline-table;;
+        width: 300px;
+        border-radius: 3px;
+        padding: 10px;
+        background-color: $cyan;
+        cursor: pointer;
+        text-decoration: none;
+
+        p {
+            font-family: $primaryFont;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
+    .uni:hover {
+        background-color: $darkCyan;
+    }
+    .uni__column {
+        display: table-cell;
+        vertical-align: top;
+    }
+    .uni__logo {
+        width: 50px;
+    }
+    .uni__name {
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #000000;
+    }
+    .uni__url {
+        font-style: italic;
+        color: $textLightGrey;
+    }
+}

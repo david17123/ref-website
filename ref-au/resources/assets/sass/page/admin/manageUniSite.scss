@@ -1,0 +1,49 @@
+@import "../../component/variables";
+@import "../../component/mixins";
+@import "../../component/admin/manageUniSideMenu";
+@import "../../component/inputs";
+
+.page-content-container {
+    width: 960px;
+    margin: auto;
+    display: table;
+}
+
+.side-menu-container,
+.manage-uni-site {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.side-menu-container {
+    width: 250px;
+    padding-right: 12px;
+}
+
+.manage-uni-site {
+    .form-field {
+        display: table;
+        margin-bottom: 10px;
+    }
+
+    .form-field__label,
+    .form-field__input {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .form-field__label {
+        width: 150px;
+        font-family: $primaryFont;
+        padding-top: 12px;
+        font-size: 14px;
+    }
+
+    .form-field__input .input-text {
+        width: 250px;
+    }
+
+    .input-button {
+        margin-top: 10px;
+    }
+}

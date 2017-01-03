@@ -12,6 +12,15 @@
 .input-text--error {
   border: solid 1px #ff3434; }
 
+.input-button {
+  border: none;
+  background-color: #00a1ff;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px 20px; }
+  .input-button:hover {
+    background-color: #4cbdff; }
+
 .login-form {
   width: 400px;
   margin-top: 150px;

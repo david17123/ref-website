@@ -40,7 +40,7 @@
             <div class="slice--sermon-summaries__container">
                 @include('component.sermonSummariesListTemplate', ['sermonSummaries' => $sermonSummaries])
             </div>
-            <a class="slice--sermon-summaries__button-link" href="{{ route('sermonSummariesList', ['universityName' => $universityName]) }}">Read More</a>
+            <a class="slice--sermon-summaries__button-link" href="{{ route('sermonSummariesList', ['uniUrl' => $uniUrl]) }}">Read More</a>
         </div>
     </div>
 

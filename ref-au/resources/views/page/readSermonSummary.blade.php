@@ -31,7 +31,7 @@
                     <h1 class="articles__heading">Articles</h1>
                     @foreach ($articles as $article)
                         <div class="articles__entry">
-                            <a href="{{ route('readArticle', ['universityName' => $universityName, 'article' => $article->id]) }}" class="articles__entry__link-overlay"></a>
+                            <a href="{{ route('readArticle', ['uniUrl' => $uniUrl, 'article' => $article->id]) }}" class="articles__entry__link-overlay"></a>
                             <div class="articles__entry__background">
                                 <div class="background-image" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getURL() }})"></div>
                                 <div class="background-shadow"></div>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <a href="{{ route('articlesList', ['universityName' => $universityName]) }}" class="articles__view-more">
+                    <a href="{{ route('articlesList', ['uniUrl' => $uniUrl]) }}" class="articles__view-more">
                         View More
                     </a>
                 </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="prev-next-sermon-summaries">
             <div class="prev-next-sermon-summaries__entry">
-                <a href="{{ route('readSermonSummary', ['universityName' => $universityName, 'sermonSummary' => $prevSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
+                <a href="{{ route('readSermonSummary', ['uniUrl' => $uniUrl, 'sermonSummary' => $prevSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
                 <div class="prev-next-sermon-summaries__entry__background">
                     <div class="background-image" style="background-image: url({{ is_null($prevSermon->heroImage) ? '' : $prevSermon->heroImage->getURL() }})"></div>
                     <div class="background-shadow"></div>
@@ -65,7 +65,7 @@
                 </div>
             </div>{{--
         --}}<div class="prev-next-sermon-summaries__entry">
-                <a href="{{ route('readSermonSummary', ['universityName' => $universityName, 'sermonSummary' => $nextSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
+                <a href="{{ route('readSermonSummary', ['uniUrl' => $uniUrl, 'sermonSummary' => $nextSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
                 <div class="prev-next-sermon-summaries__entry__background">
                     <div class="background-image" style="background-image: url({{ is_null($nextSermon->heroImage) ? '' : $nextSermon->heroImage->getURL() }})"></div>
                     <div class="background-shadow"></div>

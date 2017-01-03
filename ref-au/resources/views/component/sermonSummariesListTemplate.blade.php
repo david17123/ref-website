@@ -1,7 +1,7 @@
 <!--
 @foreach ($sermonSummaries as $i=>$sermonSummary)
 --><div class="sermon-summary-list-entry @if ($i === 0) sermon-summary-list-entry--highlight @endif ">
-        <a href="{{ route('readSermonSummary', ['universityName' => $universityName, 'sermonSummary' => $sermonSummary->id]) }}" class="sermon-summary-list-entry__link-overlay"></a>
+        <a href="{{ route('readSermonSummary', ['uniUrl' => $uniUrl, 'sermonSummary' => $sermonSummary->id]) }}" class="sermon-summary-list-entry__link-overlay"></a>
         @if ($i === 0)
             <div class="sermon-summary-list-entry__flag">
                 Recent

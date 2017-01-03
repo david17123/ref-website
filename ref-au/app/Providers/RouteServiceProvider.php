@@ -28,8 +28,8 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot($router);
 
-        $router->bind('universityName', function ($value) {
-            return University::where('name', $value)->firstOrFail();
+        $router->bind('uniUrl', function ($value) {
+            return University::where('subdomain', $value)->firstOrFail();
         });
     }
 

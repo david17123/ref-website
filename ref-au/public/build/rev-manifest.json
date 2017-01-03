@@ -1,7 +1,9 @@
 {
-  "css/auth/login.css": "css/auth/login-951c61ad5b.css",
+  "css/auth/login.css": "css/auth/login-522b05824b.css",
   "css/base.css": "css/base-f356a7c56a.css",
-  "css/defaultLayout.css": "css/defaultLayout-7f20a40927.css",
+  "css/defaultLayout.css": "css/defaultLayout-601e78ba65.css",
+  "css/page/admin/home.css": "css/page/admin/home-fd0c80db80.css",
+  "css/page/admin/manageUniSite.css": "css/page/admin/manageUniSite-cb71a89d27.css",
   "css/page/articlesList.css": "css/page/articlesList-cd6c540c37.css",
   "css/page/mainHome.css": "css/page/mainHome-574ac6c5db.css",
   "css/page/readArticle.css": "css/page/readArticle-d32c057fa8.css",

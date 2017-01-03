@@ -94,6 +94,16 @@ elixir(function(mix) {
 
 
 
+    // Admin pages
+    mix.sass([
+        'page/admin/home.scss'
+    ], 'public/css/page/admin/home.css');
+    mix.sass([
+        'page/admin/manageUniSite.scss'
+    ], 'public/css/page/admin/manageUniSite.css');
+
+
+
     // Use asset versioning
     mix.version([
         'css/**/*.css',

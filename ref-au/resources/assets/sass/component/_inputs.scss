@@ -16,3 +16,15 @@
 .input-text--error {
     border: solid 1px $errorColor;
 }
+
+.input-button {
+    border: none;
+    background-color: $blue;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 8px 20px;
+
+    &:hover {
+        background-color: $lightBlue;
+    }
+}
