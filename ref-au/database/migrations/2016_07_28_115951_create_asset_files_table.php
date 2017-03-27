@@ -15,7 +15,7 @@ class CreateAssetFilesTable extends Migration
         Schema::create('asset_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->string('cloudFilename');
+            $table->string('cloud_filename');
             $table->bigInteger('size');
             $table->integer('asset_id')->unsigned()->nullable();
             $table->timestamps();

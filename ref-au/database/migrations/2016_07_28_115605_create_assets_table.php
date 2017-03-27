@@ -15,6 +15,7 @@ class CreateAssetsTable extends Migration
         Schema::create('assets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('filename');
+            $table->boolean('temporary')->default(true);
             $table->timestamps();
         });
     }

@@ -10,7 +10,7 @@
 
 @section('pageContent')
     <div class="page-content-container">
-        <div class="article-hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getURL() }})"></div>
+        <div class="article-hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>
         <div class="article-layouter">
             <div class="article-content">
                 <h1 class="article-content__title">{{ $article->title }}</h1>
@@ -33,7 +33,7 @@
                         <div class="other-articles__entry">
                             <a href="{{ route('readArticle', ['uniUrl' => $uniUrl, 'article' => $otherArticle->id]) }}" class="other-articles__entry__link-overlay"></a>
                             <div class="other-articles__entry__background">
-                                <div class="background-image" style="background-image: url({{ is_null($otherArticle->heroImage) ? '' : $otherArticle->heroImage->getURL() }})"></div>
+                                <div class="background-image" style="background-image: url({{ is_null($otherArticle->heroImage) ? '' : $otherArticle->heroImage->getUrl() }})"></div>
                                 <div class="background-shadow"></div>
                             </div>
                             <div class="other-articles__entry__positioner">

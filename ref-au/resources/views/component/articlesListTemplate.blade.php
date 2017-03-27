@@ -7,7 +7,7 @@
                 Recent
             </div>
         @endif
-        <div class="article-list-entry__hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getURL() }})"></div>{{--
+        <div class="article-list-entry__hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>{{--
     --}}<div class="article-list-entry__snippet-content">
             <h1 class="article-list-entry__title">
                 {{ $article->title }}

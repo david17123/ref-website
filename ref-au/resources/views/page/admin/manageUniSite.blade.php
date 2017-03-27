@@ -4,6 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{{ elixir('css/page/admin/manageUniSite.css') }}"/>
 @endpush
 
+@push('js')
+    <script type="text/javascript" src="{{ elixir('js/page/admin/manageUniSite.js') }}"></script>
+@endpush
+
 @section('pageContent')
     <div class="page-content-container">
         <div class="side-menu-container">
@@ -43,6 +47,19 @@
                     </div>
                     <div class="form-field__input">
                         <input class="input-text" type="text" name="contactPerson" value="{{ old('contactPerson') ? old('contactPerson') : $university->contact_person }}" />
+                    </div>
+                </div>
+                <div class="form-field">
+                    <div class="form-field__label">
+                        Logo
+                    </div>
+                    <div class="form-field__input">
+                        @include('component.simpleFileInput', [
+                            'name' => 'uniLogo',
+                            'assets' => [$university->logo],
+                            'multiple' => false,
+                            'uploadUrl' => route('adminFileUploadHandler')
+                        ])
                     </div>
                 </div>
                 <input class="save-button input-button" type="submit" value="Save">

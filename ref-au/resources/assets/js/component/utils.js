@@ -70,4 +70,36 @@
         var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return emailRegex.test(email);
     };
+
+    /**
+     * Formats filesize to be displayed on front-end
+     *
+     * @param numeric size File size in bytes. This has to be numeric.
+     * @return string
+     */
+    $.formatFileSize = function (size) {
+        var size = parseInt(size);
+        var sizeText = '';
+        var sizeUnit = '';
+
+        if ( isNaN(size) ) {
+            throw 'Size must be integer';
+        } else {
+            if (size < 1000) { // < ~1KB
+                sizeText = size;
+                sizeUnit = 'B';
+            } else if (size < 1024*1000) { // < ~1MB
+                sizeText = (size / 1024).toFixed(2);
+                sizeUnit = 'KB';
+            } else if (size < 1024*1024*1000) { // < ~1GB
+                sizeText = (size / (1024*1024)).toFixed(2);
+                sizeUnit = 'MB';
+            } else {
+                sizeText = (size / (1024*1024*1024)).toFixed(2);
+                sizeUnit = 'GB';
+            }
+        }
+
+        return sizeText + sizeUnit;
+    };
 })(jQuery);

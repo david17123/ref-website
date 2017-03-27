@@ -12,4 +12,10 @@ class University extends Model
      * @var string
      */
     protected $table = 'universities';
+
+    // Relationships
+    public function logo()
+    {
+        return $this->belongsTo('App\Asset', 'logo_id');
+    }
 }

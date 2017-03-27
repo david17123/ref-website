@@ -10,7 +10,7 @@
 
 @section('pageContent')
     <div class="page-content-container">
-        <div class="sermon-summary-hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getURL() }})"></div>
+        <div class="sermon-summary-hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }})"></div>
         <div class="sermon-summary-layouter">
             <div class="sermon-summary-content">
                 <h1 class="sermon-summary-content__title">{{ $sermonSummary->title }}</h1>
@@ -33,7 +33,7 @@
                         <div class="articles__entry">
                             <a href="{{ route('readArticle', ['uniUrl' => $uniUrl, 'article' => $article->id]) }}" class="articles__entry__link-overlay"></a>
                             <div class="articles__entry__background">
-                                <div class="background-image" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getURL() }})"></div>
+                                <div class="background-image" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>
                                 <div class="background-shadow"></div>
                             </div>
                             <div class="articles__entry__positioner">
@@ -52,7 +52,7 @@
             <div class="prev-next-sermon-summaries__entry">
                 <a href="{{ route('readSermonSummary', ['uniUrl' => $uniUrl, 'sermonSummary' => $prevSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
                 <div class="prev-next-sermon-summaries__entry__background">
-                    <div class="background-image" style="background-image: url({{ is_null($prevSermon->heroImage) ? '' : $prevSermon->heroImage->getURL() }})"></div>
+                    <div class="background-image" style="background-image: url({{ is_null($prevSermon->heroImage) ? '' : $prevSermon->heroImage->getUrl() }})"></div>
                     <div class="background-shadow"></div>
                 </div>
                 <h1 class="prev-next-sermon-summaries__entry__title">{{ $prevSermon->title }}</h1>
@@ -67,7 +67,7 @@
         --}}<div class="prev-next-sermon-summaries__entry">
                 <a href="{{ route('readSermonSummary', ['uniUrl' => $uniUrl, 'sermonSummary' => $nextSermon->id]) }}" class="prev-next-sermon-summaries__entry__link-overlay"></a>
                 <div class="prev-next-sermon-summaries__entry__background">
-                    <div class="background-image" style="background-image: url({{ is_null($nextSermon->heroImage) ? '' : $nextSermon->heroImage->getURL() }})"></div>
+                    <div class="background-image" style="background-image: url({{ is_null($nextSermon->heroImage) ? '' : $nextSermon->heroImage->getUrl() }})"></div>
                     <div class="background-shadow"></div>
                 </div>
                 <h1 class="prev-next-sermon-summaries__entry__title">{{ $nextSermon->title }}</h1>

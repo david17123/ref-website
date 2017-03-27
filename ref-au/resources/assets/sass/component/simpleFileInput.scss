@@ -1,0 +1,66 @@
+@import "variables";
+
+.simple-file-input {
+    min-width: 230px;
+
+    .file-entry-template,
+    input[type=file] {
+        display: none;
+    }
+
+    .file-entry {
+        position: relative;
+        background-color: $teal;
+        padding: 10px;
+        margin-bottom: 5px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .file-entry--error {
+        background-color: $errorColor;
+
+        .file-entry__details__filename:hover {
+            text-decoration: none;
+        }
+    }
+    .file-entry__details {
+        font-family: $primaryFont;
+        font-size: 14px;
+        color: #ffffff;
+    }
+    .file-entry__details__filename {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .file-entry__details__filesize {
+        font-size: 12px;
+        margin-left: 5px;
+    }
+    .file-entry__remove {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 2px;
+        margin: auto;
+        width: 16px;
+        height: 16px;
+        padding: 5px;
+        cursor: pointer;
+
+        .material-icons {
+            font-size: 16px;
+            color: #ffffff;
+        }
+    }
+
+    .add-file__button {
+        display: inline-block;
+        font-family: $primaryFont;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+}

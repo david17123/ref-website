@@ -7,7 +7,7 @@
                 Recent
             </div>
         @endif
-        <div class="sermon-summary-list-entry__hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getURL() }})"></div>{{--
+        <div class="sermon-summary-list-entry__hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }})"></div>{{--
     --}}<div class="sermon-summary-list-entry__snippet-content">
             <h1 class="sermon-summary-list-entry__title">
                 {{ $sermonSummary->title }}

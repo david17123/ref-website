@@ -1,6 +1,9 @@
+@import "variables";
+@import "mixins";
+
 $articleListEntryWidth: 30%;
 $articleListEntryMargin: 15px;
-.article-list-entry {
+.sermon-summary-list-entry {
     position: relative;
     display: inline-block;
     vertical-align: top;
@@ -11,22 +14,19 @@ $articleListEntryMargin: 15px;
     background-color: #ffffff;
     &:hover {
         @include boxShadow(#cacaca 0 0 18px 0);
-        .article-list-entry__read-more__text {
-            color: $lightGold;
-        }
     }
 }
-.article-list-entry--highlight {
+.sermon-summary-list-entry--highlight {
     width: calc(3 * #{$articleListEntryWidth} + 4 * #{$articleListEntryMargin});
     height: 350px;
 
-    .article-list-entry__hero {
+    .sermon-summary-list-entry__hero {
         display: inline-block;
         width: 65%;
         height: 100%;
     }
 
-    .article-list-entry__snippet-content {
+    .sermon-summary-list-entry__snippet-content {
         position: relative;
         display: inline-block;
         width: 35%;
@@ -35,7 +35,7 @@ $articleListEntryMargin: 15px;
         @include boxSizing(border-box);
     }
 
-    .article-list-entry__footer {
+    .sermon-summary-list-entry__footer {
         position: absolute;
         width: calc(100% - 40px);
         margin-top: 0;
@@ -43,7 +43,7 @@ $articleListEntryMargin: 15px;
         right: 20px;
     }
 }
-.article-list-entry__link-overlay {
+.sermon-summary-list-entry__link-overlay {
     display: inline-block;
     position: absolute;
     left: 0;
@@ -52,7 +52,7 @@ $articleListEntryMargin: 15px;
     bottom: 0;
     z-index: 9999;
 }
-.article-list-entry__flag {
+.sermon-summary-list-entry__flag {
     $flagWidth: 21px;
     $flagHeight: 18px;
     display: inline-block;
@@ -76,52 +76,55 @@ $articleListEntryMargin: 15px;
         bottom: -$flagHeight;
     }
 }
-.article-list-entry__snippet-content {
+.sermon-summary-list-entry__snippet-content {
     padding: 20px;
     padding-bottom: 10px;
     position: relative;
-    height: 322px;
+    height: 280px;
     @include boxSizing(border-box);
 }
-.article-list-entry__hero {
+.sermon-summary-list-entry__hero {
     height: 170px;
     background-size: cover;
     background-position: center;
 }
-.article-list-entry__title {
+.sermon-summary-list-entry__title {
     font-family: $secondaryFont;
     font-size: 20px;
     line-height: 24px;
 }
-.article-list-entry__subtitle {
+.sermon-summary-list-entry__subtitle {
     font-family: $secondaryFont;
     font-size: 15px;
     margin: 10px 0;
 }
-.article-list-entry__snippet {
+.sermon-summary-list-entry__snippet {
     font-family: $primaryFont;
     font-size: 14px;
     line-height: 18px;
 }
-.article-list-entry__read-more {
+.sermon-summary-list-entry__read-more {
     text-align: right;
     font-family: $secondaryFont;
     margin-top: 8px;
 }
-.article-list-entry__read-more__text {
+.sermon-summary-list-entry__read-more__link {
     text-transform: uppercase;
     text-decoration: none;
     color: $gold;
     font-size: 14px;
+    &:hover {
+        color: $lightGold;
+    }
 }
-.article-list-entry__footer {
+.sermon-summary-list-entry__footer {
     text-align: right;
     position: absolute;
     bottom: 10px;
     left: 20px;
     right: 20px;
 }
-.article-list-entry__date-created {
+.sermon-summary-list-entry__date-created {
     display: inline-block;
     font-family: $secondaryFont;
     font-size: 14px;

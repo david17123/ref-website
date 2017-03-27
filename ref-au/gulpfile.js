@@ -18,7 +18,11 @@ elixir(function(mix) {
     ], 'public/js/base.js');
 
     // Layout specific files
-    mix.sass('defaultLayout.scss', 'public/css/defaultLayout.css');
+    mix.sass([
+        'component/inputs.scss',
+        'component/header.scss',
+        'component/footer.scss'
+    ], 'public/css/defaultLayout.css');
     mix.scripts([
         'component/header.js',
         'component/footer.js'
@@ -32,6 +36,7 @@ elixir(function(mix) {
 
     // Page specific CSS
     mix.sass([
+        'component/inputs.scss',
         'auth/login.scss'
     ], 'public/css/auth/login.css');
 
@@ -42,10 +47,12 @@ elixir(function(mix) {
 
     mix.sass([
         'lib/slick/slick.scss',
+        'component/sermonSummariesListTemplate.scss',
         'page/uniHome.scss'
     ], 'public/css/page/uniHome.css');
 
     mix.sass([
+        'component/articlesListTemplate.scss',
         'page/articlesList.scss'
     ], 'public/css/page/articlesList.css');
 
@@ -54,6 +61,7 @@ elixir(function(mix) {
     ], 'public/css/page/readArticle.css');
 
     mix.sass([
+        'component/sermonSummariesListTemplate.scss',
         'page/sermonSummariesList.scss'
     ], 'public/css/page/sermonSummariesList.css');
 
@@ -99,8 +107,17 @@ elixir(function(mix) {
         'page/admin/home.scss'
     ], 'public/css/page/admin/home.css');
     mix.sass([
+        'component/inputs.scss',
+        'component/simpleFileInput.scss',
+        'component/admin/manageUniSideMenu.scss',
         'page/admin/manageUniSite.scss'
     ], 'public/css/page/admin/manageUniSite.css');
+    mix.scripts([
+        'lib/jqueryFileupload/jquery.ui.widget.js',
+        'lib/jqueryFileupload/jquery.iframe-transport.js',
+        'lib/jqueryFileupload/jquery.fileupload.js',
+        'component/simpleFileInput.js'
+    ], 'public/js/page/admin/manageUniSite.js');
 
 
 

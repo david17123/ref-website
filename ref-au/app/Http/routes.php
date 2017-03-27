@@ -52,6 +52,10 @@ Route::group([
         'as' => 'submitUniSiteData',
         'uses' => 'Admin\UniversityController@saveSiteDetails'
     ]);
+    Route::post('upload', [
+        'as' => 'adminFileUploadHandler',
+        'uses' => 'FileUploadController@post'
+    ]);
 });
 
 Route::group([
