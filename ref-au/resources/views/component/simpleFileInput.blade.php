@@ -14,9 +14,9 @@
         <input type="file" name="files" {{ isset($multiple) && $multiple ? 'multiple' : '' }}/>
         <span>{{ $buttonText or 'Add file' }}</span>
     </label>
-    <div class="file-entry-template js-file-entry-template">
+    <script type="text/x-template" id="sfi_{{ $uniqueId }}_tpl">
         <div class="file-entry js-file-entry">
-            <input type="hidden" name="{{ $name or 'simpleFileUpload' }}" value="" />
+            <input type="hidden" name="{{ $name or 'simpleFileUpload' }}[]" value="" />
             <div class="file-entry__remove js-remove-file-button">
                 <i class="material-icons">&#xE5CD;</i>
             </div>
@@ -25,11 +25,12 @@
                 <span class="file-entry__details__filesize js-filesize"></span>
             </div>
         </div>
-    </div>
+    </script>
     <script type="text/javascript">
         var fileInput = new SimpleFileInput({
             uploadUrl: '{{ $uploadUrl or '' }}',
             root: $('.sfi_{{ $uniqueId }}'),
+            template: $('#sfi_{{ $uniqueId }}_tpl'),
             multiple: {{ isset($multiple) && $multiple ? 'true' : 'false' }},
             files: {!! isset($assets) && is_array($assets) ? json_encode($assets) : '[]' !!}
         });

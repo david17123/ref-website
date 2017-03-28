@@ -23,7 +23,6 @@
 
 .simple-file-input {
   min-width: 230px; }
-  .simple-file-input .file-entry-template,
   .simple-file-input input[type=file] {
     display: none; }
   .simple-file-input .file-entry {

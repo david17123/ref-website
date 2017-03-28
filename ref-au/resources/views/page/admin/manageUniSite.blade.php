@@ -27,6 +27,14 @@
                 </div>
                 <div class="form-field">
                     <div class="form-field__label">
+                        Subdomain
+                    </div>
+                    <div class="form-field__input">
+                        <input class="input-text" type="text" name="subdomain" value="{{ old('subdomain') ? old('subdomain') : $university->subdomain }}" />
+                    </div>
+                </div>
+                <div class="form-field">
+                    <div class="form-field__label">
                         Meeting place
                     </div>
                     <div class="form-field__input">

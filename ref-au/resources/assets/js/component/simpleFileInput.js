@@ -15,6 +15,7 @@
         function SimpleFileInput (options) {
             var _this = this;
             this.$root = options.root;
+            this.$template = options.template;
             this.multiple = !!options.multiple;
 
             // Verify parameter
@@ -72,7 +73,7 @@
         * @return jQueryElement The newly appended $fileEntry
         */
         SimpleFileInput.prototype.addToFilesList = function (file) {
-            var $template = this.$root.find('.js-file-entry-template');
+            var $template = this.$template;
 
             // Remove existing file entries if non-multiple Model
             if (!this.multiple) {

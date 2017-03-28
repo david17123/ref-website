@@ -13,18 +13,10 @@ class Asset extends Model
         return $this->hasMany('App\AssetFile', 'asset_id');
     }
 
-    public function getUrl($type='original')
+    public function finalize()
     {
-        $selectedFile = $this->getAssetFile($type);
-
-        if ($selectedFile !== null)
-        {
-            return $selectedFile->url;
-        }
-        else
-        {
-            return null;
-        }
+        $this->temporary = false;
+        $this->save();
     }
 
     public function getAssetFile($type='original')
@@ -45,6 +37,26 @@ class Asset extends Model
         }
 
         return $selectedFile;
+    }
+
+    public function getUrl($type='original')
+    {
+        $selectedFile = $this->getAssetFile($type);
+
+        if ($selectedFile !== null)
+        {
+            return $selectedFile->url;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public function remove()
+    {
+        $this->temporary = true;
+        $this->save();
     }
 
     public function toArray($type='original')

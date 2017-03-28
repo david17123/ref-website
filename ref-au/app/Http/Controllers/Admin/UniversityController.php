@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\University;
+use App\Asset;
 
 class UniversityController extends Controller
 {
@@ -23,16 +24,36 @@ class UniversityController extends Controller
         // Validate request
         $this->validate($request, [
             'name' => 'required',
+            'subdomain' => 'required',
             'meetingPlace' => 'required|max:255',
             'meetingTime' => 'required|max:255',
-            'contactPerson' => 'required|max:255'
+            'contactPerson' => 'required|max:255',
+            'uniLogo' => 'required|array'
         ]);
+
+        // Process uni logo
+        $uniLogoId = count($request->input('uniLogo')) > 0 ? $request->input('uniLogo') : null;
+        $uniLogo = Asset::find($uniLogoId)->first();
+        if ($uniLogo)
+        {
+            $uniLogo->finalize();
+        }
 
         // Save request
         $university->name = $request->input('name');
+        $university->subdomain = $request->input('subdomain');
         $university->meeting_place = $request->input('meetingPlace');
         $university->meeting_time = $request->input('meetingTime');
         $university->contact_person = $request->input('contactPerson');
+        if ($uniLogo)
+        {
+            if ($university->logo && $university->logo->id != $uniLogo->id)
+            {
+                // Remove the old logo
+                $university->logo->remove();
+            }
+            $university->logo()->associate($uniLogo);
+        }
         $university->save();
 
         return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
