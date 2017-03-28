@@ -37,8 +37,15 @@
         font-size: 14px;
     }
 
-    .form-field__input .input-text {
-        width: 250px;
+    .form-field__input {
+        .input-text {
+            width: 250px;
+        }
+
+        input[type=checkbox] {
+            height: 37px;
+            margin: 0;
+        }
     }
 
     .save-button {

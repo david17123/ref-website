@@ -42,6 +42,7 @@ class UniversityController extends Controller
         // Save request
         $university->name = $request->input('name');
         $university->subdomain = $request->input('subdomain');
+        $university->published = $request->input('published') === '1';
         $university->meeting_place = $request->input('meetingPlace');
         $university->meeting_time = $request->input('meetingTime');
         $university->contact_person = $request->input('contactPerson');

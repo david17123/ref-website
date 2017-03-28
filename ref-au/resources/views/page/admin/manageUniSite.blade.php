@@ -35,6 +35,14 @@
                 </div>
                 <div class="form-field">
                     <div class="form-field__label">
+                        Published
+                    </div>
+                    <div class="form-field__input">
+                        <input type="checkbox" name="published" value="1" {{ isset($university->published) && $university->published ? 'checked="checked"' : '' }} />
+                    </div>
+                </div>
+                <div class="form-field">
+                    <div class="form-field__label">
                         Meeting place
                     </div>
                     <div class="form-field__input">

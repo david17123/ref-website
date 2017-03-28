@@ -143,6 +143,10 @@
 .manage-uni-site .form-field__input .input-text {
   width: 250px; }
 
+.manage-uni-site .form-field__input input[type=checkbox] {
+  height: 37px;
+  margin: 0; }
+
 .manage-uni-site .save-button {
   margin-top: 10px; }
 
