@@ -37,4 +37,32 @@ class UniversityController extends Controller
 
         return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
     }
+
+    public function createUni()
+    {
+        // Get new uni subdomain
+        $existingUnis = University::all();
+        $existingUniSubdomains = [];
+        foreach ($existingUnis as $uni)
+        {
+            $existingUniSubdomains[$uni->subdomain] = true;
+        }
+        $index = 1;
+        while (true)
+        {
+            if ( !isset($existingUniSubdomains['uni'.$index]) )
+            {
+                break;
+            }
+            $index++;
+        }
+        $newUniSubdomain = 'uni'.$index;
+
+        $university = new University();
+        $university->name = 'New University '.$index;
+        $university->subdomain = $newUniSubdomain;
+        $university->save();
+
+        return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
+    }
 }

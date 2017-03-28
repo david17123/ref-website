@@ -104,11 +104,13 @@ elixir(function(mix) {
 
     // Admin pages
     mix.sass([
+        'component/admin/header.scss',
         'page/admin/home.scss'
     ], 'public/css/page/admin/home.css');
     mix.sass([
         'component/inputs.scss',
         'component/simpleFileInput.scss',
+        'component/admin/header.scss',
         'component/admin/manageUniSideMenu.scss',
         'page/admin/manageUniSite.scss'
     ], 'public/css/page/admin/manageUniSite.css');
@@ -118,6 +120,10 @@ elixir(function(mix) {
         'lib/jqueryFileupload/jquery.fileupload.js',
         'component/simpleFileInput.js'
     ], 'public/js/page/admin/manageUniSite.js');
+
+    mix.scripts([
+        'page/admin/home.js'
+    ], 'public/js/page/admin/home.js');
 
 
 

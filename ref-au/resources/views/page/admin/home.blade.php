@@ -5,7 +5,7 @@
 @endpush
 
 @push('js')
-    {{-- <script type="text/javascript" src="{{ elixir('js/page/admin/home.js') }}"></script> --}}
+    <script type="text/javascript" src="{{ elixir('js/page/admin/home.js') }}"></script>
 @endpush
 
 @section('pageContent')
@@ -14,8 +14,12 @@
         <div class="manage-unis">
             @foreach($universities as $university)
                 <a class="uni" href="{{ route('manageUniSite', ['uniUrl' => $university->subdomain]) }}">
-                    <div class="uni__column">
-                        <img class="uni__logo" src="" />
+                    <div class="uni__column uni__column--logo">
+                        @if ($university->logo)
+                            <div class="uni__logo" style="background-image: url({{ $university->logo->getUrl() }})"></div>
+                        @else
+                            <i class="material-icons uni__logo">&#xE80C;</i>
+                        @endif
                     </div>
                     <div class="uni__column">
                         <p class="uni__name">
@@ -27,6 +31,19 @@
                     </div>
                 </a>
             @endforeach
+            <a class="uni uni--create-button" href="#">
+                <form class="uni__hidden-create-form js-create-form" action="{{ route('createUni') }}" method="post">
+                    {{ csrf_field() }}
+                </form>
+                <div class="uni__column uni__column--logo">
+                    <i class="material-icons uni__logo">&#xE145;</i>
+                </div>
+                <div class="uni__column">
+                    <p class="uni__name">
+                        Add university
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
 @endsection

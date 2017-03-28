@@ -56,6 +56,10 @@ Route::group([
         'as' => 'adminFileUploadHandler',
         'uses' => 'FileUploadController@post'
     ]);
+    Route::post('uni', [
+        'as' => 'createUni',
+        'uses' => 'Admin\UniversityController@createUni'
+    ]);
 });
 
 Route::group([

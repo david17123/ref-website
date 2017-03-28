@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../mixins";
+
+.admin-header {
+    display: table;
+    width: 100%;
+    font-family: $primaryFont;
+    font-size: 14px;
+    background-color: $lightPaleBrown;
+}
+.admin-header__right-content {
+    display: table-cell;
+    text-align: right;
+    padding: 15px 0;
+    padding-right: 15px;
+}
+.admin-header__logged-in-user {
+    margin-right: 8px;
+    font-weight: 700;
+}
+.admin-header__log-out-link {
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        background-color: $paleBrown;
+    }
+}

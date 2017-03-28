@@ -5,6 +5,8 @@ namespace App\Http\ViewComposers;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 
+use Auth;
+
 class SiteComposer
 {
     /**
@@ -38,5 +40,7 @@ class SiteComposer
             $uniName = $this->route->getParameter('uniUrl')->subdomain;
         }
         $view->with('uniUrl', $uniName);
+
+        $view->with('loggedInUser', Auth::user());
     }
 }

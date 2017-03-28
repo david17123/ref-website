@@ -68,6 +68,31 @@
     font-size: 14px;
     margin-top: 5px; }
 
+.admin-header {
+  display: table;
+  width: 100%;
+  font-family: "Raleway";
+  font-size: 14px;
+  background-color: #efeae9; }
+
+.admin-header__right-content {
+  display: table-cell;
+  text-align: right;
+  padding: 15px 0;
+  padding-right: 15px; }
+
+.admin-header__logged-in-user {
+  margin-right: 8px;
+  font-weight: 700; }
+
+.admin-header__log-out-link {
+  display: inline-block;
+  padding: 8px 15px;
+  text-decoration: none; }
+  .admin-header__log-out-link:hover {
+    text-decoration: underline;
+    background-color: #d7ccc8; }
+
 .admin-manage-uni-side-menu {
   padding-right: 12px;
   border-right: solid 1px #a2a2a2; }

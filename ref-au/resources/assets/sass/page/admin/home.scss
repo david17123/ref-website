@@ -15,9 +15,12 @@
         width: 300px;
         border-radius: 3px;
         padding: 10px;
+        margin-bottom: 5px;
         background-color: $cyan;
         cursor: pointer;
         text-decoration: none;
+        vertical-align: top;
+        color: inherit;
 
         p {
             font-family: $primaryFont;
@@ -25,15 +28,41 @@
             text-decoration: none;
         }
     }
-    .uni:hover {
+    .uni:not(.uni--disabled):hover {
         background-color: $darkCyan;
+    }
+    .uni--disabled {
+        opacity: 0.5;
+        cursor: default;
+    }
+    .uni--create-button {
+        .uni__name {
+            margin-bottom: 0;
+        }
     }
     .uni__column {
         display: table-cell;
-        vertical-align: top;
+        vertical-align: middle;
+    }
+    .uni__column--logo {
+        width: 40px;
+        height: 33px;
+        position: relative;
     }
     .uni__logo {
-        width: 50px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &.material-icons {
+            height: 24px;
+        }
     }
     .uni__name {
         margin-bottom: 5px;
