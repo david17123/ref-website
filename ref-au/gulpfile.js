@@ -104,26 +104,27 @@ elixir(function(mix) {
 
     // Admin pages
     mix.sass([
-        'component/admin/header.scss',
-        'page/admin/home.scss'
-    ], 'public/css/page/admin/home.css');
-    mix.sass([
         'component/inputs.scss',
         'component/simpleFileInput.scss',
         'component/admin/header.scss',
         'component/admin/manageUniSideMenu.scss',
+
+        'page/admin/home.scss',
         'page/admin/manageUniSite.scss'
-    ], 'public/css/page/admin/manageUniSite.css');
+    ], 'public/css/page/admin/admin.css');
+    // mix.sass([
+    //     'page/admin/manageSermonSummaries.scss'
+    // ], 'public/css/page/admin/manageSermonSummaries.css');
+
+    mix.scripts([
+        'page/admin/home.js'
+    ], 'public/js/page/admin/home.js');
     mix.scripts([
         'lib/jqueryFileupload/jquery.ui.widget.js',
         'lib/jqueryFileupload/jquery.iframe-transport.js',
         'lib/jqueryFileupload/jquery.fileupload.js',
         'component/simpleFileInput.js'
     ], 'public/js/page/admin/manageUniSite.js');
-
-    mix.scripts([
-        'page/admin/home.js'
-    ], 'public/js/page/admin/home.js');
 
 
 

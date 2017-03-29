@@ -1,0 +1,218 @@
+.input-text {
+  box-sizing: border-box;
+  display: inline-block;
+  border: solid 1px #cacaca;
+  outline: none;
+  padding: 5px 10px;
+  height: 37px;
+  font-family: "Raleway"; }
+  .input-text:focus {
+    border-color: #676767; }
+
+.input-text--error {
+  border: solid 1px #ff3434; }
+
+.input-button {
+  border: none;
+  background-color: #00a1ff;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px 20px; }
+  .input-button:hover {
+    background-color: #4cbdff; }
+
+.simple-file-input {
+  min-width: 230px; }
+  .simple-file-input input[type=file] {
+    display: none; }
+  .simple-file-input .file-entry {
+    position: relative;
+    background-color: #1dc5c5;
+    padding: 10px;
+    margin-bottom: 5px; }
+    .simple-file-input .file-entry:last-child {
+      margin-bottom: 0; }
+  .simple-file-input .file-entry--error {
+    background-color: #ff3434; }
+    .simple-file-input .file-entry--error .file-entry__details__filename:hover {
+      text-decoration: none; }
+  .simple-file-input .file-entry__details {
+    font-family: "Raleway";
+    font-size: 14px;
+    color: #ffffff; }
+  .simple-file-input .file-entry__details__filename {
+    text-decoration: none;
+    color: inherit; }
+    .simple-file-input .file-entry__details__filename:hover {
+      text-decoration: underline; }
+  .simple-file-input .file-entry__details__filesize {
+    font-size: 12px;
+    margin-left: 5px; }
+  .simple-file-input .file-entry__remove {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 2px;
+    margin: auto;
+    width: 16px;
+    height: 16px;
+    padding: 5px;
+    cursor: pointer; }
+    .simple-file-input .file-entry__remove .material-icons {
+      font-size: 16px;
+      color: #ffffff; }
+  .simple-file-input .add-file__button {
+    display: inline-block;
+    font-family: "Raleway";
+    font-size: 14px;
+    margin-top: 5px; }
+
+.admin-header {
+  display: table;
+  width: 100%;
+  font-family: "Raleway";
+  font-size: 14px;
+  background-color: #efeae9; }
+
+.admin-header__right-content {
+  display: table-cell;
+  text-align: right;
+  padding: 15px 0;
+  padding-right: 15px; }
+
+.admin-header__logged-in-user {
+  margin-right: 8px;
+  font-weight: 700; }
+
+.admin-header__log-out-link {
+  display: inline-block;
+  padding: 8px 15px;
+  text-decoration: none; }
+  .admin-header__log-out-link:hover {
+    text-decoration: underline;
+    background-color: #d7ccc8; }
+
+.admin-manage-uni-side-menu {
+  padding-right: 12px;
+  border-right: solid 1px #a2a2a2; }
+  .admin-manage-uni-side-menu .side-menu-entry {
+    display: block;
+    text-decoration: none;
+    color: #7b7b7b;
+    border-bottom: solid 1px #a2a2a2;
+    padding: 12px 5px;
+    font-family: "Raleway";
+    font-size: 14px; }
+    .admin-manage-uni-side-menu .side-menu-entry:last-child {
+      border-bottom: none; }
+  .admin-manage-uni-side-menu .side-menu-entry__selected {
+    background-color: #f0f8ff;
+    pointer-events: none;
+    color: #000000;
+    font-weight: 600; }
+
+.admin-landing-page .page-content-container {
+  width: 960px;
+  margin: auto; }
+
+.admin-landing-page .section-header {
+  font-family: "Montserrat";
+  margin-bottom: 10px; }
+
+.admin-landing-page .manage-unis .uni {
+  display: inline-table;
+  width: 300px;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f0f8ff;
+  cursor: pointer;
+  text-decoration: none;
+  vertical-align: top;
+  color: inherit; }
+  .admin-landing-page .manage-unis .uni p {
+    font-family: "Raleway";
+    font-size: 14px;
+    text-decoration: none; }
+
+.admin-landing-page .manage-unis .uni:not(.uni--disabled):hover {
+  background-color: #e3f7f6; }
+
+.admin-landing-page .manage-unis .uni--disabled {
+  opacity: 0.5;
+  cursor: default; }
+
+.admin-landing-page .manage-unis .uni--create-button .uni__name {
+  margin-bottom: 0; }
+
+.admin-landing-page .manage-unis .uni__column {
+  display: table-cell;
+  vertical-align: middle; }
+
+.admin-landing-page .manage-unis .uni__column--logo {
+  width: 40px;
+  height: 33px;
+  position: relative; }
+
+.admin-landing-page .manage-unis .uni__logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .admin-landing-page .manage-unis .uni__logo.material-icons {
+    height: 24px; }
+
+.admin-landing-page .manage-unis .uni__name {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #000000; }
+
+.admin-landing-page .manage-unis .uni__url {
+  font-style: italic;
+  color: #b3b3b3; }
+
+.admin-manage-uni-site .page-content-container {
+  width: 960px;
+  margin: auto;
+  display: table; }
+
+.admin-manage-uni-site .side-menu-container,
+.admin-manage-uni-site .manage-uni-site {
+  display: table-cell;
+  vertical-align: top; }
+
+.admin-manage-uni-site .side-menu-container {
+  width: 250px;
+  padding-right: 12px; }
+
+.admin-manage-uni-site .manage-uni-site .form-field {
+  display: table;
+  margin-bottom: 10px; }
+
+.admin-manage-uni-site .manage-uni-site .form-field__label,
+.admin-manage-uni-site .manage-uni-site .form-field__input {
+  display: table-cell;
+  vertical-align: top; }
+
+.admin-manage-uni-site .manage-uni-site .form-field__label {
+  width: 150px;
+  font-family: "Raleway";
+  padding-top: 12px;
+  font-size: 14px; }
+
+.admin-manage-uni-site .manage-uni-site .form-field__input .input-text {
+  width: 250px; }
+
+.admin-manage-uni-site .manage-uni-site .form-field__input input[type=checkbox] {
+  height: 37px;
+  margin: 0; }
+
+.admin-manage-uni-site .manage-uni-site .save-button {
+  margin-top: 10px; }
+
+/*# sourceMappingURL=admin.css.map */

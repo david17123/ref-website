@@ -10,12 +10,14 @@ class SitePageService
     private $jsVars;
     private $siteTitle;
     private $metaTags;
+    private $pageClass;
 
     public function __construct()
     {
         $this->jsVars = array();
         $this->siteTitle = 'Reformed Evangelical Fellowship';
         $this->metaTags = array();
+        $this->pageClass = '';
     }
 
     /**
@@ -85,6 +87,14 @@ class SitePageService
         }
     }
 
+    /**
+     * Sets a CSS class name for the page
+     */
+    public function setPageClass($className)
+    {
+        $this->pageClass = $className;
+    }
+
 
 
     /**
@@ -135,5 +145,13 @@ class SitePageService
         {
             return $this->metaTags;
         }
+    }
+
+    /**
+     * Gets a CSS class name for the page
+     */
+    public function getPageClass()
+    {
+        return $this->pageClass ? trim($this->pageClass) : '';
     }
 }

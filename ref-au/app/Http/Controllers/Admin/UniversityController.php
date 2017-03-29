@@ -8,11 +8,21 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\University;
 use App\Asset;
+use App\HelperClasses\SitePageService;
 
 class UniversityController extends Controller
 {
+    private $sitePage;
+
+    public function __construct(SitePageService $sitePage)
+    {
+        $this->sitePage = $sitePage;
+    }
+
     public function index(University $university)
     {
+        $this->sitePage->setPageClass('admin-manage-uni-site');
+
         $viewVars = [
             'university' => $university
         ];

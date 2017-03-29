@@ -11,6 +11,13 @@ use App\HelperClasses\SitePageService;
 
 class ArticlePageController extends Controller
 {
+    private $sitePage;
+
+    public function __construct(SitePageService $sitePage)
+    {
+        $this->sitePage = $sitePage;
+    }
+
     public function listArticles(University $university)
     {
         $viewVars = [
@@ -32,8 +39,7 @@ class ArticlePageController extends Controller
             'otherArticles' => $otherArticles
         ];
 
-        $sitePage = app(SitePageService::class);
-        $sitePage->setJavascriptVar('articleContent', $article->content);
+        $this->sitePage->setJavascriptVar('articleContent', $article->content);
 
         return view('page/readArticle', $viewVars);
     }

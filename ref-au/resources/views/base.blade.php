@@ -23,7 +23,7 @@
         @stack('css')
         @stack('js')
     </head>
-    <body>
+    <body class="{{ $sitePage->getPageClass() }}">
         @yield('content')
     </body>
 </html>

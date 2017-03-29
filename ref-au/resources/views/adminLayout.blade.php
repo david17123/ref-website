@@ -1,11 +1,11 @@
 @extends('base')
 
-{{-- @push('js')
-    <script type="text/javascript" src="{{ elixir('js/adminLayout.js') }}"></script>
+@push('css')
+    <link rel="stylesheet" type="text/css" href="{{ elixir('css/page/admin/admin.css') }}"/>
 @endpush
 
-@push('css')
-    <link rel="stylesheet" type="text/css" href="{{ elixir('css/adminLayout.css') }}"/>
+{{-- @push('js')
+    <script type="text/javascript" src="{{ elixir('js/adminLayout.js') }}"></script>
 @endpush --}}
 
 @section('content')

@@ -1,9 +1,5 @@
 @extends('adminLayout')
 
-@push('css')
-    <link rel="stylesheet" type="text/css" href="{{ elixir('css/page/admin/home.css') }}"/>
-@endpush
-
 @push('js')
     <script type="text/javascript" src="{{ elixir('js/page/admin/home.js') }}"></script>
 @endpush
