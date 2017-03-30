@@ -47,9 +47,13 @@ Route::group([
         'as' => 'manageUniSite',
         'uses' => 'Admin\UniversityController@index'
     ]);
+    Route::get('uni/{uniUrl}/sermon-summary', [
+        'as' => 'manageSermonSummaries',
+        'uses' => 'Admin\UniversityController@manageSermonSummaries'
+    ]);
 
     Route::post('uni/{uniUrl}', [
-        'as' => 'submitUniSiteData',
+        'as' => 'saveUniSiteData',
         'uses' => 'Admin\UniversityController@saveSiteDetails'
     ]);
     Route::post('upload', [

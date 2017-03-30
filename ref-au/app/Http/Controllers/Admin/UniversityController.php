@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\University;
-use App\Asset;
+
 use App\HelperClasses\SitePageService;
+
+use App\University;
+use App\SermonSummary;
+use App\Asset;
 
 class UniversityController extends Controller
 {
@@ -27,6 +30,20 @@ class UniversityController extends Controller
             'university' => $university
         ];
         return view('page/admin/manageUniSite', $viewVars);
+    }
+
+    public function manageSermonSummaries(University $university)
+    {
+        $this->sitePage->setPageClass('admin-manage-sermon-summaries');
+
+        $sermonSummaries = SermonSummary::where('sermon_location_id', '=', $university->id)
+                                        ->get();
+
+        $viewVars = [
+            'university' => $university,
+            'sermonSummaries' => $sermonSummaries
+        ];
+        return view('page/admin/manageSermonSummaries', $viewVars);
     }
 
     public function saveSiteDetails(Request $request, University $university)

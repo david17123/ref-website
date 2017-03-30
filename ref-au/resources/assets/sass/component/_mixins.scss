@@ -30,3 +30,8 @@
     display: -moz-flex;
     display: flex;
 }
+@mixin elipsisTruncate() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

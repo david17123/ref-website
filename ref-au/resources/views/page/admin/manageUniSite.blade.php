@@ -10,7 +10,7 @@
             @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'site'])
         </div>
         <div class="manage-uni-site">
-            <form action="{{ route('submitUniSiteData', ['uniUrl' => $university->subdomain]) }}" method="post">
+            <form action="{{ route('saveUniSiteData', ['uniUrl' => $university->subdomain]) }}" method="post">
                 {{ csrf_field() }}
 
                 <div class="form-field">

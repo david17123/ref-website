@@ -110,11 +110,9 @@ elixir(function(mix) {
         'component/admin/manageUniSideMenu.scss',
 
         'page/admin/home.scss',
-        'page/admin/manageUniSite.scss'
+        'page/admin/manageUniSite.scss',
+        'page/admin/manageSermonSummaries.scss'
     ], 'public/css/page/admin/admin.css');
-    // mix.sass([
-    //     'page/admin/manageSermonSummaries.scss'
-    // ], 'public/css/page/admin/manageSermonSummaries.css');
 
     mix.scripts([
         'page/admin/home.js'
