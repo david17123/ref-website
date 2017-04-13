@@ -109,6 +109,8 @@ elixir(function(mix) {
         'component/admin/header.scss',
         'component/admin/manageUniSideMenu.scss',
 
+        'lib/select2/select2Override.scss',
+
         'page/admin/home.scss',
         'page/admin/manageUniSite.scss',
         'page/admin/manageSermonSummaries.scss'
@@ -123,6 +125,14 @@ elixir(function(mix) {
         'lib/jqueryFileupload/jquery.fileupload.js',
         'component/simpleFileInput.js'
     ], 'public/js/page/admin/manageUniSite.js');
+    mix.scripts([
+        'lib/jqueryFileupload/jquery.ui.widget.js',
+        'lib/jqueryFileupload/jquery.iframe-transport.js',
+        'lib/jqueryFileupload/jquery.fileupload.js',
+        'lib/select2/select2.js',
+        'component/simpleFileInput.js',
+        'page/admin/editSermonSummary.js'
+    ], 'public/js/page/admin/editSermonSummary.js');
 
 
 

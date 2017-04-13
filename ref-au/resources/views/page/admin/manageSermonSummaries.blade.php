@@ -6,7 +6,10 @@
             @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'sermonSummary'])
         </div>
         <div class="manage-sermon-summaries">
-            <h1 class="manage-sermon-summaries__header">Sermon Summaries at {{ $university->name }}</h1>
+            <div class="manage-sermon-summaries__header-container">
+                <h1 class="manage-sermon-summaries__header">Sermon Summaries at {{ $university->name }}</h1>
+                <a class="manage-sermon-summary__create-new input-button" href="{{ route('createSermonSummary', ['uniUrl' => $university->subdomain]) }}">Create new</a>
+            </div>
             <div class="manage-sermon-summaries__sermon-summaries">
                 <div class="sermon-summaries__table-header">
                     <div class="sermon-summaries__id">

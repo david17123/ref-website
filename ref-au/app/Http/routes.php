@@ -51,6 +51,23 @@ Route::group([
         'as' => 'manageSermonSummaries',
         'uses' => 'Admin\UniversityController@manageSermonSummaries'
     ]);
+    Route::get('uni/{uniUrl}/sermon-summary/create', [
+        'as' => 'createSermonSummary',
+        'uses' => 'Admin\UniversityController@createSermonSummary'
+    ]);
+    Route::get('uni/{uniUrl}/sermon-summary/{sermonSummary}', [
+        'as' => 'editSermonSummary',
+        'uses' => 'Admin\UniversityController@editSermonSummary'
+    ]);
+    Route::get('uni/{uniUrl}/sermon-summary/{sermonSummary}/delete', [
+        'as' => 'deleteSermonSummary',
+        'uses' => 'Admin\UniversityController@deleteSermonSummary'
+    ]);
+
+    Route::get('ajax/authors', [
+        'as' => 'getAuthorsAjax',
+        'uses' => 'AjaxController@getAuthorsByName'
+    ]);
 
     Route::post('uni/{uniUrl}', [
         'as' => 'saveUniSiteData',
@@ -63,6 +80,10 @@ Route::group([
     Route::post('uni', [
         'as' => 'createUni',
         'uses' => 'Admin\UniversityController@createUni'
+    ]);
+    Route::post('uni/{uniUrl}/sermon-summary', [
+        'as' => 'saveSermonSummary',
+        'uses' => 'Admin\UniversityController@saveSermonSummary'
     ]);
 });
 

@@ -788,26 +788,10 @@
   width: 250px;
   padding-right: 12px; }
 
-.admin-manage-sermon-summaries .manage-sermon-summaries__header-container {
-  display: table;
-  width: 100%;
-  margin-bottom: 10px; }
-
 .admin-manage-sermon-summaries .manage-sermon-summaries__header {
-  display: table-cell;
   font-family: "Montserrat";
-  font-size: 22px;
-  vertical-align: middle; }
-
-.admin-manage-sermon-summaries .manage-sermon-summary__create-new {
-  display: table-cell;
-  width: 80px;
-  text-align: center;
-  text-decoration: none;
-  padding: 8px 10px;
-  vertical-align: middle;
-  font-family: "Raleway";
-  font-size: 14px; }
+  margin-bottom: 10px;
+  font-size: 22px; }
 
 .admin-manage-sermon-summaries .manage-sermon-summaries__sermon-summaries {
   display: table;
@@ -916,19 +900,14 @@
   min-height: 140px;
   resize: vertical; }
 
+.admin-edit-sermon-summary .edit-sermon-summary .form-field__input input[type=checkbox] {
+  height: 37px;
+  margin: 0; }
+
 .admin-edit-sermon-summary .edit-sermon-summary .form-field__input select {
   width: 250px; }
 
 .admin-edit-sermon-summary .edit-sermon-summary .save-button {
   margin-top: 10px; }
-
-.admin-edit-sermon-summary .edit-sermon-summary .delete-button {
-  text-decoration: none;
-  font-family: "Raleway";
-  font-size: 14px;
-  color: #00a1ff;
-  margin-left: 10px; }
-  .admin-edit-sermon-summary .edit-sermon-summary .delete-button:hover {
-    color: #4cbdff; }
 
 /*# sourceMappingURL=admin.css.map */

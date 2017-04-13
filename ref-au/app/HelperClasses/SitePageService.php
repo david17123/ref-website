@@ -21,7 +21,7 @@ class SitePageService
     }
 
     /**
-     * Adds an entry to the Javascript variable `PageArgs`. Object or array
+     * Adds an entry to the Javascript variable `PageVars`. Object or array
      * values will be parsed using json_encode(). Setting value on an already
      * set variable name will override the old value.
      *

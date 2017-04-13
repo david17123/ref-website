@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -12,6 +13,7 @@ use App\HelperClasses\SitePageService;
 use App\University;
 use App\SermonSummary;
 use App\Asset;
+use App\Author;
 
 class UniversityController extends Controller
 {
@@ -44,6 +46,116 @@ class UniversityController extends Controller
             'sermonSummaries' => $sermonSummaries
         ];
         return view('page/admin/manageSermonSummaries', $viewVars);
+    }
+
+    public function createSermonSummary(University $university)
+    {
+        $this->sitePage->setPageClass('admin-edit-sermon-summary');
+
+        $this->sitePage->setJavascriptVar('preachersAjaxUrl', route('getAuthorsAjax'));
+
+        $viewVars = [
+            'university' => $university
+        ];
+        return view('page/admin/editSermonSummary', $viewVars);
+    }
+
+    public function editSermonSummary(University $university, SermonSummary $sermonSummary)
+    {
+        $this->sitePage->setPageClass('admin-edit-sermon-summary');
+
+        $this->sitePage->setJavascriptVar('preachersAjaxUrl', route('getAuthorsAjax'));
+
+        $viewVars = [
+            'university' => $university,
+            'sermonSummary' => $sermonSummary
+        ];
+        return view('page/admin/editSermonSummary', $viewVars);
+    }
+
+    public function saveSermonSummary(Request $request, University $university)
+    {
+        $this->validate($request, [
+            'title' => 'required|string|max:255',
+            'subtitle' => 'string|max:255',
+            'content' => 'required|string',
+            'preacher' => 'required|numeric',
+            'summarizer' => 'required|numeric',
+            'datePreached' => 'required|date_format:Y-m-d',
+            'heroImage' => 'required|array',
+            'sermonSummaryId' => 'numeric'
+        ]);
+
+        // Fetch sermon summary object
+        $sermonSummaryId = $request->input('sermonSummaryId', '');
+        if ($sermonSummaryId === '')
+        {
+            $sermonSummary = new SermonSummary();
+            $sermonSummary->sermonLocation()->associate($university);
+        }
+        else
+        {
+            $sermonSummary = SermonSummary::find($sermonSummaryId);
+            if ( !$sermonSummary )
+            {
+                abort(404, 'Sermon summary not found');
+            }
+        }
+
+        // Fetch preacher and summarizer objects
+        $preacherId = $request->input('preacher');
+        $preacher = Author::find($preacherId);
+        if ( !$preacher )
+        {
+            abort(404, 'Preacher not found');
+        }
+
+        $summarizerId = $request->input('summarizer');
+        $summarizer = Author::find($summarizerId);
+        if ( !$summarizer )
+        {
+            abort(404, 'Summarizer not found');
+        }
+
+        // Process hero image
+        $heroImageId = count($request->input('heroImage')) > 0 ? $request->input('heroImage') : null;
+        $heroImage = Asset::find($heroImageId)->first();
+        if ($heroImage)
+        {
+            $heroImage->finalize();
+        }
+
+        $sermonSummary->title = $request->input('title');
+        $sermonSummary->subtitle = $request->input('subtitle');
+        $sermonSummary->content = $request->input('content');
+        $sermonSummary->date_preached = Carbon::createFromFormat('Y-m-d', $request->input('datePreached'));
+        $sermonSummary->preacher()->associate($preacher);
+        $sermonSummary->summarizer()->associate($summarizer);
+        if ($heroImage)
+        {
+            if ($sermonSummary->heroImage && $sermonSummary->heroImage->id != $heroImage->id)
+            {
+                // Remove the old hero image
+                $sermonSummary->heroImage->remove();
+            }
+            $sermonSummary->heroImage()->associate($heroImage);
+        }
+
+        $sermonSummary->save();
+
+        return redirect()->route('editSermonSummary', ['uniUrl' => $university->subdomain, 'sermonSummary' => $sermonSummary->id]);
+    }
+
+    public function deleteSermonSummary(University $university, SermonSummary $sermonSummary)
+    {
+        if ($sermonSummary->heroImage)
+        {
+            $heroImage = $sermonSummary->heroImage;
+            $sermonSummary->heroImage()->dissociate();
+            $heroImage->remove();
+        }
+        $sermonSummary->delete();
+        return redirect()->route('manageSermonSummaries', ['uniUrl' => $university->subdomain]);
     }
 
     public function saveSiteDetails(Request $request, University $university)
