@@ -38,6 +38,20 @@ class UniversityController extends Controller
         return view('page/admin/manageUniSite', $viewVars);
     }
 
+    public function deleteUniSite(University $university)
+    {
+        // if ($university->logo)
+        // {
+        //     $logo = $university->logo;
+        //     $university->logo()->dissociate();
+        //     $logo->remove();
+        // }
+        // // TODO @David Deal with bannersAssetGroup and clubPicturesAssetGroup
+        // // TODO @David Deal with the other DB objects that are attached to uni: make sure they are properly deleted with their respective assets
+        // $university->delete();
+        return redirect()->route('adminHome');
+    }
+
     public function manageSermonSummaries(University $university)
     {
         $this->sitePage->setPageClass('admin-manage-sermon-summaries');

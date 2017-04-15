@@ -47,6 +47,10 @@ Route::group([
         'as' => 'manageUniSite',
         'uses' => 'Admin\UniversityController@index'
     ]);
+    Route::get('uni/{uniUrl}/delete', [
+        'as' => 'deleteUniSite',
+        'uses' => 'Admin\UniversityController@deleteUniSite'
+    ]);
     Route::get('uni/{uniUrl}/sermon-summary', [
         'as' => 'manageSermonSummaries',
         'uses' => 'Admin\UniversityController@manageSermonSummaries'

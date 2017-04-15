@@ -8215,7 +8215,7 @@ S2.define('jquery.select2',[
     })();
 })(jQuery);
 
-(function home($) {
+(function editSermonSummary($) {
     $(document).ready(function () {
         $('.js-preacher-select').select2({
             placeholder: 'Select a preacher',

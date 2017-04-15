@@ -2489,4 +2489,14 @@ var widget = $.widget;
     })();
 })(jQuery);
 
+(function home($) {
+    $(document).ready(function () {
+        $('.js-delete-button').click(function (event) {
+            if ( !confirm('Are you sure? This cannot be undone.') ) {
+                event.preventDefault();
+            }
+        });
+    });
+})(jQuery);
+
 //# sourceMappingURL=manageUniSite.js.map

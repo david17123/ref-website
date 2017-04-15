@@ -123,7 +123,8 @@ elixir(function(mix) {
         'lib/jqueryFileupload/jquery.ui.widget.js',
         'lib/jqueryFileupload/jquery.iframe-transport.js',
         'lib/jqueryFileupload/jquery.fileupload.js',
-        'component/simpleFileInput.js'
+        'component/simpleFileInput.js',
+        'page/admin/manageUniSite.js'
     ], 'public/js/page/admin/manageUniSite.js');
     mix.scripts([
         'lib/jqueryFileupload/jquery.ui.widget.js',
