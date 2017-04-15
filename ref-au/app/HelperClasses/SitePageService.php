@@ -11,6 +11,7 @@ class SitePageService
     private $siteTitle;
     private $metaTags;
     private $pageClass;
+    private $breadcrumbs;
 
     public function __construct()
     {
@@ -18,6 +19,7 @@ class SitePageService
         $this->siteTitle = 'Reformed Evangelical Fellowship';
         $this->metaTags = array();
         $this->pageClass = '';
+        $this->breadcrumbs = [];
     }
 
     /**
@@ -95,6 +97,49 @@ class SitePageService
         $this->pageClass = $className;
     }
 
+    /**
+     * Adds entries to the chain of breadcrumbs. A single breadcrumb entry has
+     * the following keys:
+     *   - text
+     *   - link (optional)
+     *
+     * @param array $breadcrumbEntries
+     */
+    public function addBreadcrumbs($breadcrumbEntries)
+    {
+        foreach ($breadcrumbEntries as $entry)
+        {
+            $this->breadcrumbs[] = [
+                'text' => isset($entry['text']) && $entry['text'] ? $entry['text'] : '',
+                'link' => isset($entry['link']) && $entry['link'] ? $entry['link'] : ''
+            ];
+        }
+    }
+
+    /**
+     * Adds a single breadcrumb entry to the existing breadcrumbs chain.
+     * Breadcrumb entry is of the same format as
+     * SitePageService::addBreadcrumbs().
+     *
+     * @param array $breadcrumb
+     */
+    public function addBreadcrumb($breadcrumb)
+    {
+        return $this->addBreadcrumbs([$breadcrumb]);
+    }
+
+    /**
+     * Sets the breadcrumb to the supplied breadcrumb entries. Breadcrumb
+     * entries are of the same format as SitePageService::addBreadcrumbs().
+     *
+     * @param array $breadcrumbEntries
+     */
+    public function setBreadcrumbs($breadcrumbEntries)
+    {
+        $this->breadcrumbs = [];
+        return $this->addBreadcrumbs($breadcrumbEntries);
+    }
+
 
 
     /**
@@ -153,5 +198,25 @@ class SitePageService
     public function getPageClass()
     {
         return $this->pageClass ? trim($this->pageClass) : '';
+    }
+
+    /**
+     * Gets the chain of breadcrumbs for the page.
+     *
+     * @return array
+     */
+    public function getBreadcrumbs()
+    {
+        return $this->breadcrumbs;
+    }
+
+    /**
+     * Checks if there is any breadcrumb for the page
+     *
+     * @return bool
+     */
+    public function hasBreadcrumbs()
+    {
+        return count($this->breadcrumbs) > 0;
     }
 }

@@ -1,11 +1,18 @@
 @import "../../component/variables";
 @import "../../component/mixins";
+@import "../../component/admin/components";
 
 .admin-manage-uni-site {
+    @include breadcrumbs;
+
     .page-content-container {
         width: 960px;
         margin: auto;
+    }
+
+    .content-layouter {
         display: table;
+        width: 100%;
     }
 
     .side-menu-container,

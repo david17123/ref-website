@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 use Auth;
 
+use App\HelperClasses\SitePageService;
+
 class SiteComposer
 {
     /**
      * @var Route
      */
     protected $route;
+    private $sitePage;
 
     /**
      * Create a new profile composer.
@@ -20,10 +23,11 @@ class SiteComposer
      * @param  Request  $request
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, SitePageService $sitePage)
     {
         // Dependencies automatically resolved by service container...
         $this->route = $request->route();
+        $this->sitePage = $sitePage;
     }
 
     /**
@@ -40,6 +44,8 @@ class SiteComposer
             $uniName = $this->route->getParameter('uniUrl')->subdomain;
         }
         $view->with('uniUrl', $uniName);
+
+        $view->with('sitePage', $this->sitePage);
 
         $view->with('loggedInUser', Auth::user());
     }

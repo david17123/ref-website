@@ -27,6 +27,10 @@ class UniversityController extends Controller
     public function index(University $university)
     {
         $this->sitePage->setPageClass('admin-manage-uni-site');
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name]
+        ]);
 
         $viewVars = [
             'university' => $university
@@ -37,6 +41,10 @@ class UniversityController extends Controller
     public function manageSermonSummaries(University $university)
     {
         $this->sitePage->setPageClass('admin-manage-sermon-summaries');
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name]
+        ]);
 
         $sermonSummaries = SermonSummary::where('sermon_location_id', '=', $university->id)
                                         ->get();
@@ -63,8 +71,12 @@ class UniversityController extends Controller
     public function editSermonSummary(University $university, SermonSummary $sermonSummary)
     {
         $this->sitePage->setPageClass('admin-edit-sermon-summary');
-
         $this->sitePage->setJavascriptVar('preachersAjaxUrl', route('getAuthorsAjax'));
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name, 'link' => route('manageSermonSummaries', ['uniUrl'=>$university->subdomain])],
+            ['text' => $sermonSummary->title]
+        ]);
 
         $viewVars = [
             'university' => $university,

@@ -6,6 +6,9 @@
 
 @section('pageContent')
     <div class="page-content-container">
+        @include('component.admin.breadcrumbs')
+
+        <div class="content-layouter">
         <div class="side-menu-container">
             @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'site'])
         </div>
@@ -76,6 +79,7 @@
                 </div>
                 <input class="save-button input-button" type="submit" value="Save">
             </form>
+        </div>
         </div>
     </div>
 @endsection

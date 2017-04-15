@@ -735,10 +735,27 @@
   font-style: italic;
   color: #b3b3b3; }
 
+.admin-manage-uni-site .breadcrumbs {
+  font-family: "Raleway";
+  font-size: 14px;
+  padding: 15px 0 20px; }
+
+.admin-manage-uni-site .breadcrumbs__entry {
+  display: inline-block; }
+
+.admin-manage-uni-site .breadcrumbs__entry__link {
+  text-decoration: none;
+  color: #00a1ff; }
+  .admin-manage-uni-site .breadcrumbs__entry__link:hover {
+    color: #4cbdff; }
+
 .admin-manage-uni-site .page-content-container {
   width: 960px;
-  margin: auto;
-  display: table; }
+  margin: auto; }
+
+.admin-manage-uni-site .content-layouter {
+  display: table;
+  width: 100%; }
 
 .admin-manage-uni-site .side-menu-container,
 .admin-manage-uni-site .manage-uni-site {
@@ -774,10 +791,27 @@
 .admin-manage-uni-site .manage-uni-site .save-button {
   margin-top: 10px; }
 
+.admin-manage-sermon-summaries .breadcrumbs {
+  font-family: "Raleway";
+  font-size: 14px;
+  padding: 15px 0 20px; }
+
+.admin-manage-sermon-summaries .breadcrumbs__entry {
+  display: inline-block; }
+
+.admin-manage-sermon-summaries .breadcrumbs__entry__link {
+  text-decoration: none;
+  color: #00a1ff; }
+  .admin-manage-sermon-summaries .breadcrumbs__entry__link:hover {
+    color: #4cbdff; }
+
 .admin-manage-sermon-summaries .page-content-container {
   width: 960px;
-  margin: auto;
-  display: table; }
+  margin: auto; }
+
+.admin-manage-sermon-summaries .content-layouter {
+  display: table;
+  width: 100%; }
 
 .admin-manage-sermon-summaries .side-menu-container,
 .admin-manage-sermon-summaries .manage-sermon-summaries {
@@ -879,10 +913,27 @@
   width: 120px;
   text-align: center; }
 
+.admin-edit-sermon-summary .breadcrumbs {
+  font-family: "Raleway";
+  font-size: 14px;
+  padding: 15px 0 20px; }
+
+.admin-edit-sermon-summary .breadcrumbs__entry {
+  display: inline-block; }
+
+.admin-edit-sermon-summary .breadcrumbs__entry__link {
+  text-decoration: none;
+  color: #00a1ff; }
+  .admin-edit-sermon-summary .breadcrumbs__entry__link:hover {
+    color: #4cbdff; }
+
 .admin-edit-sermon-summary .page-content-container {
   width: 960px;
-  margin: auto;
-  display: table; }
+  margin: auto; }
+
+.admin-edit-sermon-summary .content-layouter {
+  display: table;
+  width: 100%; }
 
 .admin-edit-sermon-summary .side-menu-container,
 .admin-edit-sermon-summary .edit-sermon-summary {

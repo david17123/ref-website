@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @inject('sitePage', 'App\HelperClasses\SitePageService')
         <title>{{ $sitePage->getSiteTitle() }}</title>
         <link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
 
