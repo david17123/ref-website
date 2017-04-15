@@ -16,3 +16,60 @@
         }
     }
 }
+
+@mixin adminForm {
+    .form-field {
+        display: table;
+        margin-bottom: 10px;
+    }
+
+    .form-field__label,
+    .form-field__input {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .form-field__label {
+        width: 150px;
+        font-family: $primaryFont;
+        padding-top: 12px;
+        font-size: 14px;
+    }
+
+    .form-field__input {
+        .input-text {
+            width: 250px;
+        }
+
+        input[type=checkbox] {
+            height: 37px;
+            margin: 0;
+        }
+
+        textarea.input-text {
+            width: 380px;
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        select {
+            width: 250px;
+        }
+    }
+
+    .save-button {
+        margin-top: 10px;
+    }
+
+    .delete-button {
+        text-decoration: none;
+        font-family: $primaryFont;
+        font-size: 14px;
+        color: $blue;
+        margin-left: 10px;
+
+        &:hover {
+            color: $lightBlue;
+        }
+    }
+}

@@ -788,8 +788,25 @@
   height: 37px;
   margin: 0; }
 
+.admin-manage-uni-site .manage-uni-site .form-field__input textarea.input-text {
+  width: 380px;
+  min-height: 140px;
+  resize: vertical; }
+
+.admin-manage-uni-site .manage-uni-site .form-field__input select {
+  width: 250px; }
+
 .admin-manage-uni-site .manage-uni-site .save-button {
   margin-top: 10px; }
+
+.admin-manage-uni-site .manage-uni-site .delete-button {
+  text-decoration: none;
+  font-family: "Raleway";
+  font-size: 14px;
+  color: #00a1ff;
+  margin-left: 10px; }
+  .admin-manage-uni-site .manage-uni-site .delete-button:hover {
+    color: #4cbdff; }
 
 .admin-manage-sermon-summaries .breadcrumbs {
   font-family: "Raleway";
@@ -961,6 +978,10 @@
 
 .admin-edit-sermon-summary .edit-sermon-summary .form-field__input .input-text {
   width: 250px; }
+
+.admin-edit-sermon-summary .edit-sermon-summary .form-field__input input[type=checkbox] {
+  height: 37px;
+  margin: 0; }
 
 .admin-edit-sermon-summary .edit-sermon-summary .form-field__input textarea.input-text {
   width: 380px;

@@ -27,37 +27,6 @@
     }
 
     .manage-uni-site {
-        .form-field {
-            display: table;
-            margin-bottom: 10px;
-        }
-
-        .form-field__label,
-        .form-field__input {
-            display: table-cell;
-            vertical-align: top;
-        }
-
-        .form-field__label {
-            width: 150px;
-            font-family: $primaryFont;
-            padding-top: 12px;
-            font-size: 14px;
-        }
-
-        .form-field__input {
-            .input-text {
-                width: 250px;
-            }
-
-            input[type=checkbox] {
-                height: 37px;
-                margin: 0;
-            }
-        }
-
-        .save-button {
-            margin-top: 10px;
-        }
+        @include adminForm;
     }
 }
