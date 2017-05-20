@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 use Carbon\Carbon;
 
 use App\Http\Controllers\Controller;
@@ -13,6 +14,7 @@ use App\HelperClasses\SitePageService;
 use App\University;
 use App\SermonSummary;
 use App\Asset;
+use App\AssetGroup;
 use App\Author;
 
 class UniversityController extends Controller
@@ -22,6 +24,57 @@ class UniversityController extends Controller
     public function __construct(SitePageService $sitePage)
     {
         $this->sitePage = $sitePage;
+    }
+
+    /**
+     * Sets the asset group's assets to be the one listed in the $newAssets
+     * specified.
+     *
+     * @param AssetGroup $assetGroup
+     * @param Collection $newAssets
+     * @param bool $remove $asset->remove() will only be called if this is true.
+     * Defaults to false.
+     * @return Array(Asset) List of assets to be removed from the group
+     */
+    private function _updateAssetGroup(AssetGroup $assetGroup, Collection $newAssets, $remove=false)
+    {
+        $oldAssets = $assetGroup->assets;
+        $oldAssetsHash = [];
+        foreach ($oldAssets as $oldAsset)
+        {
+            $oldAssetsHash[$oldAsset->id] = $oldAsset;
+        }
+
+        if (count($newAssets) > 0)
+        {
+            // Save new assets
+            foreach ($newAssets as $newAsset)
+            {
+                if ( isset($oldAssetsHash[$newAsset->id]) )
+                {
+                    // Asset is associated properly. Do not delete.
+                    unset($oldAssetsHash[$newAsset->id]);
+                }
+                else
+                {
+                    $newAsset->asset_group_id = $assetGroup->id;
+                    $newAsset->save();
+                }
+            }
+        }
+
+        $assetsToRemove = [];
+        foreach ($oldAssetsHash as $assetId => $oldAsset)
+        {
+            $assetsToRemove[] = $oldAsset;
+            if ($remove)
+            {
+                $oldAsset->remove();
+                $oldAsset->save();
+            }
+        }
+
+        return $assetsToRemove;
     }
 
     public function index(University $university)
@@ -40,15 +93,28 @@ class UniversityController extends Controller
 
     public function deleteUniSite(University $university)
     {
-        // if ($university->logo)
-        // {
-        //     $logo = $university->logo;
-        //     $university->logo()->dissociate();
-        //     $logo->remove();
-        // }
-        // // TODO @David Deal with bannersAssetGroup and clubPicturesAssetGroup
-        // // TODO @David Deal with the other DB objects that are attached to uni: make sure they are properly deleted with their respective assets
-        // $university->delete();
+        if ($university->logo)
+        {
+            $logo = $university->logo;
+            $university->logo()->dissociate();
+            $logo->remove();
+        }
+
+        if ($university->bannersAssetGroup)
+        {
+            $bannersAssetGroup = $university->bannersAssetGroup;
+            $university->bannersAssetGroup()->dissociate();
+            $bannersAssetGroup->cleanDelete();
+        }
+
+        if ($university->clubPicturesAssetGroup)
+        {
+            $clubPicturesAssetGroup = $university->clubPicturesAssetGroup;
+            $university->clubPicturesAssetGroup()->dissociate();
+            $clubPicturesAssetGroup->cleanDelete();
+        }
+
+        $university->delete();
         return redirect()->route('adminHome');
     }
 
@@ -193,15 +259,39 @@ class UniversityController extends Controller
             'meetingPlace' => 'required|max:255',
             'meetingTime' => 'required|max:255',
             'contactPerson' => 'required|max:255',
-            'uniLogo' => 'required|array'
+            'uniLogo' => 'required|array',
+            'banners' => 'required|array',
+            'clubPictures' => 'required|array'
         ]);
 
         // Process uni logo
-        $uniLogoId = count($request->input('uniLogo')) > 0 ? $request->input('uniLogo') : null;
-        $uniLogo = Asset::find($uniLogoId)->first();
-        if ($uniLogo)
+        $newUniLogoId = count($request->input('uniLogo')) > 0 ? $request->input('uniLogo') : null;
+        $newUniLogo = Asset::find($newUniLogoId)->first();
+        if ($newUniLogo)
         {
-            $uniLogo->finalize();
+            $newUniLogo->finalize();
+        }
+
+        // Process banner images
+        $newBannerIds = count($request->input('banners')) > 0 ? $request->input('banners') : [];
+        $newBanners = Asset::whereIn('id', $newBannerIds)->get();
+        if (count($newBanners) > 0)
+        {
+            foreach ($newBanners as $asset)
+            {
+                $asset->finalize();
+            }
+        }
+
+        // Process club pictures
+        $newClubPictureIds = count($request->input('clubPictures')) > 0 ? $request->input('clubPictures') : [];
+        $newClubPictures = Asset::whereIn('id', $newClubPictureIds)->get();
+        if (count($newClubPictures) > 0)
+        {
+            foreach ($newClubPictures as $asset)
+            {
+                $asset->finalize();
+            }
         }
 
         // Save request
@@ -211,15 +301,43 @@ class UniversityController extends Controller
         $university->meeting_place = $request->input('meetingPlace');
         $university->meeting_time = $request->input('meetingTime');
         $university->contact_person = $request->input('contactPerson');
-        if ($uniLogo)
+
+        $assetsToRemove = [];
+
+        if ($newUniLogo)
         {
-            if ($university->logo && $university->logo->id != $uniLogo->id)
+            if ($university->logo && $university->logo->id != $newUniLogo->id)
             {
                 // Remove the old logo
-                $university->logo->remove();
+                $assetsToRemove[] = $university->logo;
             }
-            $university->logo()->associate($uniLogo);
+            $university->logo()->associate($newUniLogo);
         }
+
+        // Update banner images
+        if ( !$university->bannersAssetGroup )
+        {
+            $bannersAssetGroup = new AssetGroup();
+            $bannersAssetGroup->save();
+            $university->bannersAssetGroup()->associate($bannersAssetGroup);
+        }
+        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->bannersAssetGroup, $newBanners, false));
+
+        // Update club pictures
+        if ( !$university->clubPicturesAssetGroup )
+        {
+            $clubPicturesAssetGroup = new AssetGroup();
+            $clubPicturesAssetGroup->save();
+            $university->clubPicturesAssetGroup()->associate($clubPicturesAssetGroup);
+        }
+        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->clubPicturesAssetGroup, $newClubPictures, false));
+
+        // Delete old assets
+        foreach ($assetsToRemove as $oldAsset)
+        {
+            $oldAsset->remove();
+        }
+
         $university->save();
 
         return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);

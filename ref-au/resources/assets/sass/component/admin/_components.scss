@@ -57,6 +57,12 @@
         }
     }
 
+    .form-field__error-message {
+        color: $errorColor;
+        font-family: $primaryFont;
+        font-size: 14px;
+    }
+
     .save-button {
         margin-top: 10px;
     }

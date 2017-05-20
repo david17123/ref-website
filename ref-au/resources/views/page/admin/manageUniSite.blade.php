@@ -16,67 +16,62 @@
                 <form action="{{ route('saveUniSiteData', ['uniUrl' => $university->subdomain]) }}" method="post">
                     {{ csrf_field() }}
 
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            University name
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="name" value="{{ old('name') ? old('name') : $university->name }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Subdomain
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="subdomain" value="{{ old('subdomain') ? old('subdomain') : $university->subdomain }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Published
-                        </div>
-                        <div class="form-field__input">
-                            <input type="checkbox" name="published" value="1" {{ isset($university->published) && $university->published ? 'checked="checked"' : '' }} />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Meeting place
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="meetingPlace" value="{{ old('meetingPlace') ? old('meetingPlace') : $university->meeting_place }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Meeting time
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="meetingTime" value="{{ old('meetingTime') ? old('meetingTime') : $university->meeting_time }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Contact person
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="contactPerson" value="{{ old('contactPerson') ? old('contactPerson') : $university->contact_person }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Logo
-                        </div>
-                        <div class="form-field__input">
-                            @include('component.simpleFileInput', [
-                                'name' => 'uniLogo',
-                                'assets' => [$university->logo],
-                                'multiple' => false,
-                                'uploadUrl' => route('adminFileUploadHandler')
-                            ])
-                        </div>
-                    </div>
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'name',
+                        'textName' => 'University name',
+                        'defaultValue' => $university->name,
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'subdomain',
+                        'textName' => 'Subdomain',
+                        'defaultValue' => $university->subdomain,
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsCheckbox', [
+                        'name' => 'published',
+                        'textName' => 'Published',
+                        'defaultValue' => isset($university->published) && $university->published
+                    ])
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'meetingPlace',
+                        'textName' => 'Meeting place',
+                        'defaultValue' => $university->meeting_place,
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'meetingTime',
+                        'textName' => 'Meeting time',
+                        'defaultValue' => $university->meeting_time,
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'contactPerson',
+                        'textName' => 'Contact person',
+                        'defaultValue' => $university->contact_person,
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsFileInput', [
+                        'name' => 'uniLogo',
+                        'textName' => 'Logo',
+                        'assets' => $university->logo ? [$university->logo] : [],
+                        'multiple' => false,
+                        'uploadUrl' => route('adminFileUploadHandler')
+                    ])
+                    @include('component.forms.simple2ColumnsFileInput', [
+                        'name' => 'banners',
+                        'textName' => 'Banners',
+                        'assets' => $university->bannersAssetGroup ? $university->bannersAssetGroup->assets : [],
+                        'multiple' => true,
+                        'uploadUrl' => route('adminFileUploadHandler')
+                    ])
+                    @include('component.forms.simple2ColumnsFileInput', [
+                        'name' => 'clubPictures',
+                        'textName' => 'Club pictures',
+                        'assets' => $university->clubPicturesAssetGroup ? $university->clubPicturesAssetGroup->assets : [],
+                        'multiple' => true,
+                        'uploadUrl' => route('adminFileUploadHandler')
+                    ])
 
                     <input class="save-button input-button" type="submit" value="Save">
                     <a class="delete-button js-delete-button" href="{{ route('deleteUniSite', ['uniUrl' => $university->subdomain]) }}">Delete</a>

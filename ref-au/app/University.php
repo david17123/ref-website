@@ -18,4 +18,14 @@ class University extends Model
     {
         return $this->belongsTo('App\Asset', 'logo_id');
     }
+
+    public function bannersAssetGroup()
+    {
+        return $this->belongsTo('App\AssetGroup', 'banners_asset_group_id');
+    }
+
+    public function clubPicturesAssetGroup()
+    {
+        return $this->belongsTo('App\AssetGroup', 'club_pictures_asset_group_id');
+    }
 }
