@@ -132,6 +132,7 @@ elixir(function(mix) {
         'lib/jqueryFileupload/jquery.fileupload.js',
         'lib/select2/select2.js',
         'component/simpleFileInput.js',
+        'component/refSelectBox.js',
         'page/admin/editSermonSummary.js'
     ], 'public/js/page/admin/editSermonSummary.js');
 

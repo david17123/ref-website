@@ -20,84 +20,59 @@
                         <input type="hidden" name="sermonSummaryId" value="{{ $sermonSummary->id }}" />
                     @endif
 
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Title
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="title" value="{{ old('title') ? old('title') : (isset($sermonSummary) ? $sermonSummary->title : '') }}" required />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Subtitle
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="text" name="subtitle" value="{{ old('subtitle') ? old('subtitle') : (isset($sermonSummary) ? $sermonSummary->subtitle : '') }}" />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Content
-                        </div>
-                        <div class="form-field__input">
-                            <textarea name="content" class="input-text" required>{{ old('content') ? old('content') : (isset($sermonSummary) ? $sermonSummary->content : '') }}</textarea>
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Preacher
-                        </div>
-                        <div class="form-field__input">
-                            <select class="js-preacher-select" name="preacher">
-                                @if (isset($sermonSummary) && $sermonSummary->preacher)
-                                    <option value="{{ $sermonSummary->preacher_id }}">{{ $sermonSummary->preacher->name }}</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Summarizer
-                        </div>
-                        <div class="form-field__input">
-                            <select class="js-summarizer-select" name="summarizer">
-                                @if (isset($sermonSummary) && $sermonSummary->summarizer)
-                                    <option value="{{ $sermonSummary->summarizer_id }}">{{ $sermonSummary->summarizer->name }}</option>
-                                @endif
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Date preached
-                        </div>
-                        <div class="form-field__input">
-                            <input class="input-text" type="date" name="datePreached" value="{{ old('datePreached') ? old('datePreached') : (isset($sermonSummary) ? $sermonSummary->date_preached->toDateString() : '') }}" required />
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <div class="form-field__label">
-                            Hero image
-                        </div>
-                        <div class="form-field__input">
-                            @if ( isset($sermonSummary) )
-                                @include('component.simpleFileInput', [
-                                    'name' => 'heroImage',
-                                    'assets' => [$sermonSummary->heroImage],
-                                    'multiple' => false,
-                                    'uploadUrl' => route('adminFileUploadHandler')
-                                ])
-                            @else
-                                @include('component.simpleFileInput', [
-                                    'name' => 'heroImage',
-                                    'assets' => [],
-                                    'multiple' => false,
-                                    'uploadUrl' => route('adminFileUploadHandler')
-                                ])
-                            @endif
-                        </div>
-                    </div>
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'title',
+                        'textName' => 'Title',
+                        'defaultValue' => isset($sermonSummary) ? $sermonSummary->title : '',
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsTextbox', [
+                        'name' => 'subtitle',
+                        'textName' => 'Subtitle',
+                        'defaultValue' => isset($sermonSummary) ? $sermonSummary->subtitle : '',
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsTextarea', [
+                        'name' => 'content',
+                        'textName' => 'Content',
+                        'defaultValue' => isset($sermonSummary) ? $sermonSummary->content : '',
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsRefSelectBox', [
+                        'name' => 'preacher',
+                        'textName' => 'Preacher',
+                        'defaultValue' => isset($sermonSummary) && $sermonSummary->preacher ? $sermonSummary->preacher_id : '',
+                        'defaultValueText' => isset($sermonSummary) && $sermonSummary->preacher ? $sermonSummary->preacher->name : '',
+                        'minimumInputLength' => 0,
+                        'allowClear' => false,
+                        'multiple' => false,
+                        'optionsAjaxUrl' => $preachersAjaxUrl,
+                        'optionsAjaxField' => 'name'
+                    ])
+                    @include('component.forms.simple2ColumnsRefSelectBox', [
+                        'name' => 'summarizer',
+                        'textName' => 'Summarizer',
+                        'defaultValue' => isset($sermonSummary) && $sermonSummary->summarizer ? $sermonSummary->summarizer_id : '',
+                        'defaultValueText' => isset($sermonSummary) && $sermonSummary->summarizer ? $sermonSummary->summarizer->name : '',
+                        'minimumInputLength' => 0,
+                        'allowClear' => false,
+                        'multiple' => false,
+                        'optionsAjaxUrl' => $preachersAjaxUrl,
+                        'optionsAjaxField' => 'name'
+                    ])
+                    @include('component.forms.simple2ColumnsDate', [
+                        'name' => 'datePreached',
+                        'textName' => 'Date preached',
+                        'defaultValue' => isset($sermonSummary) ? $sermonSummary->date_preached->toDateString() : '',
+                        'required' => true
+                    ])
+                    @include('component.forms.simple2ColumnsFileInput', [
+                        'name' => 'heroImage',
+                        'textName' => 'Hero image',
+                        'assets' => isset($sermonSummary) ? [$sermonSummary->heroImage] : [],
+                        'multiple' => false,
+                        'uploadUrl' => route('adminFileUploadHandler')
+                    ])
 
                     <input class="save-button input-button" type="submit" value="Save">
                     @if ( isset($sermonSummary) )

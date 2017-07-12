@@ -151,7 +151,6 @@ class UniversityController extends Controller
     public function editSermonSummary(University $university, SermonSummary $sermonSummary)
     {
         $this->sitePage->setPageClass('admin-edit-sermon-summary');
-        $this->sitePage->setJavascriptVar('preachersAjaxUrl', route('getAuthorsAjax'));
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
             ['text' => $university->name, 'link' => route('manageSermonSummaries', ['uniUrl'=>$university->subdomain])],
@@ -160,7 +159,8 @@ class UniversityController extends Controller
 
         $viewVars = [
             'university' => $university,
-            'sermonSummary' => $sermonSummary
+            'sermonSummary' => $sermonSummary,
+            'preachersAjaxUrl' => route('getAuthorsAjax')
         ];
         return view('page/admin/editSermonSummary', $viewVars);
     }
