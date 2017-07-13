@@ -91,6 +91,127 @@ class UniversityController extends Controller
         return view('page/admin/manageUniSite', $viewVars);
     }
 
+    public function createUni()
+    {
+        // Get new uni subdomain
+        $existingUnis = University::all();
+        $existingUniSubdomains = [];
+        foreach ($existingUnis as $uni)
+        {
+            $existingUniSubdomains[$uni->subdomain] = true;
+        }
+        $index = 1;
+        while (true)
+        {
+            if ( !isset($existingUniSubdomains['uni'.$index]) )
+            {
+                break;
+            }
+            $index++;
+        }
+        $newUniSubdomain = 'uni'.$index;
+
+        $university = new University();
+        $university->name = 'New University '.$index;
+        $university->subdomain = $newUniSubdomain;
+        $university->save();
+
+        return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
+    }
+
+    public function saveSiteDetails(Request $request, University $university)
+    {
+        // Validate request
+        $this->validate($request, [
+            'name' => 'required',
+            'subdomain' => 'required',
+            'meetingPlace' => 'required|max:255',
+            'meetingTime' => 'required|max:255',
+            'contactPerson' => 'required|max:255',
+            'uniLogo' => 'required|array',
+            'banners' => 'required|array',
+            'clubPictures' => 'required|array'
+        ]);
+
+        // Process uni logo
+        $newUniLogoId = count($request->input('uniLogo')) > 0 ? $request->input('uniLogo') : null;
+        $newUniLogo = Asset::find($newUniLogoId)->first();
+        if ($newUniLogo)
+        {
+            $newUniLogo->finalize();
+        }
+
+        // Process banner images
+        $newBannerIds = count($request->input('banners')) > 0 ? $request->input('banners') : [];
+        $newBanners = Asset::whereIn('id', $newBannerIds)->get();
+        if (count($newBanners) > 0)
+        {
+            foreach ($newBanners as $asset)
+            {
+                $asset->finalize();
+            }
+        }
+
+        // Process club pictures
+        $newClubPictureIds = count($request->input('clubPictures')) > 0 ? $request->input('clubPictures') : [];
+        $newClubPictures = Asset::whereIn('id', $newClubPictureIds)->get();
+        if (count($newClubPictures) > 0)
+        {
+            foreach ($newClubPictures as $asset)
+            {
+                $asset->finalize();
+            }
+        }
+
+        // Save request
+        $university->name = $request->input('name');
+        $university->subdomain = $request->input('subdomain');
+        $university->published = $request->input('published') === '1';
+        $university->meeting_place = $request->input('meetingPlace');
+        $university->meeting_time = $request->input('meetingTime');
+        $university->contact_person = $request->input('contactPerson');
+
+        $assetsToRemove = [];
+
+        if ($newUniLogo)
+        {
+            if ($university->logo && $university->logo->id != $newUniLogo->id)
+            {
+                // Remove the old logo
+                $assetsToRemove[] = $university->logo;
+            }
+            $university->logo()->associate($newUniLogo);
+        }
+
+        // Update banner images
+        if ( !$university->bannersAssetGroup )
+        {
+            $bannersAssetGroup = new AssetGroup();
+            $bannersAssetGroup->save();
+            $university->bannersAssetGroup()->associate($bannersAssetGroup);
+        }
+        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->bannersAssetGroup, $newBanners, false));
+
+        // Update club pictures
+        if ( !$university->clubPicturesAssetGroup )
+        {
+            $clubPicturesAssetGroup = new AssetGroup();
+            $clubPicturesAssetGroup->save();
+            $university->clubPicturesAssetGroup()->associate($clubPicturesAssetGroup);
+        }
+        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->clubPicturesAssetGroup, $newClubPictures, false));
+
+        // Delete old assets
+        foreach ($assetsToRemove as $oldAsset)
+        {
+            $oldAsset->remove();
+        }
+
+        $university->save();
+
+        return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
+    }
+
     public function deleteUniSite(University $university)
     {
         if ($university->logo)
@@ -248,126 +369,5 @@ class UniversityController extends Controller
         }
         $sermonSummary->delete();
         return redirect()->route('manageSermonSummaries', ['uniUrl' => $university->subdomain]);
-    }
-
-    public function saveSiteDetails(Request $request, University $university)
-    {
-        // Validate request
-        $this->validate($request, [
-            'name' => 'required',
-            'subdomain' => 'required',
-            'meetingPlace' => 'required|max:255',
-            'meetingTime' => 'required|max:255',
-            'contactPerson' => 'required|max:255',
-            'uniLogo' => 'required|array',
-            'banners' => 'required|array',
-            'clubPictures' => 'required|array'
-        ]);
-
-        // Process uni logo
-        $newUniLogoId = count($request->input('uniLogo')) > 0 ? $request->input('uniLogo') : null;
-        $newUniLogo = Asset::find($newUniLogoId)->first();
-        if ($newUniLogo)
-        {
-            $newUniLogo->finalize();
-        }
-
-        // Process banner images
-        $newBannerIds = count($request->input('banners')) > 0 ? $request->input('banners') : [];
-        $newBanners = Asset::whereIn('id', $newBannerIds)->get();
-        if (count($newBanners) > 0)
-        {
-            foreach ($newBanners as $asset)
-            {
-                $asset->finalize();
-            }
-        }
-
-        // Process club pictures
-        $newClubPictureIds = count($request->input('clubPictures')) > 0 ? $request->input('clubPictures') : [];
-        $newClubPictures = Asset::whereIn('id', $newClubPictureIds)->get();
-        if (count($newClubPictures) > 0)
-        {
-            foreach ($newClubPictures as $asset)
-            {
-                $asset->finalize();
-            }
-        }
-
-        // Save request
-        $university->name = $request->input('name');
-        $university->subdomain = $request->input('subdomain');
-        $university->published = $request->input('published') === '1';
-        $university->meeting_place = $request->input('meetingPlace');
-        $university->meeting_time = $request->input('meetingTime');
-        $university->contact_person = $request->input('contactPerson');
-
-        $assetsToRemove = [];
-
-        if ($newUniLogo)
-        {
-            if ($university->logo && $university->logo->id != $newUniLogo->id)
-            {
-                // Remove the old logo
-                $assetsToRemove[] = $university->logo;
-            }
-            $university->logo()->associate($newUniLogo);
-        }
-
-        // Update banner images
-        if ( !$university->bannersAssetGroup )
-        {
-            $bannersAssetGroup = new AssetGroup();
-            $bannersAssetGroup->save();
-            $university->bannersAssetGroup()->associate($bannersAssetGroup);
-        }
-        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->bannersAssetGroup, $newBanners, false));
-
-        // Update club pictures
-        if ( !$university->clubPicturesAssetGroup )
-        {
-            $clubPicturesAssetGroup = new AssetGroup();
-            $clubPicturesAssetGroup->save();
-            $university->clubPicturesAssetGroup()->associate($clubPicturesAssetGroup);
-        }
-        $assetsToRemove = array_merge($assetsToRemove, $this->_updateAssetGroup($university->clubPicturesAssetGroup, $newClubPictures, false));
-
-        // Delete old assets
-        foreach ($assetsToRemove as $oldAsset)
-        {
-            $oldAsset->remove();
-        }
-
-        $university->save();
-
-        return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
-    }
-
-    public function createUni()
-    {
-        // Get new uni subdomain
-        $existingUnis = University::all();
-        $existingUniSubdomains = [];
-        foreach ($existingUnis as $uni)
-        {
-            $existingUniSubdomains[$uni->subdomain] = true;
-        }
-        $index = 1;
-        while (true)
-        {
-            if ( !isset($existingUniSubdomains['uni'.$index]) )
-            {
-                break;
-            }
-            $index++;
-        }
-        $newUniSubdomain = 'uni'.$index;
-
-        $university = new University();
-        $university->name = 'New University '.$index;
-        $university->subdomain = $newUniSubdomain;
-        $university->save();
-
-        return redirect()->route('manageUniSite', ['uniUrl' => $university->subdomain]);
     }
 }
