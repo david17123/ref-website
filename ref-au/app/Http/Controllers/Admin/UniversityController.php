@@ -13,6 +13,7 @@ use App\HelperClasses\SitePageService;
 
 use App\University;
 use App\SermonSummary;
+use App\Event;
 use App\Asset;
 use App\AssetGroup;
 use App\Author;
@@ -239,6 +240,7 @@ class UniversityController extends Controller
         return redirect()->route('adminHome');
     }
 
+
     public function manageSermonSummaries(University $university)
     {
         $this->sitePage->setPageClass('admin-manage-sermon-summaries');
@@ -260,11 +262,15 @@ class UniversityController extends Controller
     public function createSermonSummary(University $university)
     {
         $this->sitePage->setPageClass('admin-edit-sermon-summary');
-
-        $this->sitePage->setJavascriptVar('preachersAjaxUrl', route('getAuthorsAjax'));
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name, 'link' => route('manageSermonSummaries', ['uniUrl'=>$university->subdomain])],
+            ['text' => 'New sermon summary']
+        ]);
 
         $viewVars = [
-            'university' => $university
+            'university' => $university,
+            'preachersAjaxUrl' => route('getAuthorsAjax')
         ];
         return view('page/admin/editSermonSummary', $viewVars);
     }
@@ -369,5 +375,96 @@ class UniversityController extends Controller
         }
         $sermonSummary->delete();
         return redirect()->route('manageSermonSummaries', ['uniUrl' => $university->subdomain]);
+    }
+
+
+    public function manageEvents(University $university)
+    {
+        $this->sitePage->setPageClass('admin-manage-events');
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name]
+        ]);
+
+        $events = Event::where('location_id', '=', $university->id)
+                       ->get();
+
+        $viewVars = [
+            'university' => $university,
+            'events' => $events
+        ];
+        return view('page/admin/manageEvents', $viewVars);
+    }
+
+    public function createEvent(University $university)
+    {
+        $this->sitePage->setPageClass('admin-edit-event');
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name, 'link' => route('manageEvents', ['uniUrl'=>$university->subdomain])],
+            ['text' => 'New event']
+        ]);
+
+        $viewVars = [
+            'university' => $university
+        ];
+        return view('page/admin/editEvent', $viewVars);
+    }
+
+    public function editEvent(University $university, Event $event)
+    {
+        $this->sitePage->setPageClass('admin-edit-event');
+        $this->sitePage->setBreadcrumbs([
+            ['text' => 'Admin home', 'link' => route('adminHome')],
+            ['text' => $university->name, 'link' => route('manageEvents', ['uniUrl'=>$university->subdomain])],
+            ['text' => $event->title]
+        ]);
+
+        $viewVars = [
+            'university' => $university,
+            'event' => $event
+        ];
+        return view('page/admin/editEvent', $viewVars);
+    }
+
+    public function saveEvent(Request $request, University $university)
+    {
+        $this->validate($request, [
+            'title' => 'required|string|max:255',
+            'description' => 'string',
+            'dateCommenced' => 'required|date_format:Y-m-d',
+            'dateFinished' => 'required|date_format:Y-m-d'
+        ]);
+
+        // Fetch sermon summary object
+        $eventId = $request->input('eventId', '');
+        if ($eventId === '')
+        {
+            $event = new Event();
+            $event->location()->associate($university);
+        }
+        else
+        {
+            $event = SermonSummary::find($eventId);
+            if ( !$event )
+            {
+                abort(404, 'Event not found');
+            }
+        }
+
+        $event->title = $request->input('title');
+        $event->description = $request->input('description');
+        $event->date_commenced = Carbon::createFromFormat('Y-m-d', $request->input('dateCommenced'));
+        $event->date_finished = Carbon::createFromFormat('Y-m-d', $request->input('dateFinished'));
+
+        $event->save();
+
+        return redirect()->route('editEvent', ['uniUrl' => $university->subdomain, 'event' => $event->id]);
+    }
+
+    public function deleteEvent(University $university, Event $event)
+    {
+        $event->delete();
+        return redirect()->route('manageEvents', ['uniUrl' => $university->subdomain]);
     }
 }

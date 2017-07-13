@@ -5,11 +5,11 @@
         Site
     </a>
     <a href="{{ route('manageSermonSummaries', ['uniUrl' => $university->subdomain]) }}"
-       class="side-menu-entry @if (isset($selectedMenu) && $selectedMenu === 'sermonSummary') side-menu-entry__selected @endif"
+       class="side-menu-entry @if (isset($selectedMenu) && $selectedMenu === 'sermonSummaries') side-menu-entry__selected @endif"
     >
         Sermon summaries
     </a>
-    <a href="#"
+    <a href="{{ route('manageEvents', ['uniUrl' => $university->subdomain]) }}"
        class="side-menu-entry @if (isset($selectedMenu) && $selectedMenu === 'events') side-menu-entry__selected @endif"
     >
         Events

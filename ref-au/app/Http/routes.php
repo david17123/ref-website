@@ -51,6 +51,7 @@ Route::group([
         'as' => 'deleteUniSite',
         'uses' => 'Admin\UniversityController@deleteUniSite'
     ]);
+
     Route::get('uni/{uniUrl}/sermon-summary', [
         'as' => 'manageSermonSummaries',
         'uses' => 'Admin\UniversityController@manageSermonSummaries'
@@ -68,15 +69,28 @@ Route::group([
         'uses' => 'Admin\UniversityController@deleteSermonSummary'
     ]);
 
+    Route::get('uni/{uniUrl}/event', [
+        'as' => 'manageEvents',
+        'uses' => 'Admin\UniversityController@manageEvents'
+    ]);
+    Route::get('uni/{uniUrl}/event/create', [
+        'as' => 'createEvent',
+        'uses' => 'Admin\UniversityController@createEvent'
+    ]);
+    Route::get('uni/{uniUrl}/event/{event}', [
+        'as' => 'editEvent',
+        'uses' => 'Admin\UniversityController@editEvent'
+    ]);
+    Route::get('uni/{uniUrl}/event/{event}/delete', [
+        'as' => 'deleteEvent',
+        'uses' => 'Admin\UniversityController@deleteEvent'
+    ]);
+
     Route::get('ajax/authors', [
         'as' => 'getAuthorsAjax',
         'uses' => 'AjaxController@getAuthorsByName'
     ]);
 
-    Route::post('uni/{uniUrl}', [
-        'as' => 'saveUniSiteData',
-        'uses' => 'Admin\UniversityController@saveSiteDetails'
-    ]);
     Route::post('upload', [
         'as' => 'adminFileUploadHandler',
         'uses' => 'FileUploadController@post'
@@ -85,9 +99,17 @@ Route::group([
         'as' => 'createUni',
         'uses' => 'Admin\UniversityController@createUni'
     ]);
+    Route::post('uni/{uniUrl}', [
+        'as' => 'saveUniSiteData',
+        'uses' => 'Admin\UniversityController@saveSiteDetails'
+    ]);
     Route::post('uni/{uniUrl}/sermon-summary', [
         'as' => 'saveSermonSummary',
         'uses' => 'Admin\UniversityController@saveSermonSummary'
+    ]);
+    Route::post('uni/{uniUrl}/event', [
+        'as' => 'saveEvent',
+        'uses' => 'Admin\UniversityController@saveEvent'
     ]);
 });
 

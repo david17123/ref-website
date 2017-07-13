@@ -113,7 +113,8 @@ elixir(function(mix) {
 
         'page/admin/home.scss',
         'page/admin/manageUniSite.scss',
-        'page/admin/manageSermonSummaries.scss'
+        'page/admin/manageSermonSummaries.scss',
+        'page/admin/manageEvents.scss'
     ], 'public/css/page/admin/admin.css');
 
     mix.scripts([
@@ -135,6 +136,9 @@ elixir(function(mix) {
         'component/refSelectBox.js',
         'page/admin/editSermonSummary.js'
     ], 'public/js/page/admin/editSermonSummary.js');
+    mix.scripts([
+        'page/admin/editEvent.js'
+    ], 'public/js/page/admin/editEvent.js');
 
 
 

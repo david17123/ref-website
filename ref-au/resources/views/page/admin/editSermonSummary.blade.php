@@ -10,7 +10,7 @@
 
         <div class="content-layouter">
             <div class="side-menu-container">
-                @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'sermonSummary'])
+                @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'sermonSummaries'])
             </div>
             <div class="edit-sermon-summary">
                 <form action="{{ route('saveSermonSummary', ['uniUrl' => $university->subdomain]) }}" method="post">

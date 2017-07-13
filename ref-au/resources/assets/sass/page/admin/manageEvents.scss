@@ -1,11 +1,11 @@
-// This file sets the CSS for both listing and editing sermon summaries
+// This file sets the CSS for both listing and editing events
 
 @import "../../component/variables";
 @import "../../component/mixins";
 @import "../../component/admin/components";
 
 
-.admin-manage-sermon-summaries {
+.admin-manage-events {
     @include breadcrumbs;
 
     .page-content-container {
@@ -19,7 +19,7 @@
     }
 
     .side-menu-container,
-    .manage-sermon-summaries {
+    .manage-events {
         display: table-cell;
         vertical-align: top;
     }
@@ -29,18 +29,18 @@
         padding-right: 12px;
     }
 
-    .manage-sermon-summaries__header-container {
+    .manage-events__header-container {
         display: table;
         width: 100%;
         margin-bottom: 10px;
     }
-    .manage-sermon-summaries__header {
+    .manage-events__header {
         display: table-cell;
         font-family: $secondaryFont;
         font-size: 22px;
         vertical-align: middle;
     }
-    .manage-sermon-summaries__create-new {
+    .manage-events__create-new {
         display: table-cell;
         width: 80px;
         text-align: center;
@@ -51,12 +51,12 @@
         font-size: 14px;
     }
 
-    .manage-sermon-summaries__sermon-summaries {
+    .manage-events__events {
         display: table;
         width: 100%;
     }
-    .sermon-summaries__table-header,
-    .sermon-summaries__entry {
+    .events__table-header,
+    .events__entry {
         display: table-row;
 
         > * {
@@ -67,7 +67,7 @@
             padding: 5px 0;
         }
     }
-    .sermon-summaries__table-header {
+    .events__table-header {
         background-color: $lightBlue;
         color: #ffffff;
         font-family: $secondaryFont;
@@ -79,7 +79,7 @@
             vertical-align: middle;
         }
     }
-    .sermon-summaries__entry {
+    .events__entry {
         color: inherit;
         text-decoration: none;
 
@@ -87,45 +87,33 @@
             background-color: $lightCyan;
         }
     }
-    .sermon-summaries__id {
+    .events__id {
         width: 40px;
         text-align: center;
     }
-    .sermon-summaries__content-snippet {
-        .content-snippet__head {
+    .events__snippet {
+        .snippet__head {
             @include elipsisTruncate;
             max-width: 300px;
             margin-bottom: 5px;
         }
-        .content-snippet__title {
+        .snippet__title {
             font-weight: 600;
         }
-        .content-snippet__subtitle {
-            margin-left: 5px;
-            color: $textGrey;
-            font-style: italic;
-        }
-        .content-snippet__body {
+        .snippet__body {
             @include elipsisTruncate;
             max-width: 300px;
             line-height: 18px;
         }
     }
-    .sermon-summaries__date-preached {
+    .events__date-commenced,
+    .events__date-finished {
         width: 100px;
-        text-align: center;
-    }
-    .sermon-summaries__preacher {
-        width: 120px;
-        text-align: center;
-    }
-    .sermon-summaries__summarizer {
-        width: 120px;
         text-align: center;
     }
 }
 
-.admin-edit-sermon-summary {
+.admin-edit-event {
     @include breadcrumbs;
 
     .page-content-container {
@@ -139,7 +127,7 @@
     }
 
     .side-menu-container,
-    .edit-sermon-summary {
+    .edit-event {
         display: table-cell;
         vertical-align: top;
     }
@@ -149,7 +137,7 @@
         padding-right: 12px;
     }
 
-    .edit-sermon-summary {
+    .edit-event {
         @include adminForm;
     }
 }

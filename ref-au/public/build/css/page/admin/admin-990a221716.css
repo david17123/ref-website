@@ -882,19 +882,20 @@
 
 .admin-manage-sermon-summaries .sermon-summaries__table-header {
   background-color: #4cbdff;
-  color: #ffffff;
-  font-family: "Montserrat";
-  font-size: 14px;
-  font-weight: 700; }
-  .admin-manage-sermon-summaries .sermon-summaries__table-header > * {
-    text-align: center;
-    vertical-align: middle; }
+  color: #ffffff; }
 
 .admin-manage-sermon-summaries .sermon-summaries__entry {
   color: inherit;
   text-decoration: none; }
   .admin-manage-sermon-summaries .sermon-summaries__entry:hover {
     background-color: #f6fbff; }
+
+.admin-manage-sermon-summaries .sermon-summaries__table-header {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 700; }
+  .admin-manage-sermon-summaries .sermon-summaries__table-header > * {
+    text-align: center; }
 
 .admin-manage-sermon-summaries .sermon-summaries__id {
   width: 40px;
@@ -1010,193 +1011,6 @@
   color: #00a1ff;
   margin-left: 10px; }
   .admin-edit-sermon-summary .edit-sermon-summary .delete-button:hover {
-    color: #4cbdff; }
-
-.admin-manage-events .breadcrumbs {
-  font-family: "Raleway";
-  font-size: 14px;
-  padding: 15px 0 20px; }
-
-.admin-manage-events .breadcrumbs__entry {
-  display: inline-block; }
-
-.admin-manage-events .breadcrumbs__entry__link {
-  text-decoration: none;
-  color: #00a1ff; }
-  .admin-manage-events .breadcrumbs__entry__link:hover {
-    color: #4cbdff; }
-
-.admin-manage-events .page-content-container {
-  width: 960px;
-  margin: auto; }
-
-.admin-manage-events .content-layouter {
-  display: table;
-  width: 100%; }
-
-.admin-manage-events .side-menu-container,
-.admin-manage-events .manage-events {
-  display: table-cell;
-  vertical-align: top; }
-
-.admin-manage-events .side-menu-container {
-  width: 250px;
-  padding-right: 12px; }
-
-.admin-manage-events .manage-events__header-container {
-  display: table;
-  width: 100%;
-  margin-bottom: 10px; }
-
-.admin-manage-events .manage-events__header {
-  display: table-cell;
-  font-family: "Montserrat";
-  font-size: 22px;
-  vertical-align: middle; }
-
-.admin-manage-events .manage-events__create-new {
-  display: table-cell;
-  width: 80px;
-  text-align: center;
-  text-decoration: none;
-  padding: 8px 10px;
-  vertical-align: middle;
-  font-family: "Raleway";
-  font-size: 14px; }
-
-.admin-manage-events .manage-events__events {
-  display: table;
-  width: 100%; }
-
-.admin-manage-events .events__table-header,
-.admin-manage-events .events__entry {
-  display: table-row; }
-  .admin-manage-events .events__table-header > *,
-  .admin-manage-events .events__entry > * {
-    display: table-cell;
-    font-family: "Raleway";
-    font-size: 14px;
-    vertical-align: top;
-    padding: 5px 0; }
-
-.admin-manage-events .events__table-header {
-  background-color: #4cbdff;
-  color: #ffffff;
-  font-family: "Montserrat";
-  font-size: 14px;
-  font-weight: 700; }
-  .admin-manage-events .events__table-header > * {
-    text-align: center;
-    vertical-align: middle; }
-
-.admin-manage-events .events__entry {
-  color: inherit;
-  text-decoration: none; }
-  .admin-manage-events .events__entry:hover {
-    background-color: #f6fbff; }
-
-.admin-manage-events .events__id {
-  width: 40px;
-  text-align: center; }
-
-.admin-manage-events .events__snippet .snippet__head {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 300px;
-  margin-bottom: 5px; }
-
-.admin-manage-events .events__snippet .snippet__title {
-  font-weight: 600; }
-
-.admin-manage-events .events__snippet .snippet__body {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 300px;
-  line-height: 18px; }
-
-.admin-manage-events .events__date-commenced,
-.admin-manage-events .events__date-finished {
-  width: 100px;
-  text-align: center; }
-
-.admin-edit-event .breadcrumbs {
-  font-family: "Raleway";
-  font-size: 14px;
-  padding: 15px 0 20px; }
-
-.admin-edit-event .breadcrumbs__entry {
-  display: inline-block; }
-
-.admin-edit-event .breadcrumbs__entry__link {
-  text-decoration: none;
-  color: #00a1ff; }
-  .admin-edit-event .breadcrumbs__entry__link:hover {
-    color: #4cbdff; }
-
-.admin-edit-event .page-content-container {
-  width: 960px;
-  margin: auto; }
-
-.admin-edit-event .content-layouter {
-  display: table;
-  width: 100%; }
-
-.admin-edit-event .side-menu-container,
-.admin-edit-event .edit-event {
-  display: table-cell;
-  vertical-align: top; }
-
-.admin-edit-event .side-menu-container {
-  width: 250px;
-  padding-right: 12px; }
-
-.admin-edit-event .edit-event .form-field {
-  display: table;
-  margin-bottom: 10px; }
-
-.admin-edit-event .edit-event .form-field__label,
-.admin-edit-event .edit-event .form-field__input {
-  display: table-cell;
-  vertical-align: top; }
-
-.admin-edit-event .edit-event .form-field__label {
-  width: 150px;
-  font-family: "Raleway";
-  padding-top: 12px;
-  font-size: 14px; }
-
-.admin-edit-event .edit-event .form-field__input .input-text {
-  width: 250px; }
-
-.admin-edit-event .edit-event .form-field__input input[type=checkbox] {
-  height: 37px;
-  margin: 0; }
-
-.admin-edit-event .edit-event .form-field__input textarea.input-text {
-  width: 380px;
-  min-height: 140px;
-  resize: vertical; }
-
-.admin-edit-event .edit-event .form-field__input select {
-  width: 250px; }
-
-.admin-edit-event .edit-event .form-field__error-message {
-  color: #ff3434;
-  font-family: "Raleway";
-  font-size: 14px; }
-
-.admin-edit-event .edit-event .save-button {
-  margin-top: 10px; }
-
-.admin-edit-event .edit-event .delete-button {
-  text-decoration: none;
-  font-family: "Raleway";
-  font-size: 14px;
-  color: #00a1ff;
-  margin-left: 10px; }
-  .admin-edit-event .edit-event .delete-button:hover {
     color: #4cbdff; }
 
 /*# sourceMappingURL=admin.css.map */

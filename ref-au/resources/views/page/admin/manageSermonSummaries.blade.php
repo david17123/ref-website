@@ -6,12 +6,12 @@
 
         <div class="content-layouter">
             <div class="side-menu-container">
-                @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'sermonSummary'])
+                @include('component.admin.manageUniSideMenu', ['selectedMenu' => 'sermonSummaries'])
             </div>
             <div class="manage-sermon-summaries">
                 <div class="manage-sermon-summaries__header-container">
                     <h1 class="manage-sermon-summaries__header">Sermon Summaries at {{ $university->name }}</h1>
-                    <a class="manage-sermon-summary__create-new input-button" href="{{ route('createSermonSummary', ['uniUrl' => $university->subdomain]) }}">Create new</a>
+                    <a class="manage-sermon-summaries__create-new input-button" href="{{ route('createSermonSummary', ['uniUrl' => $university->subdomain]) }}">Create new</a>
                 </div>
                 <div class="manage-sermon-summaries__sermon-summaries">
                     <div class="sermon-summaries__table-header">
