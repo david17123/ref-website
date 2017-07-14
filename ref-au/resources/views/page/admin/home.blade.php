@@ -41,5 +41,17 @@
                 </div>
             </a>
         </div>
+
+        <h1 class="section-header">Manage sitewide resources</h1>
+        <div class="manage-resources">
+            <a class="resource" href="#">
+                <i class="material-icons resource__icon">&#xE410;</i>
+                <span class="resource__text">Pic quotes</span>
+            </a>
+            <a class="resource" href="#">
+                <i class="material-icons resource__icon">&#xE873;</i>
+                <span class="resource__text">Articles</span>
+            </a>
+        </div>
     </div>
 @endsection

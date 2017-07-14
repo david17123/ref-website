@@ -8,7 +8,9 @@
     }
     .section-header {
         font-family: $secondaryFont;
-        margin-bottom: 10px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 24px;
     }
     .manage-unis {
         .uni {
@@ -73,6 +75,30 @@
         .uni__url {
             font-style: italic;
             color: $textLightGrey;
+        }
+    }
+    .manage-resources {
+        .resource {
+            display: inline-block;
+            text-decoration: none;
+            color: #000000;
+            background-color: $lightGrey;
+            border-radius: 3px;
+            padding: 8px 15px;
+            width: 150px;
+            font-family: $primaryFont;
+            font-weight: 600;
+            font-size: 14px;
+            &:hover {
+                background-color: $grey;
+            }
+        }
+        .resource__icon,
+        .resource__text {
+            vertical-align: middle;
+        }
+        .resource__icon {
+            margin-right: 2px;
         }
     }
 }

@@ -741,15 +741,7 @@
   display: inline-block;
   text-decoration: none;
   color: #000000;
-  background-color: #f3f3f3;
-  border-radius: 3px;
-  padding: 8px 15px;
-  width: 150px;
-  font-family: "Raleway";
-  font-weight: 600;
-  font-size: 14px; }
-  .admin-landing-page .manage-resources .resource:hover {
-    background-color: #efefef; }
+  background-color: wheat; }
 
 .admin-landing-page .manage-resources .resource__icon,
 .admin-landing-page .manage-resources .resource__text {

@@ -676,7 +676,9 @@
 
 .admin-landing-page .section-header {
   font-family: "Montserrat";
-  margin-bottom: 10px; }
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 24px; }
 
 .admin-landing-page .manage-unis .uni {
   display: inline-table;
@@ -734,6 +736,27 @@
 .admin-landing-page .manage-unis .uni__url {
   font-style: italic;
   color: #b3b3b3; }
+
+.admin-landing-page .manage-resources .resource {
+  display: inline-block;
+  text-decoration: none;
+  color: #000000;
+  background-color: #f3f3f3;
+  border-radius: 3px;
+  padding: 8px 15px;
+  width: 150px;
+  font-family: "Raleway";
+  font-weight: 600;
+  font-size: 14px; }
+  .admin-landing-page .manage-resources .resource:hover {
+    background-color: #efefef; }
+
+.admin-landing-page .manage-resources .resource__icon,
+.admin-landing-page .manage-resources .resource__text {
+  vertical-align: middle; }
+
+.admin-landing-page .manage-resources .resource__icon {
+  margin-right: 2px; }
 
 .admin-manage-uni-site .breadcrumbs {
   font-family: "Raleway";
