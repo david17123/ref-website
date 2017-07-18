@@ -44,9 +44,9 @@
 
         <h1 class="section-header">Manage sitewide resources</h1>
         <div class="manage-resources">
-            <a class="resource" href="#">
+            <a class="resource" href="{{ route('managePicquotes') }}">
                 <i class="material-icons resource__icon">&#xE410;</i>
-                <span class="resource__text">Pic quotes</span>
+                <span class="resource__text">Picquotes</span>
             </a>
             <a class="resource" href="{{ route('manageArticles') }}">
                 <i class="material-icons resource__icon">&#xE873;</i>

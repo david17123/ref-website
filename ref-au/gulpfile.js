@@ -116,6 +116,7 @@ elixir(function(mix) {
         'page/admin/manageSermonSummaries.scss',
         'page/admin/manageEvents.scss',
         'page/admin/manageArticles.scss',
+        'page/admin/managePicquotes.scss'
     ], 'public/css/page/admin/admin.css');
 
     mix.scripts([
@@ -149,6 +150,13 @@ elixir(function(mix) {
         'component/refSelectBox.js',
         'page/admin/editArticle.js'
     ], 'public/js/page/admin/editArticle.js');
+    mix.scripts([
+        'lib/jqueryFileupload/jquery.ui.widget.js',
+        'lib/jqueryFileupload/jquery.iframe-transport.js',
+        'lib/jqueryFileupload/jquery.fileupload.js',
+        'component/simpleFileInput.js',
+        'page/admin/editPicquote.js'
+    ], 'public/js/page/admin/editPicquote.js');
 
 
 

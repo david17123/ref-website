@@ -103,6 +103,23 @@ Route::group([
         'uses' => 'Admin\ArticleController@deleteArticle'
     ]);
 
+    Route::get('picquote', [
+        'as' => 'managePicquotes',
+        'uses' => 'Admin\PicquoteController@managePicquotes'
+    ]);
+    Route::get('picquote/create', [
+        'as' => 'createPicquote',
+        'uses' => 'Admin\PicquoteController@createPicquote'
+    ]);
+    Route::get('picquote/{picquote}', [
+        'as' => 'editPicquote',
+        'uses' => 'Admin\PicquoteController@editPicquote'
+    ]);
+    Route::get('picquote/{picquote}/delete', [
+        'as' => 'deletePicquote',
+        'uses' => 'Admin\PicquoteController@deletePicquote'
+    ]);
+
     Route::get('ajax/authors', [
         'as' => 'getAuthorsAjax',
         'uses' => 'AjaxController@getAuthorsByName'
@@ -131,6 +148,10 @@ Route::group([
     Route::post('article', [
         'as' => 'saveArticle',
         'uses' => 'Admin\ArticleController@saveArticle'
+    ]);
+    Route::post('picquote', [
+        'as' => 'savePicquote',
+        'uses' => 'Admin\PicquoteController@savePicquote'
     ]);
 });
 

@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Collection;
-use Carbon\Carbon;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
@@ -23,57 +21,6 @@ class ArticleController extends Controller
     public function __construct(SitePageService $sitePage)
     {
         $this->sitePage = $sitePage;
-    }
-
-    /**
-     * Sets the asset group's assets to be the one listed in the $newAssets
-     * specified.
-     *
-     * @param AssetGroup $assetGroup
-     * @param Collection $newAssets
-     * @param bool $remove $asset->remove() will only be called if this is true.
-     * Defaults to false.
-     * @return Array(Asset) List of assets to be removed from the group
-     */
-    private function _updateAssetGroup(AssetGroup $assetGroup, Collection $newAssets, $remove=false)
-    {
-        $oldAssets = $assetGroup->assets;
-        $oldAssetsHash = [];
-        foreach ($oldAssets as $oldAsset)
-        {
-            $oldAssetsHash[$oldAsset->id] = $oldAsset;
-        }
-
-        if (count($newAssets) > 0)
-        {
-            // Save new assets
-            foreach ($newAssets as $newAsset)
-            {
-                if ( isset($oldAssetsHash[$newAsset->id]) )
-                {
-                    // Asset is associated properly. Do not delete.
-                    unset($oldAssetsHash[$newAsset->id]);
-                }
-                else
-                {
-                    $newAsset->asset_group_id = $assetGroup->id;
-                    $newAsset->save();
-                }
-            }
-        }
-
-        $assetsToRemove = [];
-        foreach ($oldAssetsHash as $assetId => $oldAsset)
-        {
-            $assetsToRemove[] = $oldAsset;
-            if ($remove)
-            {
-                $oldAsset->remove();
-                $oldAsset->save();
-            }
-        }
-
-        return $assetsToRemove;
     }
 
     public function manageArticles()
@@ -149,7 +96,7 @@ class ArticleController extends Controller
             }
         }
 
-        // Fetch preacher and summarizer objects
+        // Fetch author object
         $authorId = $request->input('author');
         $author = Author::find($authorId);
         if ( !$author )
