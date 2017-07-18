@@ -115,6 +115,7 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->subtitle = $request->input('subtitle');
         $article->content = $request->input('content');
+        $article->published = $request->input('published') === '1';
         $article->author()->associate($author);
         if ($heroImage)
         {

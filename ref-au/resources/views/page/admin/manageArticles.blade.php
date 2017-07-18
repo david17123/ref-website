@@ -24,6 +24,9 @@
                         <div class="article__author">
                             Author
                         </div>
+                        <div class="article__published">
+                            Published
+                        </div>
                     </div>
 
                     @foreach ($articles as $article)
@@ -45,6 +48,13 @@
                             </div>
                             <div class="article__author">
                                 {{ $article->author->name }}
+                            </div>
+                            <div class="article__published">
+                                @if ($article->published)
+                                    <i class="material-icons published">&#xE876;</i>
+                                @else
+                                    <i class="material-icons unpublished">&#xE14C;</i>
+                                @endif
                             </div>
                         </a>
                     @endforeach

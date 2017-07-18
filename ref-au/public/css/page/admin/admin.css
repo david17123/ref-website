@@ -1326,6 +1326,16 @@
   width: 120px;
   text-align: center; }
 
+.admin-manage-articles .article__published {
+  width: 100px;
+  text-align: center; }
+  .admin-manage-articles .article__published .material-icons {
+    font-size: 20px; }
+  .admin-manage-articles .article__published .published {
+    color: #0cab0c; }
+  .admin-manage-articles .article__published .unpublished {
+    color: #ec1b2e; }
+
 .admin-edit-article .breadcrumbs {
   font-family: "Raleway";
   font-size: 14px;

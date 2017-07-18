@@ -21,7 +21,9 @@ class ArticlePageController extends Controller
     public function listArticles(University $university)
     {
         $viewVars = [
-            'articles' => Article::orderBy('created_at', 'desc')->get()
+            'articles' => Article::where('published', '=', true)
+                                ->orderBy('created_at', 'desc')
+                                ->get()
         ];
 
         return view('page/articlesList', $viewVars);
@@ -29,7 +31,15 @@ class ArticlePageController extends Controller
 
     public function readArticle(University $university, Article $article)
     {
-        $otherArticles = Article::where('id', '<>', $article->id)
+        if ( !$article->published )
+        {
+            abort(404, 'Article not found');
+        }
+
+        $otherArticles = Article::where([
+                                ['id', '<>', $article->id],
+                                ['published', '=', true]
+                            ])
                             ->inRandomOrder()
                             ->take(5)
                             ->get();
