@@ -30,6 +30,9 @@
                         <div class="sermon-summaries__summarizer">
                             Summarizer
                         </div>
+                        <div class="sermon-summaries__published">
+                            Published
+                        </div>
                     </div>
 
                     @foreach ($sermonSummaries as $sermonSummary)
@@ -54,6 +57,13 @@
                             </div>
                             <div class="sermon-summaries__summarizer">
                                 {{ $sermonSummary->summarizer->name }}
+                            </div>
+                            <div class="sermon-summaries__published">
+                                @if ($sermonSummary->published)
+                                    <i class="material-icons published">&#xE876;</i>
+                                @else
+                                    <i class="material-icons unpublished">&#xE14C;</i>
+                                @endif
                             </div>
                         </a>
                     @endforeach

@@ -22,7 +22,9 @@ class SermonSummaryPageController extends Controller
     public function listSermonSummaries(University $university)
     {
         $viewVars = [
-            'sermonSummaries' => SermonSummary::orderBy('created_at', 'desc')->get()
+            'sermonSummaries' => SermonSummary::where('published', '=', true)
+                                            ->orderBy('created_at', 'desc')
+                                            ->get()
         ];
 
         return view('page/sermonSummariesList', $viewVars);
@@ -30,7 +32,13 @@ class SermonSummaryPageController extends Controller
 
     public function readSermonSummary(University $university, SermonSummary $sermonSummary)
     {
-        $articles = Article::inRandomOrder()
+        if ( !$sermonSummary->published )
+        {
+            abort(404, 'Sermon summary not found');
+        }
+
+        $articles = Article::where('published', '=', true)
+                        ->inRandomOrder()
                         ->take(5)
                         ->get();
         $prevSermon = SermonSummary::where('id', 1)->first();

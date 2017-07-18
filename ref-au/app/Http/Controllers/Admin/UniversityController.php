@@ -348,6 +348,7 @@ class UniversityController extends Controller
         $sermonSummary->subtitle = $request->input('subtitle');
         $sermonSummary->content = $request->input('content');
         $sermonSummary->date_preached = Carbon::createFromFormat('Y-m-d', $request->input('datePreached'));
+        $sermonSummary->published = $request->input('published') === '1';
         $sermonSummary->preacher()->associate($preacher);
         $sermonSummary->summarizer()->associate($summarizer);
         if ($heroImage)

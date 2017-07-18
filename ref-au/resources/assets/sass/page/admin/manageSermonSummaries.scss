@@ -123,6 +123,22 @@
         width: 120px;
         text-align: center;
     }
+    .sermon-summaries__published {
+        width: 100px;
+        text-align: center;
+
+        .material-icons {
+            font-size: 20px;
+        }
+
+        .published {
+            color: $green;
+        }
+
+        .unpublished {
+            color: $red;
+        }
+    }
 }
 
 .admin-edit-sermon-summary {

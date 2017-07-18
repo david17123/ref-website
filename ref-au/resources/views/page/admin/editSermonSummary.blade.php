@@ -73,6 +73,11 @@
                         'multiple' => false,
                         'uploadUrl' => route('adminFileUploadHandler')
                     ])
+                    @include('component.forms.simple2ColumnsCheckbox', [
+                        'name' => 'published',
+                        'textName' => 'Published',
+                        'defaultValue' => isset($sermonSummary->published) && $sermonSummary->published
+                    ])
 
                     <input class="save-button input-button" type="submit" value="Save">
                     @if ( isset($sermonSummary) )

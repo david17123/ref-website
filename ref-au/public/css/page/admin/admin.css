@@ -957,6 +957,16 @@
   width: 120px;
   text-align: center; }
 
+.admin-manage-sermon-summaries .sermon-summaries__published {
+  width: 100px;
+  text-align: center; }
+  .admin-manage-sermon-summaries .sermon-summaries__published .material-icons {
+    font-size: 20px; }
+  .admin-manage-sermon-summaries .sermon-summaries__published .published {
+    color: #0cab0c; }
+  .admin-manage-sermon-summaries .sermon-summaries__published .unpublished {
+    color: #ec1b2e; }
+
 .admin-edit-sermon-summary .breadcrumbs {
   font-family: "Raleway";
   font-size: 14px;
