@@ -86,6 +86,23 @@ Route::group([
         'uses' => 'Admin\UniversityController@deleteEvent'
     ]);
 
+    Route::get('article', [
+        'as' => 'manageArticles',
+        'uses' => 'Admin\ArticleController@manageArticles'
+    ]);
+    Route::get('article/create', [
+        'as' => 'createArticle',
+        'uses' => 'Admin\ArticleController@createArticle'
+    ]);
+    Route::get('article/{article}', [
+        'as' => 'editArticle',
+        'uses' => 'Admin\ArticleController@editArticle'
+    ]);
+    Route::get('article/{article}/delete', [
+        'as' => 'deleteArticle',
+        'uses' => 'Admin\ArticleController@deleteArticle'
+    ]);
+
     Route::get('ajax/authors', [
         'as' => 'getAuthorsAjax',
         'uses' => 'AjaxController@getAuthorsByName'
@@ -110,6 +127,10 @@ Route::group([
     Route::post('uni/{uniUrl}/event', [
         'as' => 'saveEvent',
         'uses' => 'Admin\UniversityController@saveEvent'
+    ]);
+    Route::post('article', [
+        'as' => 'saveArticle',
+        'uses' => 'Admin\ArticleController@saveArticle'
     ]);
 });
 

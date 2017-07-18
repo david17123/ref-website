@@ -10,7 +10,7 @@
 
 @section('pageContent')
     <div class="page-content-container">
-        <div class="sermon-summary-hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }})"></div>
+        <div class="sermon-summary-hero" style="background-image: url('{{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }}')"></div>
         <div class="sermon-summary-layouter">
             <div class="sermon-summary-content">
                 <h1 class="sermon-summary-content__title">{{ $sermonSummary->title }}</h1>

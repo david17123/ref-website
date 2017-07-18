@@ -7,7 +7,7 @@
                 Recent
             </div>
         @endif
-        <div class="article-list-entry__hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>{{--
+        <div class="article-list-entry__hero" style="background-image: url('{{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }}')"></div>{{--
     --}}<div class="article-list-entry__snippet-content">
             <h1 class="article-list-entry__title">
                 {{ $article->title }}
@@ -19,7 +19,11 @@
             </p>
             <p class="article-list-entry__snippet">
                 {{-- Idea from: http://stackoverflow.com/a/79986 --}}
-                {{ substr($article->content, 0, strpos(wordwrap($article->content, 300, '#delim#'), '#delim#')) }}&hellip;
+                @if ( strlen($article->content) > 300 )
+                    {{ substr($article->content, 0, strpos(wordwrap($article->content, 300, '#delim#'), '#delim#')) }}&hellip;
+                @else
+                    {{ $article->content }}
+                @endif
             </p>
             <p class="article-list-entry__read-more">
                 <span class="article-list-entry__read-more__text">Read more&hellip;</span>

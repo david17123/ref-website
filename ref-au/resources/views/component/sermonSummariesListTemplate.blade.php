@@ -7,7 +7,7 @@
                 Recent
             </div>
         @endif
-        <div class="sermon-summary-list-entry__hero" style="background-image: url({{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }})"></div>{{--
+        <div class="sermon-summary-list-entry__hero" style="background-image: url('{{ is_null($sermonSummary->heroImage) ? '' : $sermonSummary->heroImage->getUrl() }}')"></div>{{--
     --}}<div class="sermon-summary-list-entry__snippet-content">
             <h1 class="sermon-summary-list-entry__title">
                 {{ $sermonSummary->title }}
@@ -19,7 +19,11 @@
             </p>
             <p class="sermon-summary-list-entry__snippet">
                 {{-- Idea from: http://stackoverflow.com/a/79986 --}}
-                {{ substr($sermonSummary->content, 0, strpos(wordwrap($sermonSummary->content, 300, '#delim#'), '#delim#')) }}&hellip;
+                @if ( strlen($sermonSummary->content) > 300 )
+                    {{ substr($sermonSummary->content, 0, strpos(wordwrap($sermonSummary->content, 300, '#delim#'), '#delim#')) }}&hellip;
+                @else
+                    {{ $sermonSummary->content }}
+                @endif
             </p>
             <p class="sermon-summary-list-entry__read-more">
                 <span class="sermon-summary-list-entry__read-more__link">Read more&hellip;</span>

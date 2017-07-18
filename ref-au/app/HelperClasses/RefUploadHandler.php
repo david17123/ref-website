@@ -11,6 +11,15 @@ use App\AssetFile;
  */
 class RefUploadHandler extends UploadHandler
 {
+    protected function get_file_name($file_path, $name, $size, $type, $error, $index, $content_range)
+    {
+        // Normalises $name to some sanity check before passing over to parent method
+        $name = preg_replace('/[^a-zA-Z0-9\s.\-_]/', '', $name);
+        $name = preg_replace('/\s+/', '-', $name);
+
+        return parent::get_file_name($file_path, $name, $size, $type, $error, $index, $content_range);
+    }
+
     /**
      * Processes uploaded file. This method moves the uploaded file from the
      * default tmp_name to the designated upload path as specified in the
@@ -30,7 +39,7 @@ class RefUploadHandler extends UploadHandler
      * This overridden method will add Asset->toArray() under `asset` field
      *
      * @param string $uploaded_file The `tmp_name` from the default upload location
-     * @param string $name File name to be given for the file // TODO @David Test that get_file_name will actually safeguard against weird file names.
+     * @param string $name File name to be given for the file
      * @param string $size Numeric string of the file's size in bytes
      * @param string $type Uploaded file type?
      * @param string $error Existing error messages, either as `error_messages` index or plain error message string

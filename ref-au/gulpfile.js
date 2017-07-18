@@ -114,7 +114,8 @@ elixir(function(mix) {
         'page/admin/home.scss',
         'page/admin/manageUniSite.scss',
         'page/admin/manageSermonSummaries.scss',
-        'page/admin/manageEvents.scss'
+        'page/admin/manageEvents.scss',
+        'page/admin/manageArticles.scss',
     ], 'public/css/page/admin/admin.css');
 
     mix.scripts([
@@ -139,6 +140,15 @@ elixir(function(mix) {
     mix.scripts([
         'page/admin/editEvent.js'
     ], 'public/js/page/admin/editEvent.js');
+    mix.scripts([
+        'lib/jqueryFileupload/jquery.ui.widget.js',
+        'lib/jqueryFileupload/jquery.iframe-transport.js',
+        'lib/jqueryFileupload/jquery.fileupload.js',
+        'lib/select2/select2.js',
+        'component/simpleFileInput.js',
+        'component/refSelectBox.js',
+        'page/admin/editArticle.js'
+    ], 'public/js/page/admin/editArticle.js');
 
 
 

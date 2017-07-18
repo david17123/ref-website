@@ -48,7 +48,7 @@
                 <i class="material-icons resource__icon">&#xE410;</i>
                 <span class="resource__text">Pic quotes</span>
             </a>
-            <a class="resource" href="#">
+            <a class="resource" href="{{ route('manageArticles') }}">
                 <i class="material-icons resource__icon">&#xE873;</i>
                 <span class="resource__text">Articles</span>
             </a>

@@ -10,7 +10,7 @@
 
 @section('pageContent')
     <div class="page-content-container">
-        <div class="article-hero" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>
+        <div class="article-hero" style="background-image: url('{{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }}')"></div>
         <div class="article-layouter">
             <div class="article-content">
                 <h1 class="article-content__title">{{ $article->title }}</h1>
