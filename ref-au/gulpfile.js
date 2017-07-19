@@ -116,7 +116,8 @@ elixir(function(mix) {
         'page/admin/manageSermonSummaries.scss',
         'page/admin/manageEvents.scss',
         'page/admin/manageArticles.scss',
-        'page/admin/managePicquotes.scss'
+        'page/admin/managePicquotes.scss',
+        'page/admin/manageAuthors.scss'
     ], 'public/css/page/admin/admin.css');
 
     mix.scripts([
@@ -157,6 +158,12 @@ elixir(function(mix) {
         'component/simpleFileInput.js',
         'page/admin/editPicquote.js'
     ], 'public/js/page/admin/editPicquote.js');
+    mix.scripts([
+        'lib/select2/select2.js',
+        'component/refSelectBox.js',
+        'page/admin/editAuthor.js'
+    ], 'public/js/page/admin/editAuthor.js');
+
 
 
 

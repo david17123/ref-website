@@ -21,6 +21,16 @@
     height: 35px;
 }
 
+.select2-container--default .select2-selection--single .select2-selection__clear {
+    display: inline-block;
+    width: 20px;
+    font-family: Arial;
+    font-size: 24px;
+    line-height: 35px;
+    color: $textGrey;
+    text-align: center;
+}
+
 // Dropdown
 
 .select2-dropdown {

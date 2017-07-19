@@ -81,7 +81,7 @@ class ArticleController extends Controller
             'articleId' => 'numeric'
         ]);
 
-        // Fetch sermon summary object
+        // Fetch article object
         $articleId = $request->input('articleId', '');
         if ($articleId === '')
         {

@@ -120,9 +120,30 @@ Route::group([
         'uses' => 'Admin\PicquoteController@deletePicquote'
     ]);
 
+    Route::get('author', [
+        'as' => 'manageAuthors',
+        'uses' => 'Admin\AuthorController@manageAuthors'
+    ]);
+    Route::get('author/create', [
+        'as' => 'createAuthor',
+        'uses' => 'Admin\AuthorController@createAuthor'
+    ]);
+    Route::get('author/{author}', [
+        'as' => 'editAuthor',
+        'uses' => 'Admin\AuthorController@editAuthor'
+    ]);
+    Route::get('author/{author}/delete', [
+        'as' => 'deleteAuthor',
+        'uses' => 'Admin\AuthorController@deleteAuthor'
+    ]);
+
     Route::get('ajax/authors', [
         'as' => 'getAuthorsAjax',
         'uses' => 'AjaxController@getAuthorsByName'
+    ]);
+    Route::get('ajax/users', [
+        'as' => 'getUsersAjax',
+        'uses' => 'AjaxController@getUsersByName'
     ]);
 
     Route::post('upload', [
@@ -152,6 +173,10 @@ Route::group([
     Route::post('picquote', [
         'as' => 'savePicquote',
         'uses' => 'Admin\PicquoteController@savePicquote'
+    ]);
+    Route::post('author', [
+        'as' => 'saveAuthor',
+        'uses' => 'Admin\AuthorController@saveAuthor'
     ]);
 });
 

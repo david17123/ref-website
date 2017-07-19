@@ -73,7 +73,7 @@ class PicquoteController extends Controller
             'picquoteId' => 'numeric'
         ]);
 
-        // Fetch sermon summary object
+        // Fetch picquote object
         $picquoteId = $request->input('picquoteId', '');
         if ($picquoteId === '')
         {
