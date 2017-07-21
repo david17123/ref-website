@@ -44,7 +44,7 @@
                     @endcan
 
                     <input class="save-button input-button" type="submit" value="Save">
-                    @if ( isset($user) )
+                    @if ( isset($user) && policy($user)->delete(Auth::user(), $user))
                         <a class="delete-button js-delete-button" href="{{ route('deleteUser', ['user' => $user->id]) }}">Delete</a>
                     @endif
                 </form>

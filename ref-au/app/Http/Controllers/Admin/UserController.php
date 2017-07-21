@@ -78,6 +78,7 @@ class UserController extends Controller
 
     public function saveUser(Request $request)
     {
+        // TODO @David How to deal with password and remember_token fields when creating new user?
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255',

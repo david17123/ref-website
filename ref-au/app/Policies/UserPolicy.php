@@ -36,7 +36,7 @@ class UserPolicy
 
     public function delete(User $user, User $userToManage)
     {
-        return $user->role && $user->role->code_name === 'siteAdmin';
+        return $user->role && $user->role->code_name === 'superAdmin';
     }
 
     public function updateRole(User $user, User $userToManage)
