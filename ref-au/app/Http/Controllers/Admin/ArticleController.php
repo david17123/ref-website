@@ -78,8 +78,6 @@ class ArticleController extends Controller
 
     public function saveArticle(Request $request)
     {
-        $this->authorize('update', $article);
-
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'subtitle' => 'string|max:255',
@@ -103,6 +101,8 @@ class ArticleController extends Controller
                 abort(404, 'Article not found');
             }
         }
+
+        $this->authorize('update', $article);
 
         // Fetch author object
         $authorId = $request->input('author');

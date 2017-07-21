@@ -5796,7 +5796,7 @@ S2.define('jquery.select2',[
     })();
 })(jQuery);
 
-(function editAuthor($) {
+(function editUser($) {
     $(document).ready(function () {
         $('.js-delete-button').click(function (event) {
             if ( !confirm('Are you sure? This cannot be undone.') ) {
@@ -5806,4 +5806,4 @@ S2.define('jquery.select2',[
     });
 })(jQuery);
 
-//# sourceMappingURL=editAuthor.js.map
+//# sourceMappingURL=editUser.js.map

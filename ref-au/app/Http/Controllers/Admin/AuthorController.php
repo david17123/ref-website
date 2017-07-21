@@ -77,8 +77,6 @@ class AuthorController extends Controller
 
     public function saveAuthor(Request $request)
     {
-        $this->authorize('update', $author);
-
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'userId' => 'numeric',
@@ -99,6 +97,8 @@ class AuthorController extends Controller
                 abort(404, 'Author not found');
             }
         }
+
+        $this->authorize('update', $author);
 
         // Fetch user object
         $user = null;

@@ -56,6 +56,10 @@
                 <i class="material-icons resource__icon">&#xE254;</i>
                 <span class="resource__text">Authors</span>
             </a>
+            <a class="resource" href="{{ route('manageUsers') }}">
+                <i class="material-icons resource__icon">&#xE7FD;</i>
+                <span class="resource__text">Users</span>
+            </a>
         </div>
     </div>
 @endsection

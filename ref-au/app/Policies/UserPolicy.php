@@ -38,4 +38,9 @@ class UserPolicy
     {
         return $user->role && $user->role->code_name === 'siteAdmin';
     }
+
+    public function updateRole(User $user, User $userToManage)
+    {
+        return $user->role && $user->role->code_name === 'superAdmin';
+    }
 }

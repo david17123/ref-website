@@ -15,7 +15,7 @@
                         <div class="author__id">
                             ID
                         </div>
-                        <div class="author__title">
+                        <div class="author__name">
                             Name
                         </div>
                     </div>

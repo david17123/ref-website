@@ -137,6 +137,23 @@ Route::group([
         'uses' => 'Admin\AuthorController@deleteAuthor'
     ]);
 
+    Route::get('user', [
+        'as' => 'manageUsers',
+        'uses' => 'Admin\UserController@manageUsers'
+    ]);
+    Route::get('user/create', [
+        'as' => 'createUser',
+        'uses' => 'Admin\UserController@createUser'
+    ]);
+    Route::get('user/{user}', [
+        'as' => 'editUser',
+        'uses' => 'Admin\UserController@editUser'
+    ]);
+    Route::get('user/{user}/delete', [
+        'as' => 'deleteUser',
+        'uses' => 'Admin\UserController@deleteUser'
+    ]);
+
     Route::get('ajax/authors', [
         'as' => 'getAuthorsAjax',
         'uses' => 'AjaxController@getAuthorsByName'
@@ -144,6 +161,10 @@ Route::group([
     Route::get('ajax/users', [
         'as' => 'getUsersAjax',
         'uses' => 'AjaxController@getUsersByName'
+    ]);
+    Route::get('ajax/roles', [
+        'as' => 'getRolesAjax',
+        'uses' => 'AjaxController@getRolesByTitle'
     ]);
 
     Route::post('upload', [
@@ -177,6 +198,10 @@ Route::group([
     Route::post('author', [
         'as' => 'saveAuthor',
         'uses' => 'Admin\AuthorController@saveAuthor'
+    ]);
+    Route::post('user', [
+        'as' => 'saveUser',
+        'uses' => 'Admin\UserController@saveUser'
     ]);
 });
 

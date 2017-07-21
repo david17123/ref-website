@@ -117,7 +117,8 @@ elixir(function(mix) {
         'page/admin/manageEvents.scss',
         'page/admin/manageArticles.scss',
         'page/admin/managePicquotes.scss',
-        'page/admin/manageAuthors.scss'
+        'page/admin/manageAuthors.scss',
+        'page/admin/manageUsers.scss'
     ], 'public/css/page/admin/admin.css');
 
     mix.scripts([
@@ -163,6 +164,11 @@ elixir(function(mix) {
         'component/refSelectBox.js',
         'page/admin/editAuthor.js'
     ], 'public/js/page/admin/editAuthor.js');
+    mix.scripts([
+        'lib/select2/select2.js',
+        'component/refSelectBox.js',
+        'page/admin/editUser.js'
+    ], 'public/js/page/admin/editUser.js');
 
 
 

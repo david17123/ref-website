@@ -9,6 +9,7 @@ use App\Http\Requests;
 
 use App\Author;
 use App\User;
+use App\Role;
 use App\SermonSummary;
 use App\Asset;
 
@@ -54,6 +55,28 @@ class AjaxController extends Controller
         {
             $user = $user->makeHidden(['email', 'created_at', 'updated_at']);
             $response[] = $user->toArray();
+        }
+        return response()->json($response);
+    }
+
+    /**
+     * Input:
+     * - title
+     * Output:
+     * - List of stripped down Role objects that matches the title
+     */
+    public function getRolesByTitle(Request $request)
+    {
+        $title = $request->input('title', '');
+        $matchedRoles = Role::where('title', 'like', '%'.$title.'%')
+                            ->cursor();
+        $response = [];
+        foreach ($matchedRoles as $role)
+        {
+            $response[] = [
+                'id' => $role->id,
+                'name' => $role->title
+            ];
         }
         return response()->json($response);
     }

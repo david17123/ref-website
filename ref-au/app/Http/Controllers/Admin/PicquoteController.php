@@ -73,8 +73,6 @@ class PicquoteController extends Controller
 
     public function savePicquote(Request $request)
     {
-        $this->authorize('update', $picquote);
-
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'image' => 'required|array',
@@ -95,6 +93,8 @@ class PicquoteController extends Controller
                 abort(404, 'Picquote not found');
             }
         }
+
+        $this->authorize('update', $picquote);
 
         // Process image
         $imageId = count($request->input('image')) > 0 ? $request->input('image') : null;

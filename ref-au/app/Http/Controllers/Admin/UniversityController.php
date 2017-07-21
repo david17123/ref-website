@@ -308,8 +308,6 @@ class UniversityController extends Controller
 
     public function saveSermonSummary(Request $request, University $university)
     {
-        $this->authorize('update', $sermonSummary);
-
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'subtitle' => 'string|max:255',
@@ -336,6 +334,8 @@ class UniversityController extends Controller
                 abort(404, 'Sermon summary not found');
             }
         }
+
+        $this->authorize('update', $sermonSummary);
 
         // Fetch preacher and summarizer objects
         $preacherId = $request->input('preacher');
@@ -454,8 +454,6 @@ class UniversityController extends Controller
 
     public function saveEvent(Request $request, University $university)
     {
-        $this->authorize('update', $event);
-
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'description' => 'string',
@@ -463,7 +461,7 @@ class UniversityController extends Controller
             'dateFinished' => 'required|date_format:Y-m-d'
         ]);
 
-        // Fetch sermon summary object
+        // Fetch event object
         $eventId = $request->input('eventId', '');
         if ($eventId === '')
         {
@@ -478,6 +476,8 @@ class UniversityController extends Controller
                 abort(404, 'Event not found');
             }
         }
+
+        $this->authorize('update', $event);
 
         $event->title = $request->input('title');
         $event->description = $request->input('description');
