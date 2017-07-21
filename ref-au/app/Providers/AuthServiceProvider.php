@@ -13,7 +13,14 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'App\Article' => 'App\Policies\ArticlePolicy',
+        'App\Asset' => 'App\Policies\AssetPolicy',
+        'App\Author' => 'App\Policies\AuthorPolicy',
+        'App\Event' => 'App\Policies\EventPolicy',
+        'App\Picquote' => 'App\Policies\PicquotePolicy',
+        'App\SermonSummary' => 'App\Policies\SermonSummaryPolicy',
+        'App\University' => 'App\Policies\UniversityPolicy',
+        'App\User' => 'App\Policies\UserPolicy',
     ];
 
     /**
@@ -26,6 +33,19 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
+        $gate->before(function ($user, $ability) {
+            if ($user->role && $user->role->code_name === 'superAdmin')
+            {
+                return true;
+            }
+            else
+            {
+                return null;
+            }
+        });
+
+        $gate->define('adminPage', function ($user) {
+            return $user->role && $user->role->code_name === 'siteAdmin';
+        });
     }
 }

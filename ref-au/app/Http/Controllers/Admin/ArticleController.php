@@ -25,6 +25,8 @@ class ArticleController extends Controller
 
     public function manageArticles()
     {
+        $this->authorize('manage', Article::class);
+
         $this->sitePage->setPageClass('admin-manage-articles');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -41,6 +43,8 @@ class ArticleController extends Controller
 
     public function createArticle()
     {
+        $this->authorize('create', Article::class);
+
         $this->sitePage->setPageClass('admin-edit-article');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -56,6 +60,8 @@ class ArticleController extends Controller
 
     public function editArticle(Article $article)
     {
+        $this->authorize('update', $article);
+
         $this->sitePage->setPageClass('admin-edit-article');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -72,6 +78,8 @@ class ArticleController extends Controller
 
     public function saveArticle(Request $request)
     {
+        $this->authorize('update', $article);
+
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'subtitle' => 'string|max:255',
@@ -134,6 +142,8 @@ class ArticleController extends Controller
 
     public function deleteArticle(Article $article)
     {
+        $this->authorize('delete', $article);
+
         if ($article->heroImage)
         {
             $heroImage = $article->heroImage;

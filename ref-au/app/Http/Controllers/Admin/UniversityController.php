@@ -80,6 +80,8 @@ class UniversityController extends Controller
 
     public function index(University $university)
     {
+        $this->authorize('update', $university);
+
         $this->sitePage->setPageClass('admin-manage-uni-site');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -94,6 +96,8 @@ class UniversityController extends Controller
 
     public function createUni()
     {
+        $this->authorize('create', University::class);
+
         // Get new uni subdomain
         $existingUnis = University::all();
         $existingUniSubdomains = [];
@@ -122,6 +126,8 @@ class UniversityController extends Controller
 
     public function saveSiteDetails(Request $request, University $university)
     {
+        $this->authorize('update', $university);
+
         // Validate request
         $this->validate($request, [
             'name' => 'required',
@@ -215,6 +221,8 @@ class UniversityController extends Controller
 
     public function deleteUniSite(University $university)
     {
+        $this->authorize('delete', $university);
+
         if ($university->logo)
         {
             $logo = $university->logo;
@@ -243,6 +251,8 @@ class UniversityController extends Controller
 
     public function manageSermonSummaries(University $university)
     {
+        $this->authorize('manage', SermonSummary::class);
+
         $this->sitePage->setPageClass('admin-manage-sermon-summaries');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -261,6 +271,8 @@ class UniversityController extends Controller
 
     public function createSermonSummary(University $university)
     {
+        $this->authorize('create', SermonSummary::class);
+
         $this->sitePage->setPageClass('admin-edit-sermon-summary');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -277,6 +289,8 @@ class UniversityController extends Controller
 
     public function editSermonSummary(University $university, SermonSummary $sermonSummary)
     {
+        $this->authorize('update', $sermonSummary);
+
         $this->sitePage->setPageClass('admin-edit-sermon-summary');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -294,6 +308,8 @@ class UniversityController extends Controller
 
     public function saveSermonSummary(Request $request, University $university)
     {
+        $this->authorize('update', $sermonSummary);
+
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'subtitle' => 'string|max:255',
@@ -368,6 +384,8 @@ class UniversityController extends Controller
 
     public function deleteSermonSummary(University $university, SermonSummary $sermonSummary)
     {
+        $this->authorize('delete', $sermonSummary);
+
         if ($sermonSummary->heroImage)
         {
             $heroImage = $sermonSummary->heroImage;
@@ -381,6 +399,8 @@ class UniversityController extends Controller
 
     public function manageEvents(University $university)
     {
+        $this->authorize('manage', Event::class);
+
         $this->sitePage->setPageClass('admin-manage-events');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -399,6 +419,8 @@ class UniversityController extends Controller
 
     public function createEvent(University $university)
     {
+        $this->authorize('create', Event::class);
+
         $this->sitePage->setPageClass('admin-edit-event');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -414,6 +436,8 @@ class UniversityController extends Controller
 
     public function editEvent(University $university, Event $event)
     {
+        $this->authorize('update', $event);
+
         $this->sitePage->setPageClass('admin-edit-event');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -430,6 +454,8 @@ class UniversityController extends Controller
 
     public function saveEvent(Request $request, University $university)
     {
+        $this->authorize('update', $event);
+
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'description' => 'string',
@@ -465,6 +491,8 @@ class UniversityController extends Controller
 
     public function deleteEvent(University $university, Event $event)
     {
+        $this->authorize('delete', $event);
+
         $event->delete();
         return redirect()->route('manageEvents', ['uniUrl' => $university->subdomain]);
     }

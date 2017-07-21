@@ -24,6 +24,8 @@ class PicquoteController extends Controller
 
     public function managePicquotes()
     {
+        $this->authorize('manage', Picquote::class);
+
         $this->sitePage->setPageClass('admin-manage-picquotes');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -40,6 +42,8 @@ class PicquoteController extends Controller
 
     public function createPicquote()
     {
+        $this->authorize('create', Picquote::class);
+
         $this->sitePage->setPageClass('admin-edit-picquote');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -52,6 +56,8 @@ class PicquoteController extends Controller
 
     public function editPicquote(Picquote $picquote)
     {
+        $this->authorize('update', $picquote);
+
         $this->sitePage->setPageClass('admin-edit-picquote');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -67,6 +73,8 @@ class PicquoteController extends Controller
 
     public function savePicquote(Request $request)
     {
+        $this->authorize('update', $picquote);
+
         $this->validate($request, [
             'title' => 'required|string|max:255',
             'image' => 'required|array',
@@ -115,6 +123,8 @@ class PicquoteController extends Controller
 
     public function deletePicquote(Picquote $picquote)
     {
+        $this->authorize('delete', $picquote);
+
         if ($picquote->image)
         {
             $image = $picquote->image;

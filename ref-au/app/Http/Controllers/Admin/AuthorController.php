@@ -23,6 +23,8 @@ class AuthorController extends Controller
 
     public function manageAuthors()
     {
+        $this->authorize('manage', Author::class);
+
         $this->sitePage->setPageClass('admin-manage-authors');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -39,6 +41,8 @@ class AuthorController extends Controller
 
     public function createAuthor()
     {
+        $this->authorize('create', Author::class);
+
         $this->sitePage->setPageClass('admin-edit-author');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -55,6 +59,8 @@ class AuthorController extends Controller
 
     public function editAuthor(Author $author)
     {
+        $this->authorize('update', $author);
+
         $this->sitePage->setPageClass('admin-edit-author');
         $this->sitePage->setBreadcrumbs([
             ['text' => 'Admin home', 'link' => route('adminHome')],
@@ -71,6 +77,8 @@ class AuthorController extends Controller
 
     public function saveAuthor(Request $request)
     {
+        $this->authorize('update', $author);
+
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'userId' => 'numeric',
@@ -124,6 +132,8 @@ class AuthorController extends Controller
 
     public function deleteAuthor(Author $author)
     {
+        $this->authorize('delete', $author);
+
         $author->delete();
         return redirect()->route('manageAuthors');
     }

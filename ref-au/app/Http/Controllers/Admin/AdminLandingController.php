@@ -20,6 +20,8 @@ class AdminLandingController extends Controller
 
     public function index()
     {
+        $this->authorize('adminPage');
+
         $this->sitePage->setPageClass('admin-landing-page');
 
         $viewVars = [
