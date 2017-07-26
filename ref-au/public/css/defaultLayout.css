@@ -31,8 +31,10 @@
   z-index: 100; }
 
 .site-header--opaque {
-  background-color: #ffffff;
+  background-color: #242424;
   box-shadow: #949494 0 0 10px; }
+  .site-header--opaque .site-header__link a {
+    color: #ffffff; }
 
 .site-header__container {
   display: table;

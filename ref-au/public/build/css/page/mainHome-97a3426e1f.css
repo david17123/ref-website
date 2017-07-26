@@ -69,19 +69,31 @@
 .slice {
   font-family: "Raleway"; }
 
-.slice--fill-height {
-  height: 100vh; }
-
 .slice__content-container {
   position: relative;
   width: 1024px;
   margin: auto; }
 
 .slice--welcome {
-  background-image: url(/img/page/mainHome/HomepageBackground.jpg);
-  background-size: cover;
-  background-position: center;
-  position: relative; }
+  position: relative;
+  height: 100vh; }
+  .slice--welcome .slice__background {
+    background-image: url(/img/page/mainHome/HomepageBackground.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+  .slice--welcome .slice__background-gradient {
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+    /* IE6-9 */
+    width: 100%;
+    height: 100%; }
   .slice--welcome .slice__content-container {
     height: 100%; }
   .slice--welcome .club-identity {
@@ -114,13 +126,61 @@
     text-align: right; }
   .slice--welcome .about-snippet__button-link {
     text-transform: uppercase;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 24px;
+    font-family: "Raleway";
+    font-size: 22px;
+    font-weight: 600;
     display: inline-block;
-    border: solid 2px #000000;
     margin-top: 13px;
-    padding: 3px 5px; }
+    padding: 7px 20px;
+    background-color: #ec1b2e; }
+    .slice--welcome .about-snippet__button-link:hover {
+      background-color: #fa4251; }
+    .slice--welcome .about-snippet__button-link .text {
+      vertical-align: middle; }
+    .slice--welcome .about-snippet__button-link .arrow {
+      border-top: solid 9px transparent;
+      border-bottom: solid 9px transparent;
+      border-left: solid 11px #ffffff;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px; }
+
+.slice--mission-statement {
+  min-height: 100vh; }
+  .slice--mission-statement .slice__header {
+    text-align: center;
+    margin-top: 30px; }
+  .slice--mission-statement .slice__header__pre-header {
+    font-family: "Amiri";
+    font-size: 34px;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center; }
+  .slice--mission-statement .slice__header__header {
+    font-family: "Raleway";
+    border: solid 6px #000000;
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 38px;
+    font-weight: 700;
+    padding: 12px 32px; }
+  .slice--mission-statement .mission-statement {
+    display: table;
+    width: 100%;
+    margin-top: 60px; }
+  .slice--mission-statement .mission-statement__entry {
+    display: table-cell;
+    text-align: center;
+    padding: 0 80px; }
+    .slice--mission-statement .mission-statement__entry img {
+      width: 60px; }
+    .slice--mission-statement .mission-statement__entry p {
+      text-align: center;
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 24px; }
 
 .slice--quote {
   height: 300px;
@@ -128,10 +188,6 @@
   background-position: center;
   background-attachment: fixed;
   box-shadow: #000000 0 20px 20px -20px inset; }
-  .slice--quote.slice--first-quote {
-    background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg); }
-    .slice--quote.slice--first-quote .slice__content-container {
-      width: 500px; }
   .slice--quote.slice--second-quote {
     background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg); }
     .slice--quote.slice--second-quote .slice__content-container {
@@ -156,45 +212,74 @@
     font-size: 16px;
     line-height: 20px; }
 
+.slice--university-slices-header {
+  background-color: #242424; }
+  .slice--university-slices-header .slice__content-container {
+    padding: 40px 0;
+    text-align: center; }
+  .slice--university-slices-header .university-slices-header {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: solid 6px #ffffff;
+    padding: 10px 25px; }
+
 .slice--university {
   height: 250px;
-  border-bottom: solid 1px #a2a2a2;
+  border-bottom: solid 2px #242424;
   overflow: hidden; }
   .slice--university .university {
     display: table;
     table-layout: fixed;
     width: 100%; }
-    .slice--university .university::before {
-      content: '';
-      display: block;
-      width: 100vw;
-      height: 100%;
-      position: absolute;
-      background-color: #f4ede5; }
   .slice--university .university--details-at-left::before {
     left: calc(-100vw + 3px); }
+  .slice--university .university--details-at-left .university__details {
+    text-align: right;
+    padding-right: 40px; }
+    .slice--university .university--details-at-left .university__details::before {
+      border-left: solid 65px #ffffff;
+      left: 0; }
+    .slice--university .university--details-at-left .university__details p {
+      text-align: right; }
   .slice--university .university--details-at-right::before {
     right: calc(-100vw + 3px); }
+  .slice--university .university--details-at-right .university__details {
+    text-align: left;
+    padding-left: 40px; }
+    .slice--university .university--details-at-right .university__details::before {
+      border-right: solid 65px #ffffff;
+      right: 0; }
+    .slice--university .university--details-at-right .university__details p {
+      text-align: left; }
   .slice--university .university__details,
   .slice--university .university__photos,
   .slice--university .university__logo-placeholder {
     display: table-cell;
     vertical-align: middle; }
   .slice--university .university__details {
-    width: 30%;
-    background-color: #f4ede5;
+    width: 35%;
+    background-color: #242424;
     text-align: center; }
+    .slice--university .university__details::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      border-top: solid 250px transparent; }
     .slice--university .university__details p {
-      text-align: center;
       font-family: "Montserrat";
       font-size: 14px;
       line-height: 18px;
-      margin: 17px 0; }
+      margin: 17px 0;
+      color: #ffffff; }
   .slice--university .university__details__visit-button {
     display: inline-block;
-    padding: 10px 80px;
+    padding: 8px 20px;
     font-family: "Raleway";
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
@@ -205,8 +290,8 @@
     .slice--university .university__details__visit-button .text {
       vertical-align: middle; }
     .slice--university .university__details__visit-button .arrow {
-      border-top: solid 9px transparent;
-      border-bottom: solid 9px transparent;
+      border-top: solid 8px transparent;
+      border-bottom: solid 8px transparent;
       border-left: solid 11px #ffffff;
       display: inline-block;
       vertical-align: middle;
@@ -215,13 +300,11 @@
     width: 40%; }
   .slice--university .university__photos__container {
     height: 250px;
-    background-color: #1b1b1b;
+    background-size: cover;
+    background-position: center;
     text-align: center; }
-    .slice--university .university__photos__container img {
-      height: 100%;
-      display: inline; }
   .slice--university .university__logo-placeholder {
-    width: 30%; }
+    width: 25%; }
   .slice--university .slice-cover {
     -webkit-transition: all 400ms ease;
     transition: all 400ms ease;
@@ -235,8 +318,7 @@
       content: '';
       display: block;
       position: absolute;
-      border-top: solid 125px transparent;
-      border-bottom: solid 125px transparent; }
+      border-bottom: solid 250px transparent; }
   .slice--university .slice-cover--open-right {
     right: calc(50% - 50vw); }
     .slice--university .slice-cover--open-right.slice-cover--opened {
@@ -252,10 +334,11 @@
       right: -65px;
       border-left: solid 65px #ffffff; }
   .slice--university .slice-cover--opened {
-    width: 30%; }
+    width: 25%; }
   .slice--university .slice-cover__content-container {
     text-align: center;
     height: 160px;
+    width: 240px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -302,6 +385,32 @@
         border-radius: 100%; }
     .slice--university .slick-dots .slick-active button::before {
       background-color: #ffffff; }
+
+.slice--subscribe {
+  background-color: #242424;
+  padding: 45px 0; }
+  .slice--subscribe .slice__content-container {
+    width: auto;
+    background-image: url("/img/page/mainHome/FirstQuoteBackground.jpg");
+    background-size: cover;
+    background-position: center; }
+  .slice--subscribe .slice__header {
+    display: inline-block;
+    color: #000000;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: solid 6px #000000;
+    padding: 10px 25px; }
+  .slice--subscribe .subscribe-prompt {
+    margin: auto;
+    width: 340px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 22px; }
+  .slice--subscribe .subscribe-prompt--prominent {
+    font-weight: 600;
+    width: 700px; }
 
 .test-slick {
   border: solid 1px black;

@@ -9,7 +9,10 @@
 @endpush
 
 @section('pageContent')
-    <div class="slice slice--fill-height slice--welcome">
+    <div class="slice slice--welcome">
+        <div class="slice__background">
+            <div class="slice__background-gradient"></div>
+        </div>
         <div class="slice__content-container">
             <div class="club-identity">
                 <div class="club-identity__logo" style="background-image: url(img/page/mainHome/REFLogo.png)"></div>
@@ -22,125 +25,110 @@
                     &ldquo;Kami menyebut diri Reformed Injili, karena kami bertheologi Reformed dan bersemangat Injili.
                     Theologi Reformed, kami percaya adalah theologi &hellip;&rdquo;
                 </p>
-                <a href="#" class="about-snippet__button-link">About Us</a>
+                <a href="#" class="about-snippet__button-link">
+                    <span class="text">About Us</span>
+                    <span class="arrow"></span>
+                </a>
             </div>
         </div>
     </div>
 
-    <div class="slice slice--quote slice--first-quote">
+    <div class="slice slice--mission-statement">
         <div class="slice__content-container">
-            <div class="quote">
-                <p class="quote__author">
-                    Kejadian 1:28
-                </p>
-                <p class="quote__content">
-                    &ldquo;Allah memberkati mereka, lalu Allah berfirman kepada mereka: &lsquo;Beranakcuculah dan bertambah banyak;
-                    penuhilah bumi dan taklukkanlah itu, berkuasalah atas ikan-ikan di laut dan burung-burung di udara dan
-                    atas segala binatang yang merayap di bumi.&rsquo;&rdquo;
-                </p>
+            <div class="slice__header">
+                <p class="slice__header__pre-header">Our</p>
+                <p class="slice__header__header">Mission</p>
+            </div>
+            <div class="mission-statement">
+                <div class="mission-statement__entry">
+                    <img src="/img/component/university/MelbourneUniLogo.png" alt="vision">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla pretium blandit leo non luctus. Quisque ut leo erat.
+                        Nullam convallis lectus non massa placerat tempus.
+                        Etiam blandit rhoncus orci ac tincidunt.
+                    </p>
+                </div>
+                <div class="mission-statement__entry">
+                    <img src="/img/component/university/MelbourneUniLogo.png" alt="mission">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla pretium blandit leo non luctus. Quisque ut leo erat.
+                        Nullam convallis lectus non massa placerat tempus.
+                        Etiam blandit rhoncus orci ac tincidunt.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="universities" class="slice slice--university slice--melbourne-uni">
+    <div id="universities" class="slice slice--university-slices-header">
         <div class="slice__content-container">
-            <div class="university university--details-at-left">
-                <div class="university__details">
-                    <p>John Medley Building Room 114<br>Tuesday, 12.30 PM</p>
-                    <p>+61 405 059 466</p>
-                    <a href="{{ route('uniHome', ['univeristyName' => 'unimelb']) }}" class="university__details__visit-button">
-                        <span class="text">Visit</span>
-                        <span class="arrow"></span>
-                    </a>
-                </div>
-                <div class="university__photos">
-                    <div class="university__photos__carousel js-photos-carousel">
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
-                        </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
-                        </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
-                        </div>
-                    </div>
-                </div>
-                <div class="university__logo-placeholder"></div>
-            </div>
-            <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--melbourne-uni">
-                <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/component/university/MelbourneUniLogo.png" alt="Melbourne University Logo" />
-                    <p class="slice-cover__text">University of<br>Melbourne</p>
-                </div>
+            <div class="university-slices-header">
+                Weekly Meetings
             </div>
         </div>
     </div>
-    <div class="slice slice--university slice--monash-uni">
-        <div class="slice__content-container">
-            <div class="university university--details-at-right">
-                <div class="university__logo-placeholder"></div>
-                <div class="university__photos">
-                    <div class="university__photos__carousel js-photos-carousel">
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
+    @for ($i=0; $i<count($universities); $i++)
+        <div class="slice slice--university slice--{{ $universities[$i]->subdomain }}">
+            <div class="slice__content-container">
+                <div class="university university--details-at-{{ $i % 2 === 1 ? 'right' : 'left' }}">
+                    @if ($i % 2 === 1)
+                        <div class="university__logo-placeholder"></div>
+                    @else
+                        <div class="university__details">
+                            <p>{{ $universities[$i]->meeting_place }}<br>{{ $universities[$i]->meeting_time }}</p>
+                            <p>{{ $universities[$i]->contact_person }}</p>
+                            <a href="{{ route('uniHome', ['univeristyName' => $universities[$i]->subdomain]) }}" class="university__details__visit-button">
+                                <span class="text">Visit</span>
+                                <span class="arrow"></span>
+                            </a>
                         </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
-                        </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
+                    @endif
+                    <div class="university__photos">
+                        <div class="university__photos__carousel js-photos-carousel">
+                            @foreach ($universities[$i]->clubPicturesAssetGroup->assets as $clubPicture)
+                                <div class="university__photos__container" style="background-image: url('{{ $clubPicture->getUrl() }}')"></div>
+                            @endforeach
                         </div>
                     </div>
+                    @if ($i % 2 === 1)
+                        <div class="university__details">
+                            <p>{{ $universities[$i]->meeting_place }}<br>{{ $universities[$i]->meeting_time }}</p>
+                            <p>{{ $universities[$i]->contact_person }}</p>
+                            <a href="{{ route('uniHome', ['univeristyName' => $universities[$i]->subdomain]) }}" class="university__details__visit-button">
+                                <span class="text">Visit</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </div>
+                    @else
+                        <div class="university__logo-placeholder"></div>
+                    @endif
                 </div>
-                <div class="university__details">
-                    <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
-                    <p>+61 405 059 466</p>
-                    <a href="{{ route('uniHome', ['univeristyName' => 'monash']) }}" class="university__details__visit-button">
-                        <span class="text">Visit</span>
-                        <span class="arrow"></span>
-                    </a>
-                </div>
-            </div>
-            <div class="slice-cover slice-cover--open-left js-slice-cover-toggle" data-target="slice--monash-uni">
-                <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/component/university/MonashLogo.png" alt="Monash University Logo" />
-                    <p class="slice-cover__text">Monash<br>University</p>
+                <div class="slice-cover slice-cover--open-{{ $i % 2 === 1 ? 'left' : 'right' }} js-slice-cover-toggle" data-target="slice--{{ $universities[$i]->subdomain }}">
+                    <div class="slice-cover__content-container">
+                        <img class="slice-cover__image" src="{{ $universities[$i]->logo->getUrl() }}" alt="{{ $universities[$i]->name }} Logo" />
+                        <p class="slice-cover__text">{{ $universities[$i]->name }}</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="slice slice--university slice--rmit-uni">
+    @endfor
+
+    <div class="slice slice--subscribe">
         <div class="slice__content-container">
-            <div class="university university--details-at-left">
-                <div class="university__details">
-                    <p>Building 46 Room 10<br>Tuesday, 12.30 PM</p>
-                    <p>+61 405 059 466</p>
-                    <a href="{{ route('uniHome', ['univeristyName' => 'rmit']) }}" class="university__details__visit-button">
-                        <span class="text">Visit</span>
-                        <span class="arrow"></span>
-                    </a>
-                </div>
-                <div class="university__photos">
-                    <div class="university__photos__carousel js-photos-carousel">
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni1.jpg" alt="Picture 1" />
-                        </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni2.jpg" alt="Picture 2" />
-                        </div>
-                        <div class="university__photos__container">
-                            <img src="/img/page/mainHome/Uni3.jpg" alt="Picture 3" />
-                        </div>
-                    </div>
-                </div>
-                <div class="university__logo-placeholder"></div>
+            <div class="slice__header">
+                Join Us!
             </div>
-            <div class="slice-cover slice-cover--open-right js-slice-cover-toggle" data-target="slice--rmit-uni">
-                <div class="slice-cover__content-container">
-                    <img class="slice-cover__image" src="/img/component/university/RMITLogo.png" alt="RMIT University Logo" />
-                    <p class="slice-cover__text">RMIT<br>University</p>
-                </div>
+            <p class="subscribe-prompt subscribe-prompt--prominent">
+                We'd like to keep you in touch with our events and content.
+            </p>
+            <p class="subscribe-prompt">
+                Sign up now to our mailing list to receive updates and devotions right in your inbox!
+            </p>
+            <div class="subscribe-form js-subscribe-form">
+                <input type="text" name="email" value="" placeholder="Your Email">
+                <input type="submit" value="Sign Up">
             </div>
         </div>
     </div>

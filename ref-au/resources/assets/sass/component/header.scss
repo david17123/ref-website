@@ -10,8 +10,12 @@
     z-index: $zPageHeader;
 }
 .site-header--opaque {
-    background-color: #ffffff;
+    background-color: $blackBackground;
     @include boxShadow(#949494 0 0 10px);
+
+    .site-header__link a {
+        color: #ffffff;
+    }
 }
 .site-header__container {
     display: table;

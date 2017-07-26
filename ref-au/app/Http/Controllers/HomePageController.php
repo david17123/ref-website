@@ -8,13 +8,22 @@ use App\Http\Requests;
 use App\University;
 use App\SermonSummary;
 
-class UniversityHomePageController extends Controller
+class HomePageController extends Controller
 {
+    public function displayMainHome()
+    {
+        $viewVars = [
+            'universities' => University::all()
+        ];
+
+        return view('page/mainHome', $viewVars);
+    }
+
     /**
      * @param string $university Name of university as used in the sub-domain
      * @return Response
      */
-    public function displayHome(University $university)
+    public function displayUniHome(University $university)
     {
         // TODO Fetch uni specific contents
         $sermonSummaries = SermonSummary::orderBy('created_at', 'desc')

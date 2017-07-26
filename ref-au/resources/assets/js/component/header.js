@@ -1,6 +1,6 @@
 (function header($) {
     window.SiteHeader = {
-        dynamicHeader: true
+        dynamicHeader: false
     };
 
     /**

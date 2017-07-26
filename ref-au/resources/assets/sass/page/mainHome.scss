@@ -6,19 +6,32 @@
 .slice {
     font-family: $primaryFont;
 }
-.slice--fill-height {
-    height: 100vh;
-}
 .slice__content-container {
     position: relative;
     width: 1024px;
     margin: auto;
 }
+
 .slice--welcome {
-    background-image: url(/img/page/mainHome/HomepageBackground.jpg);
-    background-size: cover;
-    background-position: center;
     position: relative;
+    height: 100vh;
+
+    .slice__background {
+        background-image: url(/img/page/mainHome/HomepageBackground.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    .slice__background-gradient {
+        background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+        width: 100%;
+        height: 100%;
+    }
 
     .slice__content-container {
         height: 100%;
@@ -60,29 +73,88 @@
     }
     .about-snippet__button-link {
         text-transform: uppercase;
-        color: #000000;
+        color: #ffffff;
         text-decoration: none;
-        font-size: 24px;
+        font-family: $primaryFont;
+        font-size: 22px;
+        font-weight: 600;
         display: inline-block;
-        border: solid 2px #000000;
         margin-top: 13px;
-        padding: 3px 5px;
+        padding: 7px 20px;
+        background-color: $red;
+
+        &:hover {
+            background-color: $lightRed;
+        }
+
+        .text {
+            vertical-align: middle;
+        }
+
+        .arrow {
+            border-top: solid 9px transparent;
+            border-bottom: solid 9px transparent;
+            border-left: solid 11px #ffffff;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
     }
 }
+
+.slice--mission-statement {
+    min-height: 100vh;
+
+    .slice__header {
+        text-align: center;
+        margin-top: 30px;
+    }
+    .slice__header__pre-header {
+        font-family: $rareHeaderFont;
+        font-size: 34px;
+        font-style: italic;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .slice__header__header {
+        font-family: $primaryFont;
+        border: solid 6px #000000;
+        text-transform: uppercase;
+        display: inline-block;
+        font-size: 38px;
+        font-weight: 700;
+        padding: 12px 32px;
+    }
+
+    .mission-statement {
+        display: table;
+        width: 100%;
+        margin-top: 60px;
+    }
+    .mission-statement__entry {
+        display: table-cell;
+        text-align: center;
+        padding: 0 80px;
+
+        img {
+            width: 60px;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 24px;
+        }
+    }
+}
+
 .slice--quote {
     height: 300px;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     @include boxShadow(#000000 0 20px 20px -20px inset);
-
-    &.slice--first-quote {
-        background-image: url(/img/page/mainHome/FirstQuoteBackground.jpg);
-
-        .slice__content-container {
-            width: 500px;
-        }
-    }
 
     &.slice--second-quote {
         background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg);
@@ -121,31 +193,74 @@
         line-height: 20px;
     }
 }
+
 $universitySliceHeight: 250px;
+$arrow-width: 65px;
+.slice--university-slices-header {
+    background-color: $blackBackground;
+
+    .slice__content-container {
+        padding: 40px 0;
+        text-align: center;
+    }
+
+    .university-slices-header {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: solid 6px #ffffff;
+        padding: 10px 25px;
+    }
+}
 .slice--university {
     height: $universitySliceHeight;
-    border-bottom: solid 1px $borderColor;
+    border-bottom: solid 2px $blackBackground;
     overflow: hidden;
 
     .university {
         display: table;
         table-layout: fixed;
         width: 100%;
-
+    }
+    .university--details-at-left {
         &::before {
-            content: '';
-            display: block;
-            width: 100vw;
-            height: 100%;
-            position: absolute;
-            background-color: $cream;
+            left: calc(-100vw + 3px);
+        }
+
+        .university__details {
+            text-align: right;
+            padding-right: 40px;
+
+            &::before {
+                border-left: solid $arrow-width #ffffff;
+                left: 0;
+            }
+
+            p {
+                text-align: right;
+            }
         }
     }
-    .university--details-at-left::before {
-        left: calc(-100vw + 3px);
-    }
-    .university--details-at-right::before {
-        right: calc(-100vw + 3px);
+    .university--details-at-right {
+        &::before {
+            right: calc(-100vw + 3px);
+        }
+
+        .university__details {
+            text-align: left;
+            padding-left: 40px;
+
+            &::before {
+                border-right: solid $arrow-width #ffffff;
+                right: 0;
+            }
+
+            p {
+                text-align: left;
+            }
+        }
     }
 
     .university__details,
@@ -156,24 +271,31 @@ $universitySliceHeight: 250px;
     }
 
     .university__details {
-        width: 30%;
-        background-color: $cream;
+        width: 35%;
+        background-color: $blackBackground;
         text-align: center;
-        // @include boxShadow(#cdcdcd 0 0 19px inset);
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            border-top: solid $universitySliceHeight transparent;
+        }
 
         p {
-            text-align: center;
             font-family: $secondaryFont;
             font-size: 14px;
             line-height: 18px;
             margin: 17px 0;
+            color: #ffffff;
         }
     }
     .university__details__visit-button {
         display: inline-block;
-        padding: 10px 80px;
+        padding: 8px 20px;
         font-family: $primaryFont;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
         text-decoration: none;
         text-transform: uppercase;
@@ -189,8 +311,8 @@ $universitySliceHeight: 250px;
         }
 
         .arrow {
-            border-top: solid 9px transparent;
-            border-bottom: solid 9px transparent;
+            border-top: solid 8px transparent;
+            border-bottom: solid 8px transparent;
             border-left: solid 11px #ffffff;
             display: inline-block;
             vertical-align: middle;
@@ -203,20 +325,15 @@ $universitySliceHeight: 250px;
     }
     .university__photos__container {
         height: $universitySliceHeight;
-        background-color: #1b1b1b;
+        background-size: cover;
+        background-position: center;
         text-align: center;
-
-        img {
-            height: 100%;
-            display: inline;
-        }
     }
 
     .university__logo-placeholder {
-        width: 30%;
+        width: 25%;
     }
 
-    $arrow-width: 65px;
     .slice-cover {
         @include transition(all 400ms ease);
         position: absolute;
@@ -231,8 +348,7 @@ $universitySliceHeight: 250px;
             content: '';
             display: block;
             position: absolute;
-            border-top: solid 125px transparent;
-            border-bottom: solid 125px transparent;
+            border-bottom: solid $universitySliceHeight transparent;
         }
     }
     .slice-cover--open-right {
@@ -260,12 +376,13 @@ $universitySliceHeight: 250px;
         }
     }
     .slice-cover--opened {
-        width: 30%;
+        width: 25%;
     }
     .slice-cover__content-container {
         text-align: center;
         // display: inline-block;
         height: 160px;
+        width: 240px;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -327,16 +444,75 @@ $universitySliceHeight: 250px;
     }
 }
 
+.slice--subscribe {
+    background-color: $blackBackground;
+    padding: 50px 0;
 
+    .slice__content-container {
+        text-align: center;
+        width: auto;
+        background-image: url('/img/page/mainHome/FirstQuoteBackground.jpg');
+        background-size: cover;
+        background-position: center;
+        padding: 55px 0;
+    }
 
+    .slice__header {
+        display: inline-block;
+        color: #000000;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: solid 6px #000000;
+        padding: 10px 25px;
+        margin-bottom: 40px;
+    }
 
+    .subscribe-prompt {
+        margin: auto;
+        width: 400px;
+        text-align: center;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .subscribe-prompt--prominent {
+        font-weight: 600;
+        width: 550px;
+        margin-bottom: 8px;
+    }
 
+    .subscribe-form {
+        width: 550px;
+        margin: auto;
+        margin-top: 30px;
 
-.test-slick {
-    border: solid 1px black;
-    width: 400px;
-    .slide-entry {
-        height: 100px;
-        background-color: wheat;
+        input[type=text] {
+            @include boxShadow(rgba(0,0,0, 0.4) 0 5px 10px 0);
+            @include boxSizing(border-box);
+            display: block;
+            border: none;
+            width: 100%;
+            font-family: $primaryFont;
+            font-size: 16px;
+            text-align: center;
+            padding: 7px 10px;
+            margin-bottom: 20px;
+        }
+
+        input[type=submit] {
+            background-color: $red;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            display: block;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 22px;
+            padding: 10px 0;
+
+            &:hover {
+                background-color: $lightRed;
+            }
+        }
     }
 }

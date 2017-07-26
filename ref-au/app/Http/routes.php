@@ -30,9 +30,10 @@ Route::auth();
 Route::group([
     'domain' => 'new.ref-au.'.$tld
 ], function () {
-    Route::get('/', ['as' => 'mainHome', function () {
-        return view('page/mainHome');
-    }]);
+    Route::get('/', [
+        'as' => 'mainHome',
+        'uses' => 'HomePageController@displayMainHome'
+    ]);
 });
 
 Route::group([
@@ -210,7 +211,7 @@ Route::group([
 ], function () {
     Route::get('/', [
         'as' => 'uniHome',
-        'uses' => 'UniversityHomePageController@displayHome'
+        'uses' => 'HomePageController@displayUniHome'
     ]);
     Route::get('article/{article}', [
         'as' => 'readArticle',
