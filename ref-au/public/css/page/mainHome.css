@@ -227,7 +227,7 @@
     padding: 10px 25px; }
 
 .slice--university {
-  height: 250px;
+  height: 230px;
   border-bottom: solid 2px #242424;
   overflow: hidden; }
   .slice--university .university {
@@ -240,7 +240,7 @@
     text-align: right;
     padding-right: 40px; }
     .slice--university .university--details-at-left .university__details::before {
-      border-left: solid 65px #ffffff;
+      border-left: solid 45px #ffffff;
       left: 0; }
     .slice--university .university--details-at-left .university__details p {
       text-align: right; }
@@ -250,7 +250,7 @@
     text-align: left;
     padding-left: 40px; }
     .slice--university .university--details-at-right .university__details::before {
-      border-right: solid 65px #ffffff;
+      border-right: solid 45px #ffffff;
       right: 0; }
     .slice--university .university--details-at-right .university__details p {
       text-align: left; }
@@ -260,7 +260,7 @@
     display: table-cell;
     vertical-align: middle; }
   .slice--university .university__details {
-    width: 35%;
+    width: 30%;
     background-color: #242424;
     text-align: center; }
     .slice--university .university__details::before {
@@ -268,7 +268,7 @@
       display: block;
       position: absolute;
       top: 0;
-      border-top: solid 250px transparent; }
+      border-top: solid 230px transparent; }
     .slice--university .university__details p {
       font-family: "Montserrat";
       font-size: 14px;
@@ -299,12 +299,12 @@
   .slice--university .university__photos {
     width: 40%; }
   .slice--university .university__photos__container {
-    height: 250px;
+    height: 230px;
     background-size: cover;
     background-position: center;
     text-align: center; }
   .slice--university .university__logo-placeholder {
-    width: 25%; }
+    width: 30%; }
   .slice--university .slice-cover {
     -webkit-transition: all 400ms ease;
     transition: all 400ms ease;
@@ -318,23 +318,23 @@
       content: '';
       display: block;
       position: absolute;
-      border-bottom: solid 250px transparent; }
+      border-bottom: solid 230px transparent; }
   .slice--university .slice-cover--open-right {
     right: calc(50% - 50vw); }
     .slice--university .slice-cover--open-right.slice-cover--opened {
       right: 0; }
     .slice--university .slice-cover--open-right::before {
-      left: -65px;
-      border-right: solid 65px #ffffff; }
+      left: -45px;
+      border-right: solid 45px #ffffff; }
   .slice--university .slice-cover--open-left {
     left: calc(50% - 50vw); }
     .slice--university .slice-cover--open-left.slice-cover--opened {
       left: 0; }
     .slice--university .slice-cover--open-left::before {
-      right: -65px;
-      border-left: solid 65px #ffffff; }
+      right: -45px;
+      border-left: solid 45px #ffffff; }
   .slice--university .slice-cover--opened {
-    width: 25%; }
+    width: 30%; }
   .slice--university .slice-cover__content-container {
     text-align: center;
     height: 160px;
@@ -351,7 +351,9 @@
     text-transform: uppercase;
     text-align: center;
     font-family: "Montserrat";
-    font-size: 28px; }
+    font-size: 22px;
+    line-height: 24px;
+    margin-top: 10px; }
   .slice--university .slick-dots {
     position: absolute;
     top: 0;

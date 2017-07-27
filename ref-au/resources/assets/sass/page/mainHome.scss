@@ -194,8 +194,8 @@
     }
 }
 
-$universitySliceHeight: 250px;
-$arrow-width: 65px;
+$universitySliceHeight: 230px;
+$arrow-width: 45px;
 .slice--university-slices-header {
     background-color: $blackBackground;
 
@@ -271,7 +271,7 @@ $arrow-width: 65px;
     }
 
     .university__details {
-        width: 35%;
+        width: 30%;
         background-color: $blackBackground;
         text-align: center;
 
@@ -331,7 +331,7 @@ $arrow-width: 65px;
     }
 
     .university__logo-placeholder {
-        width: 25%;
+        width: 30%;
     }
 
     .slice-cover {
@@ -376,7 +376,7 @@ $arrow-width: 65px;
         }
     }
     .slice-cover--opened {
-        width: 25%;
+        width: 30%;
     }
     .slice-cover__content-container {
         text-align: center;
@@ -397,7 +397,9 @@ $arrow-width: 65px;
         text-transform: uppercase;
         text-align:center;
         font-family: $secondaryFont;
-        font-size: 28px;
+        font-size: 22px;
+        line-height: 24px;
+        margin-top: 10px;
     }
 
     .slick-dots {
