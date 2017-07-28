@@ -1,7 +1,12 @@
-@mixin boxShadow($args...) {
-    -webkit-box-shadow: $args;
-    -moz-box-shadow: $args;
-    box-shadow: $args;
+@mixin boxShadow($arg) {
+    -webkit-box-shadow: $arg;
+    -moz-box-shadow: $arg;
+    box-shadow: $arg;
+}
+
+@mixin dropShadow($arg) {
+    -webkit-filter: drop-shadow($arg);
+    filter: drop-shadow($arg);
 }
 
 @mixin transition($args...) {

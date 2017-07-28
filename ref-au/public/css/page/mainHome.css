@@ -346,6 +346,8 @@
     right: 0;
     margin: auto; }
   .slice--university .slice-cover__image {
+    -webkit-filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
     height: 100px; }
   .slice--university .slice-cover__text {
     text-transform: uppercase;
