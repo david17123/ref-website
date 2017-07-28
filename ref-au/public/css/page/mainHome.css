@@ -233,7 +233,8 @@
   .slice--university .university {
     display: table;
     table-layout: fixed;
-    width: 100%; }
+    width: 100%;
+    background-color: #242424; }
   .slice--university .university--details-at-left::before {
     left: calc(-100vw + 3px); }
   .slice--university .university--details-at-left .university__details {
@@ -261,7 +262,6 @@
     vertical-align: middle; }
   .slice--university .university__details {
     width: 30%;
-    background-color: #242424;
     text-align: center; }
     .slice--university .university__details::before {
       content: '';
@@ -394,7 +394,7 @@
   .slice--subscribe .slice__content-container {
     text-align: center;
     width: auto;
-    background-image: url("/img/page/mainHome/FirstQuoteBackground.jpg");
+    background-image: url("/img/page/mainHome/REFSubscribeBackground.jpg");
     background-size: cover;
     background-position: center;
     padding: 55px 0; }
@@ -444,5 +444,68 @@
       padding: 10px 0; }
       .slice--subscribe .subscribe-form input[type=submit]:hover {
         background-color: #fa4251; }
+
+.slice--picquotes {
+  background-color: #242424;
+  overflow: hidden; }
+  .slice--picquotes .slice__content-container {
+    font-size: 0; }
+  .slice--picquotes .slice__header {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: solid 6px #ffffff;
+    padding: 10px 25px;
+    margin-top: 20px;
+    margin-bottom: 40px; }
+  .slice--picquotes .picquotes-container {
+    display: inline-block;
+    position: relative; }
+  .slice--picquotes .picquotes-set {
+    display: inline-block;
+    white-space: nowrap; }
+  .slice--picquotes .picquotes-set--clones {
+    position: absolute;
+    top: 0; }
+  .slice--picquotes .picquotes-column {
+    display: inline-block;
+    width: 200px; }
+  .slice--picquotes .picquotes-column--large {
+    width: 400px; }
+  .slice--picquotes .picquote {
+    background-size: cover;
+    background-position: center;
+    float: left;
+    width: 200px;
+    height: 200px; }
+  .slice--picquotes .picquote--large {
+    width: 400px;
+    height: 400px; }
+  .slice--picquotes .picquotes-link {
+    display: inline-block;
+    float: right;
+    padding: 8px 20px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    font-family: "Raleway";
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ec1b2e; }
+    .slice--picquotes .picquotes-link:hover {
+      background-color: #fa4251; }
+    .slice--picquotes .picquotes-link .text {
+      vertical-align: middle; }
+    .slice--picquotes .picquotes-link .arrow {
+      border-top: solid 8px transparent;
+      border-bottom: solid 8px transparent;
+      border-left: solid 11px #ffffff;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px; }
 
 /*# sourceMappingURL=mainHome.css.map */

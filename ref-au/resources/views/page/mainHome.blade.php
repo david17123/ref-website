@@ -41,7 +41,7 @@
             </div>
             <div class="mission-statement">
                 <div class="mission-statement__entry">
-                    <img src="/img/component/university/MelbourneUniLogo.png" alt="vision">
+                    <img src="/img/page/mainHome/MissionIcon.png" alt="mission">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla pretium blandit leo non luctus. Quisque ut leo erat.
@@ -50,7 +50,7 @@
                     </p>
                 </div>
                 <div class="mission-statement__entry">
-                    <img src="/img/component/university/MelbourneUniLogo.png" alt="mission">
+                    <img src="/img/page/mainHome/VisionIcon.png" alt="vision">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla pretium blandit leo non luctus. Quisque ut leo erat.
@@ -130,6 +130,37 @@
                 <input type="text" name="email" value="" placeholder="Your Email">
                 <input type="submit" value="Sign Up">
             </div>
+        </div>
+    </div>
+
+    <div class="slice slice--picquotes">
+        <div class="slice__content-container">
+            <div class="slice__header">
+                Pic-quotes
+            </div>
+            <div class="picquotes-container js-picquotes-container">
+                <div class="picquotes-set js-picquotes-set">
+                    <div class="picquotes-column picquotes-column--large">
+                        <div class="picquote picquote--large" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                    </div>
+                    <div class="picquotes-column">
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                    </div>
+                    <div class="picquotes-column picquotes-column--large">
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote picquote--large" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="picquotes-link">
+                <span class="text">More</span>
+                <span class="arrow"></span>
+            </a>
         </div>
     </div>
 

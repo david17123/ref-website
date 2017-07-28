@@ -2909,6 +2909,11 @@
     };
 
     $(document).ready(function () {
+
+        ///////////////////////
+        // University slices //
+        ///////////////////////
+
         $('.js-photos-carousel').slick({
             arrows: false,
             dots: true,
@@ -2946,6 +2951,25 @@
             }
         }, 300));
         $(document).trigger('scroll.uniSlice');
+
+
+        /////////////////////
+        // Picquotes slice //
+        /////////////////////
+
+        var $picquotesContainer = $('.js-picquotes-container');
+        var $cloneBase = $('.js-picquotes-set').clone().addClass('picquotes-set--clones');
+        for (var i=0; i<4; i++) { // Duplicate picquotes 2 times to either side
+            var $clone = $cloneBase.clone();
+            var leftOffset = 0;
+            if ( i % 2 === 0 ) {
+                leftOffset = -(i/2 + 1) * 100;
+            } else {
+                leftOffset = ( (i+1)/2 ) * 100;
+            }
+            $clone.css('left', leftOffset+'%');
+            $picquotesContainer.append($clone);
+        }
     });
 })(jQuery);
 
