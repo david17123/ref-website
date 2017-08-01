@@ -1,0 +1,60 @@
+.input-text {
+  box-sizing: border-box;
+  display: inline-block;
+  border: solid 1px #cacaca;
+  outline: none;
+  padding: 5px 10px;
+  height: 37px;
+  font-family: "Raleway"; }
+  .input-text:focus {
+    border-color: #676767; }
+
+.input-text--error {
+  border: solid 1px #ff3434; }
+
+.input-button {
+  border: none;
+  background-color: #00a1ff;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px 20px; }
+  .input-button:hover {
+    background-color: #4cbdff; }
+
+.site-header {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100; }
+
+.site-header--opaque {
+  background-color: #242424;
+  box-shadow: rgba(0, 0, 0, 0.58) 0 0 10px; }
+  .site-header--opaque .site-header__link a {
+    color: #ffffff; }
+
+.site-header__container {
+  display: table;
+  table-layout: fixed;
+  width: 910px;
+  height: 55px;
+  margin: auto; }
+
+.site-header__link {
+  display: table-cell;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  vertical-align: middle;
+  font-size: 15px; }
+  .site-header__link a {
+    color: #000000;
+    text-decoration: none; }
+
+.site-header__site-logo {
+  height: 35px; }
+
+/*# sourceMappingURL=headerOnlyLayout.css.map */

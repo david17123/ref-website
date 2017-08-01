@@ -1,4 +1,4 @@
-@extends('defaultLayout')
+@extends('headerOnlyLayout')
 
 @push('css')
     <link rel="stylesheet" type="text/css" href="{{ elixir('css/page/mainHome.css') }}"/>
@@ -164,18 +164,49 @@
         </div>
     </div>
 
-    <div class="slice slice--quote slice--second-quote">
+    <div class="slice slice--link-to-page">
         <div class="slice__content-container">
-            <div class="quote quote--light">
-                <p class="quote__content">
-                    &ldquo;This Christianity is not a cultural thing. It is not something tha should be just a
-                    small part of your life; it is not something that you do on Sunday&hellip; Christianity is
-                    not about you being just like the world all the time and then coming to church on Sunday.
-                    If that is your Christianity &hellip; you are not Christian.&rdquo;
-                </p>
-                <p class="quote__author">
-                    Paul Washer
-                </p>
+            <p class="slice__pre-header">Our</p>
+            <p class="slice__header">Articles</p>
+            <a class="button-link" href="#">View</a>
+        </div>
+    </div>
+
+    <div class="slice slice--contact-us">
+        <div class="slice__content-container">
+            <div class="slice__header">We want to hear from you</div>
+            <div class="contact-us">
+                <div class="contact-us__details">
+                    <div class="details__title">Contact</div>
+                    <div class="details__block">
+                        <p>552 City Road,</p>
+                        <p>South Melbourne</p>
+                        <p>3205, VIC</p>
+                    </div>
+                    <div class="details__block">
+                        <p>Jordan Frans Adrian</p>
+                        <p>+61 123 456 789</p>
+                        <p>info@ref-au.org</p>
+                    </div>
+                    <div class="details__social-links">
+                        <a class="social-link social-link--facebook" href="#">
+                            <img class="social-link__icon" alt="Facebook" src="/img/component/footer/Facebook.png" />
+                        </a>
+                        <a class="social-link social-link--youtube" href="#">
+                            <img class="social-link__icon" alt="Youtube" src="/img/component/footer/Youtube.png" />
+                        </a>
+                        <a class="social-link social-link--instagram" href="#">
+                            <img class="social-link__icon" alt="Instagram" src="/img/component/footer/Instagram.png" />
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-us__form" action="post">
+                    <input type="text" name="name" value="" placeholder="Name" required>
+                    <input type="email" name="email" value="" placeholder="Email" required>
+                    <input type="text" name="subject" value="" placeholder="Subject" required>
+                    <textarea name="message" rows="8" cols="80" placeholder="Message" required></textarea>
+                    <input type="submit" value="Send">
+                </form>
             </div>
         </div>
     </div>

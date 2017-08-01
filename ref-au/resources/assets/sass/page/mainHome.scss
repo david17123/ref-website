@@ -149,51 +149,6 @@
     }
 }
 
-.slice--quote {
-    height: 300px;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    @include boxShadow(#000000 0 20px 20px -20px inset);
-
-    &.slice--second-quote {
-        background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg);
-
-        .slice__content-container {
-            width: 740px;
-        }
-    }
-
-    .slice__content-container {
-        display: table;
-        height: 100%;
-    }
-
-    .quote {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .quote--light {
-        .quote__author, .quote__content {
-            color: #ffffff;
-            text-shadow: #000000 0 0 3px;
-        }
-    }
-    .quote__author, .quote__content {
-        text-align: center;
-        padding: 8px 0;
-        color: #000000;
-        text-shadow: #ffffff 0 0 3px;
-    }
-    .quote__author {
-        font-size: 18px;
-    }
-    .quote__content {
-        font-size: 16px;
-        line-height: 20px;
-    }
-}
-
 $universitySliceHeight: 230px;
 $arrowWidth: 45px;
 .slice--university-slices-header {
@@ -601,6 +556,144 @@ $picquoteWidth: 200px;
             display: inline-block;
             vertical-align: middle;
             margin-left: 5px;
+        }
+    }
+}
+
+.slice--link-to-page {
+    background-image: url('/img/page/mainHome/REFSubscribeBackground.jpg');
+    background-size: cover;
+    background-position: center;
+
+    .slice__content-container {
+        text-align: center;
+        padding: 100px 0 120px;
+    }
+
+    .slice__pre-header {
+        font-family: $rareHeaderFont;
+        font-style: italic;
+        text-transform: lowercase;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .slice__header {
+        font-family: $primaryFont;
+        font-weight: 800;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    .button-link {
+        font-family: $primaryFont;
+        font-size: 27px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ffffff;
+        display: inline-block;
+        background-color: $red;
+        padding: 9px 40px;
+        margin-top: 35px;
+
+        &:hover {
+            background-color: $lightRed;
+        }
+    }
+}
+
+.slice--contact-us {
+    background-color: $blackBackground;
+
+    .slice__content-container {
+        text-align: center;
+        padding-top: 130px;
+        padding-bottom: 100px;
+    }
+
+    .slice__header {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: solid 6px #ffffff;
+        padding: 16px 32px;
+    }
+
+    .contact-us {
+        width: 522px;
+        margin: auto;
+        margin-top: 60px;
+        display: table;
+        table-layout: fixed;
+    }
+    .contact-us__details {
+        display: table-cell;
+        vertical-align: top;
+        color: #ffffff;
+
+        .details__title {
+            text-transform: uppercase;
+            font-size: 25px;
+            font-weight: 600;
+        }
+        .details__block {
+            padding-top: 5px;
+            padding-bottom: 25px;
+
+            p {
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .details__social-links {
+            .social-link {
+                margin-right: 15px;
+                text-decoration: none;
+            }
+            .social-link__icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+    .contact-us__form {
+        display: table-cell;
+        vertical-align: top;
+        font-size: 0;
+
+        input[type=text],
+        input[type=email],
+        textarea {
+            @include boxSizing(border-box);
+            font-family: $primaryFont;
+            border: none;
+            width: 100%;
+            margin-bottom: 6px;
+            padding: 5px 10px;
+        }
+
+        textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            border: none;
+            background-color: $red;
+            float: right;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-size: 14px;
+            padding: 5px 30px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $lightRed;
+            }
         }
     }
 }

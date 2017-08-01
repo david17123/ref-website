@@ -182,36 +182,6 @@
       font-size: 18px;
       line-height: 24px; }
 
-.slice--quote {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  box-shadow: #000000 0 20px 20px -20px inset; }
-  .slice--quote.slice--second-quote {
-    background-image: url(/img/page/mainHome/SecondQuoteBackground.jpg); }
-    .slice--quote.slice--second-quote .slice__content-container {
-      width: 740px; }
-  .slice--quote .slice__content-container {
-    display: table;
-    height: 100%; }
-  .slice--quote .quote {
-    display: table-cell;
-    vertical-align: middle; }
-  .slice--quote .quote--light .quote__author, .slice--quote .quote--light .quote__content {
-    color: #ffffff;
-    text-shadow: #000000 0 0 3px; }
-  .slice--quote .quote__author, .slice--quote .quote__content {
-    text-align: center;
-    padding: 8px 0;
-    color: #000000;
-    text-shadow: #ffffff 0 0 3px; }
-  .slice--quote .quote__author {
-    font-size: 18px; }
-  .slice--quote .quote__content {
-    font-size: 16px;
-    line-height: 20px; }
-
 .slice--university-slices-header {
   background-color: #242424; }
   .slice--university-slices-header .slice__content-container {
@@ -509,5 +479,106 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 5px; }
+
+.slice--link-to-page {
+  background-image: url("/img/page/mainHome/REFSubscribeBackground.jpg");
+  background-size: cover;
+  background-position: center; }
+  .slice--link-to-page .slice__content-container {
+    text-align: center;
+    padding: 100px 0 120px; }
+  .slice--link-to-page .slice__pre-header {
+    font-family: "Amiri";
+    font-style: italic;
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 40px; }
+  .slice--link-to-page .slice__header {
+    font-family: "Raleway";
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40px; }
+  .slice--link-to-page .button-link {
+    font-family: "Raleway";
+    font-size: 27px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #ffffff;
+    display: inline-block;
+    background-color: #ec1b2e;
+    padding: 9px 40px;
+    margin-top: 35px; }
+    .slice--link-to-page .button-link:hover {
+      background-color: #fa4251; }
+
+.slice--contact-us {
+  background-color: #242424; }
+  .slice--contact-us .slice__content-container {
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 100px; }
+  .slice--contact-us .slice__header {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: solid 6px #ffffff;
+    padding: 16px 32px; }
+  .slice--contact-us .contact-us {
+    width: 522px;
+    margin: auto;
+    margin-top: 60px;
+    display: table;
+    table-layout: fixed; }
+  .slice--contact-us .contact-us__details {
+    display: table-cell;
+    vertical-align: top;
+    color: #ffffff; }
+    .slice--contact-us .contact-us__details .details__title {
+      text-transform: uppercase;
+      font-size: 25px;
+      font-weight: 600; }
+    .slice--contact-us .contact-us__details .details__block {
+      padding-top: 5px;
+      padding-bottom: 25px; }
+      .slice--contact-us .contact-us__details .details__block p {
+        font-size: 14px;
+        line-height: 20px; }
+    .slice--contact-us .contact-us__details .details__social-links .social-link {
+      margin-right: 15px;
+      text-decoration: none; }
+    .slice--contact-us .contact-us__details .details__social-links .social-link__icon {
+      width: 28px;
+      height: 28px; }
+  .slice--contact-us .contact-us__form {
+    display: table-cell;
+    vertical-align: top;
+    font-size: 0; }
+    .slice--contact-us .contact-us__form input[type=text],
+    .slice--contact-us .contact-us__form input[type=email],
+    .slice--contact-us .contact-us__form textarea {
+      box-sizing: border-box;
+      font-family: "Raleway";
+      border: none;
+      width: 100%;
+      margin-bottom: 6px;
+      padding: 5px 10px; }
+    .slice--contact-us .contact-us__form textarea {
+      height: 130px;
+      resize: vertical; }
+    .slice--contact-us .contact-us__form input[type=submit] {
+      border: none;
+      background-color: #ec1b2e;
+      float: right;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-size: 14px;
+      padding: 5px 30px;
+      cursor: pointer; }
+      .slice--contact-us .contact-us__form input[type=submit]:hover {
+        background-color: #fa4251; }
 
 /*# sourceMappingURL=mainHome.css.map */

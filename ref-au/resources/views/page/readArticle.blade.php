@@ -42,46 +42,6 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="other-articles__entry">
-                        <div class="other-articles__entry__background">
-                            <div class="background-image" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
-                            <div class="background-shadow"></div>
-                        </div>
-                        <div class="other-articles__entry__positioner">
-                            <h1 class="other-articles__entry__title">Pokemon Go Culture</h1>
-                            <span class="other-articles__entry__read-button">Read</span>
-                        </div>
-                    </div>
-                    <div class="other-articles__entry">
-                        <div class="other-articles__entry__background">
-                            <div class="background-image" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
-                            <div class="background-shadow"></div>
-                        </div>
-                        <div class="other-articles__entry__positioner">
-                            <h1 class="other-articles__entry__title">Pokemon Go Culture</h1>
-                            <span class="other-articles__entry__read-button">Read</span>
-                        </div>
-                    </div>
-                    <div class="other-articles__entry">
-                        <div class="other-articles__entry__background">
-                            <div class="background-image" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
-                            <div class="background-shadow"></div>
-                        </div>
-                        <div class="other-articles__entry__positioner">
-                            <h1 class="other-articles__entry__title">Pokemon Go Culture</h1>
-                            <span class="other-articles__entry__read-button">Read</span>
-                        </div>
-                    </div>
-                    <div class="other-articles__entry">
-                        <div class="other-articles__entry__background">
-                            <div class="background-image" style="background-image: url(http://www.w3schools.com/css/img_fjords.jpg)"></div>
-                            <div class="background-shadow"></div>
-                        </div>
-                        <div class="other-articles__entry__positioner">
-                            <h1 class="other-articles__entry__title">Pokemon Go Culture</h1>
-                            <span class="other-articles__entry__read-button">Read</span>
-                        </div>
-                    </div> --}}
                     <a href="{{ route('articlesList', ['uniUrl' => $uniUrl]) }}" class="other-articles__view-more">
                         View More
                     </a>

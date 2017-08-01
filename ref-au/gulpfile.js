@@ -28,6 +28,14 @@ elixir(function(mix) {
         'component/footer.js'
     ], 'public/js/defaultLayout.js');
 
+    mix.sass([
+        'component/inputs.scss',
+        'component/header.scss'
+    ], 'public/css/headerOnlyLayout.css');
+    mix.scripts([
+        'component/header.js'
+    ], 'public/js/headerOnlyLayout.js');
+
     // mix.sass('adminLayout.scss', 'public/css/adminLayout.css');
     // mix.scripts([
     // ], 'public/js/adminLayout.js');
