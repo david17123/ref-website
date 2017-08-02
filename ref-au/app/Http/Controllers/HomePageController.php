@@ -33,7 +33,7 @@ class HomePageController extends Controller
         }
         $randomPicquotes = Picquote::where('published', '=', true)
                                 ->inRandomOrder()
-                                ->take(4*2)
+                                ->take(9)
                                 ->get();
         $randomPicquotesCount = 0;
         foreach ($randomPicquotes as $picquote)
