@@ -11,7 +11,7 @@
         </div>
         <div class="site-header__link">
             <a class="js-site-header-link" href="@if ($uniUrl) {{ route('uniHome', ['uniUrl' => $uniUrl]) }} @else {{ route('mainHome') }} @endif">
-                <img class="site-header__site-logo" src="{{ $uniLogo or '/img/component/university/RMITLogo.png' }}" alt="Site logo" />
+                <img class="site-header__site-logo" src="{{ $uniLogo or '/img/component/university/RMITLogoWhite.png' }}" alt="Site logo" />
             </a>
         </div>
         <div class="site-header__link">

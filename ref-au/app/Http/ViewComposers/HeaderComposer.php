@@ -33,20 +33,18 @@ class HeaderComposer
      */
     public function compose(View $view)
     {
-        if ($this->route->hasParameter('universityName'))
+        if ($this->route->hasParameter('uniUrl'))
         {
-            $uniName = strtolower( $this->route->getParameter('universityName')->name );
+            $uniName = strtolower( $this->route->getParameter('uniUrl')->name );
             $university = University::where('name', $uniName)->first();
             if ( $university )
             {
-                // TODO Do this properly
-                // $view->with('uniLogo', $university->siteLogo());
-                $view->with('uniLogo', '/img/component/university/MonashLogo.png');
+                $view->with('uniLogo', $university->logo->getUrl());
             }
         }
         else
         {
-            $view->with('uniLogo', '/img/page/mainHome/REFLogo.png');
+            $view->with('uniLogo', '/img/page/mainHome/REFLogoWhite.png');
         }
     }
 }
