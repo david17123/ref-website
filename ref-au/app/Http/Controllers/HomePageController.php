@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\University;
 use App\SermonSummary;
+use App\Picquote;
 use App\HelperClasses\SitePageService;
 
 class HomePageController extends Controller
@@ -20,8 +21,38 @@ class HomePageController extends Controller
 
     public function displayMainHome()
     {
+        // Get picquotes: 5 latest, 4 random
+        $picquotes = Picquote::where('published', '=', true)
+                                ->orderBy('created_at', 'desc')
+                                ->take(5)
+                                ->get();
+        $takenPicquotes = [];
+        foreach ($picquotes as $picquote)
+        {
+            $takenPicquotes[$picquote->id] = true;
+        }
+        $randomPicquotes = Picquote::where('published', '=', true)
+                                ->inRandomOrder()
+                                ->take(4*2)
+                                ->get();
+        $randomPicquotesCount = 0;
+        foreach ($randomPicquotes as $picquote)
+        {
+            if ( isset($takenPicquotes[$picquote->id]) )
+            {
+                continue;
+            }
+            $picquotes[] = $picquote;
+            $randomPicquotesCount++;
+            if ($randomPicquotesCount >= 4)
+            {
+                break;
+            }
+        }
+
         $viewVars = [
-            'universities' => University::where('published', '=', true)->get()
+            'universities' => University::where('published', '=', true)->get(),
+            'picquotes' => $picquotes
         ];
 
         $this->sitePage->setJavascriptVar('subscribeAjaxUrl', route('subscribeAjax'));

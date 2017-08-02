@@ -145,19 +145,19 @@
             <div class="picquotes-container js-picquotes-container">
                 <div class="picquotes-set js-picquotes-set">
                     <div class="picquotes-column picquotes-column--large">
-                        <div class="picquote picquote--large" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote picquote--large" style="background-image: url('{{ $picquotes[0]->image->getUrl() }}')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[1]->image->getUrl() }}')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[2]->image->getUrl() }}')"></div>
                     </div>
                     <div class="picquotes-column">
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[3]->image->getUrl() }}')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[4]->image->getUrl() }}')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[5]->image->getUrl() }}')"></div>
                     </div>
                     <div class="picquotes-column picquotes-column--large">
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
-                        <div class="picquote picquote--large" style="background-image: url('https://pbs.twimg.com/media/B_xWvOwXAAAzeLK.jpg')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[6]->image->getUrl() }}')"></div>
+                        <div class="picquote" style="background-image: url('{{ $picquotes[7]->image->getUrl() }}')"></div>
+                        <div class="picquote picquote--large" style="background-image: url('{{ $picquotes[8]->image->getUrl() }}')"></div>
                     </div>
                 </div>
             </div>
