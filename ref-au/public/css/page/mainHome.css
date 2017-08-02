@@ -160,7 +160,7 @@
     text-align: center; }
   .slice--mission-statement .slice__header__header {
     font-family: "Raleway";
-    border: solid 6px #000000;
+    border: solid 4px #000000;
     text-transform: uppercase;
     display: inline-block;
     font-size: 38px;
@@ -193,7 +193,7 @@
     font-size: 26px;
     font-weight: 700;
     text-transform: uppercase;
-    border: solid 6px #ffffff;
+    border: solid 4px #ffffff;
     padding: 10px 25px; }
 
 .slice--university {
@@ -376,7 +376,7 @@
     font-size: 26px;
     font-weight: 700;
     text-transform: uppercase;
-    border: solid 6px #000000;
+    border: solid 4px #000000;
     padding: 10px 25px;
     margin-bottom: 40px; }
   .slice--subscribe .subscribe-prompt {
@@ -414,8 +414,24 @@
       text-transform: uppercase;
       font-size: 22px;
       padding: 10px 0; }
-      .slice--subscribe .subscribe-form input[type=submit]:hover {
+      .slice--subscribe .subscribe-form input[type=submit]:hover:not([disabled]) {
         background-color: #fa4251; }
+      .slice--subscribe .subscribe-form input[type=submit][disabled] {
+        background-color: #cacaca;
+        cursor: default;
+        pointer-events: none; }
+  .slice--subscribe .subscribe-success {
+    display: none;
+    width: 550px;
+    margin: auto;
+    text-align: center;
+    background-color: #0cab0c;
+    color: #ffffff;
+    font-size: 22px;
+    padding: 10px 0;
+    margin-top: 30px; }
+    .slice--subscribe .subscribe-success > * {
+      vertical-align: middle; }
 
 .slice--picquotes {
   background-color: #242424;
@@ -428,7 +444,7 @@
     font-size: 26px;
     font-weight: 700;
     text-transform: uppercase;
-    border: solid 6px #ffffff;
+    border: solid 4px #ffffff;
     padding: 10px 25px;
     margin-top: 20px;
     margin-bottom: 40px; }
@@ -525,7 +541,7 @@
     font-size: 30px;
     font-weight: 700;
     text-transform: uppercase;
-    border: solid 6px #ffffff;
+    border: solid 4px #ffffff;
     padding: 16px 32px; }
   .slice--contact-us .contact-us {
     width: 522px;
@@ -553,23 +569,24 @@
     .slice--contact-us .contact-us__details .details__social-links .social-link__icon {
       width: 28px;
       height: 28px; }
-  .slice--contact-us .contact-us__form {
+  .slice--contact-us .contact-us__form-container {
     display: table-cell;
-    vertical-align: top;
-    font-size: 0; }
-    .slice--contact-us .contact-us__form input[type=text],
-    .slice--contact-us .contact-us__form input[type=email],
-    .slice--contact-us .contact-us__form textarea {
+    vertical-align: top; }
+    .slice--contact-us .contact-us__form-container .contact-us__form {
+      font-size: 0; }
+    .slice--contact-us .contact-us__form-container input[type=text],
+    .slice--contact-us .contact-us__form-container input[type=email],
+    .slice--contact-us .contact-us__form-container textarea {
       box-sizing: border-box;
       font-family: "Raleway";
       border: none;
       width: 100%;
       margin-bottom: 6px;
       padding: 5px 10px; }
-    .slice--contact-us .contact-us__form textarea {
+    .slice--contact-us .contact-us__form-container textarea {
       height: 130px;
       resize: vertical; }
-    .slice--contact-us .contact-us__form input[type=submit] {
+    .slice--contact-us .contact-us__form-container input[type=submit] {
       border: none;
       background-color: #ec1b2e;
       float: right;
@@ -578,7 +595,15 @@
       font-size: 14px;
       padding: 5px 30px;
       cursor: pointer; }
-      .slice--contact-us .contact-us__form input[type=submit]:hover {
+      .slice--contact-us .contact-us__form-container input[type=submit]:hover:not([disabled]) {
         background-color: #fa4251; }
+      .slice--contact-us .contact-us__form-container input[type=submit][disabled] {
+        background-color: #cacaca;
+        cursor: default;
+        pointer-events: none; }
+    .slice--contact-us .contact-us__form-container .contact-us__contact-success {
+      display: none;
+      color: #ffffff;
+      font-size: 18px; }
 
 /*# sourceMappingURL=mainHome.css.map */

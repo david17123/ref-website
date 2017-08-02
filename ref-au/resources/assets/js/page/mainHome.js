@@ -77,5 +77,72 @@
             $clone.css('left', leftOffset+'%');
             $picquotesContainer.append($clone);
         }
+
+
+        /////////////////////
+        // Subscribe slice //
+        /////////////////////
+
+        var $subscribeForm = $('.js-subscribe-form');
+        var $subscribeSuccess = $('.js-subscribe-success');
+
+        $subscribeForm.on('submit', function (event) {
+            event.preventDefault();
+            $subscribeForm.find('input').prop('disabled', true);
+
+            $.ajax({
+                url: PageVars.subscribeAjaxUrl,
+                method: 'POST',
+                data: {
+                    email: $subscribeForm.find('input[name=email]').val(),
+                    _token: PageVars.csrfToken
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.subscribed) {
+                        $subscribeSuccess.css('display', 'block');
+                        $subscribeForm.css('display', 'none');
+                    }
+                },
+                complete: function () {
+                    $subscribeForm.find('input').prop('disabled', false);
+                }
+            });
+        });
+
+
+        //////////////////////
+        // Contact Us slice //
+        //////////////////////
+
+        var $contactUsForm = $('.js-contact-us-form');
+        var $contactUsSuccess = $('.js-contact-us-success');
+
+        $contactUsForm.on('submit', function (event) {
+            event.preventDefault();
+            $contactUsForm.find('input, textarea').prop('disabled', true);
+
+            $.ajax({
+                url: PageVars.contactUsAjaxUrl,
+                method: 'POST',
+                data: {
+                    name: $contactUsForm.find('input[name=name]').val(),
+                    email: $contactUsForm.find('input[name=email]').val(),
+                    subject: $contactUsForm.find('input[name=subject]').val(),
+                    message: $contactUsForm.find('textarea[name=message]').val(),
+                    _token: PageVars.csrfToken
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success) {
+                        $contactUsSuccess.css('display', 'block');
+                        $contactUsForm.css('display', 'none');
+                    }
+                },
+                complete: function () {
+                    $contactUsForm.find('input, textarea').prop('disabled', false);
+                }
+            });
+        });
     });
 })(jQuery);

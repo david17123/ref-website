@@ -7,14 +7,26 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\University;
 use App\SermonSummary;
+use App\HelperClasses\SitePageService;
 
 class HomePageController extends Controller
 {
+    private $sitePage;
+
+    public function __construct(SitePageService $sitePage)
+    {
+        $this->sitePage = $sitePage;
+    }
+
     public function displayMainHome()
     {
         $viewVars = [
             'universities' => University::where('published', '=', true)->get()
         ];
+
+        $this->sitePage->setJavascriptVar('subscribeAjaxUrl', route('subscribeAjax'));
+        $this->sitePage->setJavascriptVar('contactUsAjaxUrl', route('contactUsAjax'));
+        $this->sitePage->setJavascriptVar('csrfToken', csrf_token());
 
         return view('page/mainHome', $viewVars);
     }

@@ -118,7 +118,7 @@
     }
     .slice__header__header {
         font-family: $primaryFont;
-        border: solid 6px #000000;
+        border: solid 4px #000000;
         text-transform: uppercase;
         display: inline-block;
         font-size: 38px;
@@ -165,7 +165,7 @@ $arrowWidth: 45px;
         font-size: 26px;
         font-weight: 700;
         text-transform: uppercase;
-        border: solid 6px #ffffff;
+        border: solid 4px #ffffff;
         padding: 10px 25px;
     }
 }
@@ -421,7 +421,7 @@ $arrowWidth: 45px;
         font-size: 26px;
         font-weight: 700;
         text-transform: uppercase;
-        border: solid 6px #000000;
+        border: solid 4px #000000;
         padding: 10px 25px;
         margin-bottom: 40px;
     }
@@ -468,9 +468,31 @@ $arrowWidth: 45px;
             font-size: 22px;
             padding: 10px 0;
 
-            &:hover {
+            &:hover:not([disabled]) {
                 background-color: $lightRed;
             }
+
+            &[disabled] {
+                background-color: $disabledGrey;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+    }
+
+    .subscribe-success {
+        display: none;
+        width: 550px;
+        margin: auto;
+        text-align: center;
+        background-color: $green;
+        color: #ffffff;
+        font-size: 22px;
+        padding: 10px 0;
+        margin-top: 30px;
+
+        > * {
+            vertical-align: middle;
         }
     }
 }
@@ -490,7 +512,7 @@ $picquoteWidth: 200px;
         font-size: 26px;
         font-weight: 700;
         text-transform: uppercase;
-        border: solid 6px #ffffff;
+        border: solid 4px #ffffff;
         padding: 10px 25px;
         margin-top: 20px;
         margin-bottom: 40px;
@@ -619,7 +641,7 @@ $picquoteWidth: 200px;
         font-size: 30px;
         font-weight: 700;
         text-transform: uppercase;
-        border: solid 6px #ffffff;
+        border: solid 4px #ffffff;
         padding: 16px 32px;
     }
 
@@ -660,10 +682,13 @@ $picquoteWidth: 200px;
             }
         }
     }
-    .contact-us__form {
+    .contact-us__form-container {
         display: table-cell;
         vertical-align: top;
-        font-size: 0;
+
+        .contact-us__form {
+            font-size: 0;
+        }
 
         input[type=text],
         input[type=email],
@@ -691,9 +716,21 @@ $picquoteWidth: 200px;
             padding: 5px 30px;
             cursor: pointer;
 
-            &:hover {
+            &:hover:not([disabled]) {
                 background-color: $lightRed;
             }
+
+            &[disabled] {
+                background-color: $disabledGrey;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+
+        .contact-us__contact-success {
+            display: none;
+            color: #ffffff;
+            font-size: 18px;
         }
     }
 }

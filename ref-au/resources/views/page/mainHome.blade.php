@@ -126,9 +126,13 @@
             <p class="subscribe-prompt">
                 Sign up now to our mailing list to receive updates and devotions right in your inbox!
             </p>
-            <div class="subscribe-form js-subscribe-form">
+            <form class="subscribe-form js-subscribe-form" method="POST">
                 <input type="text" name="email" value="" placeholder="Your Email">
                 <input type="submit" value="Sign Up">
+            </form>
+            <div class="subscribe-success js-subscribe-success">
+                <i class="material-icons">&#xE86C;</i>
+                <span class="text">Subscribed!</span>
             </div>
         </div>
     </div>
@@ -200,13 +204,18 @@
                         </a>
                     </div>
                 </div>
-                <form class="contact-us__form" action="post">
-                    <input type="text" name="name" value="" placeholder="Name" required>
-                    <input type="email" name="email" value="" placeholder="Email" required>
-                    <input type="text" name="subject" value="" placeholder="Subject" required>
-                    <textarea name="message" rows="8" cols="80" placeholder="Message" required></textarea>
-                    <input type="submit" value="Send">
-                </form>
+                <div class="contact-us__form-container">
+                    <form class="contact-us__form js-contact-us-form" method="POST">
+                        <input type="text" name="name" value="" placeholder="Name" required>
+                        <input type="email" name="email" value="" placeholder="Email" required>
+                        <input type="text" name="subject" value="" placeholder="Subject" required>
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <input type="submit" value="Send">
+                    </form>
+                    <div class="contact-us__contact-success js-contact-us-success">
+                        <p>Thanks for contacting us!</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

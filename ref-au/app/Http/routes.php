@@ -34,6 +34,16 @@ Route::group([
         'as' => 'mainHome',
         'uses' => 'HomePageController@displayMainHome'
     ]);
+
+    Route::post('ajax/subscribe', [
+        'as' => 'subscribeAjax',
+        'uses' => 'AjaxController@subscribe'
+    ]);
+
+    Route::post('ajax/contact', [
+        'as' => 'contactUsAjax',
+        'uses' => 'AjaxController@contact'
+    ]);
 });
 
 Route::group([
