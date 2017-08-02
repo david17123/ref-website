@@ -21,7 +21,7 @@
             <a class="js-site-header-link" href="{{ route('sermonSummariesList', ['uniUrl' => $uniUrl]) }}">Sermons</a>
         </div>
         <div class="site-header__link">
-            <a class="js-site-header-link" href="#">Contact Us</a>
+            <a class="js-site-header-link" href="{{ route('mainHome') }}/#contact-us">Contact Us</a>
         </div>
     </div>
 </div>

@@ -176,7 +176,7 @@
         </div>
     </div>
 
-    <div class="slice slice--contact-us">
+    <div id="contact-us" class="slice slice--contact-us">
         <div class="slice__content-container">
             <div class="slice__header">We want to hear from you</div>
             <div class="contact-us">
