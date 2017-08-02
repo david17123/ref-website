@@ -30,7 +30,7 @@
                         'name' => 'subtitle',
                         'textName' => 'Subtitle',
                         'defaultValue' => isset($sermonSummary) ? $sermonSummary->subtitle : '',
-                        'required' => true
+                        'required' => false
                     ])
                     @include('component.forms.simple2ColumnsTextarea', [
                         'name' => 'content',

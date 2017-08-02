@@ -75,6 +75,7 @@ class HomePageController extends Controller
 
         // TODO Fetch uni specific contents
         $sermonSummaries = SermonSummary::where('sermon_location_id', '=', $university->id)
+                                ->where('published', '=', true)
                                 ->orderBy('created_at', 'desc')
                                 ->take(4)
                                 ->get();
