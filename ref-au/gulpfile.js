@@ -77,6 +77,11 @@ elixir(function(mix) {
         'page/readSermonSummary.scss'
     ], 'public/css/page/readSermonSummary.css');
 
+    mix.sass([
+        'lib/magnificPopup/magnific-popup.css',
+        'page/picquotesList.scss'
+    ], 'public/css/page/picquotesList.css');
+
 
 
     // Page specific JS
@@ -107,6 +112,11 @@ elixir(function(mix) {
         'lib/marked/marked.js',
         'page/readSermonSummary.js'
     ], 'public/js/page/readSermonSummary.js');
+
+    mix.scripts([
+        'lib/magnificPopup/jquery.magnific-popup.js',
+        'page/picquotesList.js'
+    ], 'public/js/page/picquotesList.js');
 
 
 

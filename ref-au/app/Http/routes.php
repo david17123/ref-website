@@ -42,6 +42,10 @@ Route::group([
         'as' => 'articlesList',
         'uses' => 'ArticlePageController@listArticles'
     ]);
+    Route::get('picquotes', [
+        'as' => 'picquotesList',
+        'uses' => 'PicquotePageController@listPicquotes'
+    ]);
 
     Route::post('ajax/subscribe', [
         'as' => 'subscribeAjax',

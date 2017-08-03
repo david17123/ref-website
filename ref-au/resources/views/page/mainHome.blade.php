@@ -161,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="picquotes-link">
+            <a href="{{ route('picquotesList') }}" class="picquotes-link">
                 <span class="text">More</span>
                 <span class="arrow"></span>
             </a>

@@ -1,0 +1,35 @@
+@import "../component/variables";
+@import "../component/mixins";
+
+body {
+    background-color: $cream;
+}
+
+.page-content-container {
+    width: 1024px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.page-header {
+    font-family: $primaryFont;
+    text-transform: uppercase;
+    font-size: 40px;
+    text-align: center;
+}
+
+.picquotes-container {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+.picquote {
+    display: inline-block;
+    width: 320px;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 5px;
+    margin-bottom: 10px;
+}
