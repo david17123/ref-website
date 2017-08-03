@@ -4,13 +4,13 @@
             <a class="js-site-header-link" href="#">About US</a>
         </div>
         <div class="site-header__link">
-            <a class="js-site-header-link" href="{{ route('articlesList', ['uniUrl' => $uniUrl]) }}">Article</a>
+            <a class="js-site-header-link" href="{{ $uniUrl ? route('articlesListUni', ['uniUrl' => $uniUrl]) : route('articlesList') }}">Article</a>
         </div>
         <div class="site-header__link">
             <a class="js-site-header-link" href="#">Event</a>
         </div>
         <div class="site-header__link">
-            <a class="js-site-header-link" href="@if ($uniUrl) {{ route('uniHome', ['uniUrl' => $uniUrl]) }} @else {{ route('mainHome') }} @endif">
+            <a class="js-site-header-link" href="{{ $uniUrl ? route('uniHome', ['uniUrl' => $uniUrl]) : route('mainHome') }}">
                 <img class="site-header__site-logo" src="{{ $uniLogo or '/img/component/university/RMITLogoWhite.png' }}" alt="Site logo" />
             </a>
         </div>

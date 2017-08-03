@@ -1,7 +1,7 @@
 <!--
 @foreach ($articles as $i=>$article)
 --><div class="article-list-entry @if ($i === 0) article-list-entry--highlight @endif ">
-        <a href="{{ route('readArticle', ['uniUrl' => $uniUrl, 'article' => $article->id]) }}" class="article-list-entry__link-overlay"></a>
+        <a href="{{ $uniUrl ? route('readArticleUni', ['uniUrl' => $uniUrl, 'article' => $article->id]) : route('readArticle', ['article' => $article->id]) }}" class="article-list-entry__link-overlay"></a>
         @if ($i === 0)
             <div class="article-list-entry__flag">
                 Recent

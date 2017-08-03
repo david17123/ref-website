@@ -172,7 +172,7 @@
         <div class="slice__content-container">
             <p class="slice__pre-header">Our</p>
             <p class="slice__header">Articles</p>
-            <a class="button-link" href="#">View</a>
+            <a class="button-link" href="{{ route('articlesList') }}">View</a>
         </div>
     </div>
 

@@ -34,12 +34,19 @@ Route::group([
         'as' => 'mainHome',
         'uses' => 'HomePageController@displayMainHome'
     ]);
+    Route::get('article/{article}', [
+        'as' => 'readArticle',
+        'uses' => 'ArticlePageController@readArticle'
+    ]);
+    Route::get('article', [
+        'as' => 'articlesList',
+        'uses' => 'ArticlePageController@listArticles'
+    ]);
 
     Route::post('ajax/subscribe', [
         'as' => 'subscribeAjax',
         'uses' => 'AjaxController@subscribe'
     ]);
-
     Route::post('ajax/contact', [
         'as' => 'contactUsAjax',
         'uses' => 'AjaxController@contact'
@@ -224,12 +231,12 @@ Route::group([
         'uses' => 'HomePageController@displayUniHome'
     ]);
     Route::get('article/{article}', [
-        'as' => 'readArticle',
-        'uses' => 'ArticlePageController@readArticle'
+        'as' => 'readArticleUni',
+        'uses' => 'ArticlePageController@readArticleUni'
     ]);
     Route::get('article', [
-        'as' => 'articlesList',
-        'uses' => 'ArticlePageController@listArticles'
+        'as' => 'articlesListUni',
+        'uses' => 'ArticlePageController@listArticlesUni'
     ]);
     Route::get('sermon/{sermonSummary}', [
         'as' => 'readSermonSummary',

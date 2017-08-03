@@ -18,7 +18,7 @@ class ArticlePageController extends Controller
         $this->sitePage = $sitePage;
     }
 
-    public function listArticles(University $university)
+    public function listArticles()
     {
         $viewVars = [
             'articles' => Article::where('published', '=', true)
@@ -29,7 +29,7 @@ class ArticlePageController extends Controller
         return view('page/articlesList', $viewVars);
     }
 
-    public function readArticle(University $university, Article $article)
+    public function readArticle(Article $article)
     {
         if ( !$article->published )
         {
@@ -52,5 +52,15 @@ class ArticlePageController extends Controller
         $this->sitePage->setJavascriptVar('articleContent', $article->content);
 
         return view('page/readArticle', $viewVars);
+    }
+
+    public function listArticlesUni(University $university)
+    {
+        return $this->listArticles();
+    }
+
+    public function readArticleUni(University $university, Article $article)
+    {
+        return $this->readArticle($article);
     }
 }

@@ -31,7 +31,7 @@
                     <h1 class="articles__heading">Articles</h1>
                     @foreach ($articles as $article)
                         <div class="articles__entry">
-                            <a href="{{ route('readArticle', ['uniUrl' => $uniUrl, 'article' => $article->id]) }}" class="articles__entry__link-overlay"></a>
+                            <a href="{{ $uniUrl ? route('readArticleUni', ['uniUrl' => $uniUrl, 'article' => $article->id]) : route('readArticle', ['article' => $article->id]) }}" class="articles__entry__link-overlay"></a>
                             <div class="articles__entry__background">
                                 <div class="background-image" style="background-image: url({{ is_null($article->heroImage) ? '' : $article->heroImage->getUrl() }})"></div>
                                 <div class="background-shadow"></div>
@@ -42,7 +42,7 @@
                             </div>
                         </div>
                     @endforeach
-                    <a href="{{ route('articlesList', ['uniUrl' => $uniUrl]) }}" class="articles__view-more">
+                    <a href="{{ $uniUrl ? route('articlesListUni', ['uniUrl' => $uniUrl]) : route('articlesList') }}" class="articles__view-more">
                         View More
                     </a>
                 </div>
