@@ -2,113 +2,160 @@
 @import "mixins";
 
 .site-footer {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-    padding: 30px 0;
-    background-image: url(/img/component/footer/FooterBackground.jpg);
-    background-size: 23px;
+    background-color: $blackBackground;
 }
+.site-footer__content-container {
+    display: table;
+    width: 1024px;
+    table-layout: fixed;
+    padding-top: 50px;
+    margin: auto;
+}
+
 .site-footer__section {
     display: table-cell;
-    border-right: solid 3px $borderColor;
-    text-align: center;
     padding-bottom: 80px;
-
-    &:first-child {
-        .site-footer__section__content {
-            padding-top: 0;
-        }
-    }
-
-    &:last-child {
-        border-right: none;
-    }
-}
-.site-footer__section:first-child {
-    padding-top: 0;
 }
 .site-footer__section__header {
-    font-family: $rareHeaderFont;
+    font-family: $primaryFont;
     text-transform: uppercase;
-    font-size: 18px;
-    text-align: center;
-    padding-top: 10px;
+    font-size: 16px;
+    color: #ffffff;
     padding-bottom: 15px;
 }
 .site-footer__section__content {
     display: inline-table;
     width: 250px;
-    padding: 10px 0;
+    padding-top: 16px;
     font-family: $primaryFont;
-    color: $textGrey;
+    color: #ffffff;
     font-size: 14px;
 
     p {
-        text-align: center;
         line-height: 18px;
     }
+}
 
-    form {
-        text-align: center;
+.site-footer__section--contact {
+    .uni-email {
+        font-size: 16px;
+        font-weight: 600;
     }
 
-    input[type=text] {
-        width: 220px;
+    .contact-person {
+        font-size: 16px;
+        margin-top: 15px;
     }
-
-    .subscribe-form {
+}
+.site-footer__section--recent-posts {
+    .post-entry {
         display: table;
-    }
-    .subscribe-form--hidden {
-        display: none;
-    }
-    .subscribe-form__text-field {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .subscribe-form__submit {
-        display: table-cell;
-        background-color: $orange;
-        color: #ffffff;
-        text-transform: uppercase;
+        width: 100%;
+        margin-bottom: 24px;
         text-decoration: none;
-        font-size: 14px;
-        padding-left: 10px;
-        padding-right: 10px;
-        vertical-align: middle;
-    }
-    .subscribe-form__submit--disabled {
-        background-color: $disabledGrey;
-        cursor: default;
-    }
+        color: #ffffff;
 
-    .success {
-        text-align: center;
-        color: $green;
-    }
-    .success--hidden {
-        display: none;
-    }
-    .success__icon {
-        vertical-align: middle;
-    }
-    .success__text {
-        vertical-align: middle;
-        margin-left: 3px;
-    }
+        .post-entry__thumbnail {
+            display: table-cell;
+            width: 88px;
+            height: 65px;
+            background-size: cover;
+            background-position: center;
+        }
 
-    .social-link {
-        display: table-cell;
-        text-align: center;
-    }
-    .social-link__icon {
-        width: 30px;
-        height: 30px;
+        .post-entry__details {
+            display: table-cell;
+            padding-left: 15px;
+        }
+        .post-entry__title {
+            font-size: 14px;
+            vertical-align: middle;
+        }
+        .post-entry__date {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .post-entry__date__icon {
+            vertical-align: middle;
+            font-size: 18px;
+        }
+        .post-entry__date__text {
+            vertical-align: middle;
+        }
     }
 }
 .site-footer__section--social {
     .site-footer__section__content {
-        width: 170px;
+        padding-top: 12px;
+
+        form {
+            text-align: center;
+        }
+
+        .subscribe-form-container {
+            margin-top: 50px;
+        }
+
+        .subscribe-form-header {
+            font-size: 16px;
+            margin-bottom: 7px;
+        }
+
+        .subscribe-form {
+            display: table;
+        }
+        .subscribe-form--hidden {
+            display: none;
+        }
+        .subscribe-form__text-field {
+            display: table-cell;
+            vertical-align: middle;
+            width: 170px;
+        }
+        .subscribe-form__submit {
+            display: table-cell;
+            background-color: $red;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 10px;
+            vertical-align: middle;
+            border: none;
+            line-height: 17px;
+            cursor: pointer;
+
+            &:hover:not(:disabled) {
+                background-color: $lightRed;
+            }
+            &:disabled {
+                background-color: $disabledGrey;
+                cursor: default;
+                pointer-events: none;
+            }
+        }
+
+        .success {
+            color: $green;
+            margin-left: -2px;
+        }
+        .success--hidden {
+            display: none;
+        }
+        .success__icon {
+            vertical-align: middle;
+        }
+        .success__text {
+            vertical-align: middle;
+            margin-left: 3px;
+        }
+
+        .social-link {
+            margin-right: 20px;
+            text-decoration: none;
+        }
+        .social-link__icon {
+            width: 26px;
+            height: 26px;
+        }
     }
 }

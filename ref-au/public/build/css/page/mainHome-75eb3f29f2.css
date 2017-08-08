@@ -414,9 +414,9 @@
       text-transform: uppercase;
       font-size: 22px;
       padding: 10px 0; }
-      .slice--subscribe .subscribe-form input[type=submit]:hover:not([disabled]) {
+      .slice--subscribe .subscribe-form input[type=submit]:hover:not(:disabled) {
         background-color: #fa4251; }
-      .slice--subscribe .subscribe-form input[type=submit][disabled] {
+      .slice--subscribe .subscribe-form input[type=submit]:disabled {
         background-color: #cacaca;
         cursor: default;
         pointer-events: none; }
@@ -594,9 +594,9 @@
       font-size: 14px;
       padding: 5px 30px;
       cursor: pointer; }
-      .slice--contact-us .contact-us__form-container input[type=submit]:hover:not([disabled]) {
+      .slice--contact-us .contact-us__form-container input[type=submit]:hover:not(:disabled) {
         background-color: #fa4251; }
-      .slice--contact-us .contact-us__form-container input[type=submit][disabled] {
+      .slice--contact-us .contact-us__form-container input[type=submit]:disabled {
         background-color: #cacaca;
         cursor: default;
         pointer-events: none; }

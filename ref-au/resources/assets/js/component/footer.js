@@ -1,32 +1,29 @@
 (function footer($) {
     $(document).ready(function () {
-        $('.js-subscribe-button').click(function (e) {
-            e.preventDefault();
+        var $subscribeForm = $('.js-subscribe-form');
+        $subscribeForm.on('submit', function (event) {
+            event.preventDefault();
 
-            var $button = $(this);
-            var $inputField = $('.js-subscribe-email');
+            var $email = $('.js-subscribe-email');
             if ( $(this).hasClass('disabled') )
             {
                 return;
             }
 
             // Disable inputs
-            $button.addClass('subscribe-form__submit--disabled');
-            $inputField.prop('disabled', true);
-            $inputField.removeClass('input-text--error');
+            $subscribeForm.find('input').prop('disabled', true);
+            $email.removeClass('input-text--error');
 
             var onSuccess = function () {
-                $button.removeClass('subscribe-form__submit--disabled');
-                $inputField.prop('disabled', false);
+                $subscribeForm.find('input').prop('disabled', false);
                 $('.js-subscribe-form').addClass('subscribe-form--hidden');
                 $('.js-success-indicator').removeClass('success--hidden');
             };
 
             var onError = function (error) {
                 console.error(error);
-                $button.removeClass('subscribe-form__submit--disabled');
-                $inputField.prop('disabled', false);
-                $inputField.addClass('input-text--error');
+                $subscribeForm.find('input').prop('disabled', false);
+                $email.addClass('input-text--error');
             };
 
             var email = $('.js-subscribe-email').val();
@@ -36,16 +33,25 @@
                 return;
             }
 
-            // $.ajax({
-            //     url: '',
-            //     data: {
-            //         email: email
-            //     },
-            //     method: 'POST',
-            //     dataType: 'json',
-            //     success: function (data, textStatus, jqXHR) {},
-            //     error: function (jqXHR, textStatus, errorThrown) {}
-            // });
+            $.ajax({
+                url: PageVars.subscribeAjaxUrl,
+                method: 'POST',
+                data: {
+                    email: $email.val(),
+                    _token: PageVars.csrfToken
+                },
+                dataType: 'json',
+                success: function (data) {
+                    if (data.subscribed) {
+                        onSuccess();
+                    } else {
+                        onError('Failed to subscribe');
+                    }
+                },
+                error: function (error) {
+                    onError(error);
+                }
+            });
         });
     });
 })(jQuery);

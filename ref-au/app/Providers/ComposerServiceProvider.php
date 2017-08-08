@@ -18,6 +18,9 @@ class ComposerServiceProvider extends ServiceProvider
             'component.header', 'App\Http\ViewComposers\HeaderComposer'
         );
         view()->composer(
+            'component.footer', 'App\Http\ViewComposers\FooterComposer'
+        );
+        view()->composer(
             '*', 'App\Http\ViewComposers\SiteComposer'
         );
     }

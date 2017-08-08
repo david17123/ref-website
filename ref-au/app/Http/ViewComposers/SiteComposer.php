@@ -38,12 +38,12 @@ class SiteComposer
      */
     public function compose(View $view)
     {
-        $uniName = '';
+        $uniUrl = '';
         if ($this->route->hasParameter('uniUrl'))
         {
-            $uniName = $this->route->getParameter('uniUrl')->subdomain;
+            $uniUrl = $this->route->getParameter('uniUrl')->subdomain;
         }
-        $view->with('uniUrl', $uniName);
+        $view->with('uniUrl', $uniUrl);
 
         $view->with('sitePage', $this->sitePage);
 

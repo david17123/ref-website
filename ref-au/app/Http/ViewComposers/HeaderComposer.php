@@ -4,6 +4,7 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+
 use App\University;
 
 class HeaderComposer
