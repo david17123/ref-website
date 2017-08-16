@@ -246,3 +246,5 @@ Route::get('/', function () {
     // return view('page/mainHome');
     return redirect('https://reformedevangelicalfellowship.wordpress.com');
 });
+
+Route::get('/home', 'HomeController@index');
