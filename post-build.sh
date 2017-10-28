@@ -2,6 +2,7 @@
 # is up and running (hence the name post build).
 
 # 1. Set up apache2 to REF dev website
+# Check https://getcomposer.org/download/ to get the latest hash value
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/ref-au.conf
 sudo a2dissite 000-default
 sudo a2ensite ref-au
