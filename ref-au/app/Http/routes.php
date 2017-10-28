@@ -16,7 +16,14 @@ if ( !isset($tld) )
 {
     $matches = array();
     preg_match('/(?:[a-zA-Z]+:\/\/)?(?:[a-zA-Z-]+\.)?ref-au\.([^\/]+)/', Request::root(), $matches);
-    $tld = $matches[1];
+    if ( isset($matches) )
+    {
+        $tld = $matches[1];
+    }
+    else
+    {
+        error_log('Cannot deduce `$tld`: no actual TLD set.');
+    }
 }
 else
 {
