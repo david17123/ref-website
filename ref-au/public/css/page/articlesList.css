@@ -5,34 +5,45 @@
   width: 30%;
   margin: 15px;
   box-sizing: border-box;
-  -webkit-transition: all linear 100ms;
   transition: all linear 100ms;
-  background-color: #ffffff; }
-  .article-list-entry:hover {
-    box-shadow: #cacaca 0 0 18px 0; }
-    .article-list-entry:hover .article-list-entry__read-more__text {
-      color: #bd600a; }
+  background-color: #ffffff;
+}
+
+.article-list-entry:hover {
+  box-shadow: #cacaca 0 0 18px 0;
+}
+
+.article-list-entry:hover .article-list-entry__read-more__text {
+  color: #bd600a;
+}
 
 .article-list-entry--highlight {
   width: calc(3 * 30% + 4 * 15px);
-  height: 350px; }
-  .article-list-entry--highlight .article-list-entry__hero {
-    display: inline-block;
-    width: 65%;
-    height: 100%; }
-  .article-list-entry--highlight .article-list-entry__snippet-content {
-    position: relative;
-    display: inline-block;
-    width: 35%;
-    height: 100%;
-    float: right;
-    box-sizing: border-box; }
-  .article-list-entry--highlight .article-list-entry__footer {
-    position: absolute;
-    width: calc(100% - 40px);
-    margin-top: 0;
-    bottom: 10px;
-    right: 20px; }
+  height: 350px;
+}
+
+.article-list-entry--highlight .article-list-entry__hero {
+  display: inline-block;
+  width: 65%;
+  height: 100%;
+}
+
+.article-list-entry--highlight .article-list-entry__snippet-content {
+  position: relative;
+  display: inline-block;
+  width: 35%;
+  height: 100%;
+  float: right;
+  box-sizing: border-box;
+}
+
+.article-list-entry--highlight .article-list-entry__footer {
+  position: absolute;
+  width: calc(100% - 40px);
+  margin-top: 0;
+  bottom: 10px;
+  right: 20px;
+}
 
 .article-list-entry__link-overlay {
   display: inline-block;
@@ -41,7 +52,8 @@
   right: 0;
   top: 0;
   bottom: 0;
-  z-index: 9999; }
+  z-index: 9999;
+}
 
 .article-list-entry__flag {
   display: inline-block;
@@ -53,82 +65,98 @@
   left: -21px;
   top: 30px;
   font-family: "Raleway";
-  font-weight: 600; }
-  .article-list-entry__flag::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-right: solid 21px #bf0000;
-    border-bottom: solid 18px transparent;
-    left: 0;
-    bottom: -18px; }
+  font-weight: 600;
+}
+
+.article-list-entry__flag::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-right: solid 21px #bf0000;
+  border-bottom: solid 18px transparent;
+  left: 0;
+  bottom: -18px;
+}
 
 .article-list-entry__snippet-content {
   padding: 20px;
   padding-bottom: 10px;
   position: relative;
   height: 322px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .article-list-entry__hero {
   height: 170px;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+}
 
 .article-list-entry__title {
   font-family: "Montserrat";
   font-size: 20px;
-  line-height: 24px; }
+  line-height: 24px;
+}
 
 .article-list-entry__subtitle {
   font-family: "Montserrat";
   font-size: 15px;
-  margin: 10px 0; }
+  margin: 10px 0;
+}
 
 .article-list-entry__snippet {
   font-family: "Raleway";
   font-size: 14px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
 .article-list-entry__read-more {
   text-align: right;
   font-family: "Montserrat";
-  margin-top: 8px; }
+  margin-top: 8px;
+}
 
 .article-list-entry__read-more__text {
   text-transform: uppercase;
   text-decoration: none;
   color: #964800;
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .article-list-entry__footer {
   text-align: right;
   position: absolute;
   bottom: 10px;
   left: 20px;
-  right: 20px; }
+  right: 20px;
+}
 
 .article-list-entry__date-created {
   display: inline-block;
   font-family: "Montserrat";
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 body {
-  background-color: #f4ede5; }
+  background-color: #f4ede5;
+}
 
 .page-content-container {
   width: 1024px;
   margin: auto;
-  margin-top: 150px; }
+  margin-top: 150px;
+}
 
 .page-header {
   font-family: "Raleway";
   text-transform: uppercase;
   font-size: 40px;
-  text-align: center; }
+  text-align: center;
+}
 
 .articles-container {
   margin-top: 20px;
-  text-align: center; }
+  text-align: center;
+}
 
 /*# sourceMappingURL=articlesList.css.map */

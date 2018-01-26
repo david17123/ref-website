@@ -48,13 +48,22 @@
 
                     var jqXHR = data.submit();
                     data.context.$fileEntry.data('jqXHR', jqXHR);
+                    updateFileEntryBasedOnStatus(data.context.$fileEntry);
                 },
                 done: function (e, data) {
                     // Update fileData attached to $fileEntry
                     var $fileEntry = data.context.$fileEntry;
                     var fileData = $fileEntry.data('fileData');
                     var returnedFileData = data.result.files[0];
-                    fileData.id = returnedFileData.asset.id;
+                    if (returnedFileData.error) {
+                        fileData.error = returnedFileData.error;
+                    } else {
+                        if (fileData.error) {
+                            delete(fileData.error);
+                        }
+                        fileData.id = returnedFileData.asset.id;
+                        fileData.url = returnedFileData.asset.url;
+                    }
 
                     updateFileEntryBasedOnStatus($fileEntry);
                 },
@@ -157,21 +166,21 @@
             var status = getFileEntryStatus($fileEntry);
 
             if (status === 'uploaded') {
-                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', fileData.url);
+                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', fileData.url).attr('title', '');
                 $fileEntry.find('.js-filesize').text( $.formatFileSize(fileData.size) );
                 $fileEntry.find('input[type=hidden]').val(fileData.id);
 
                 $fileEntry.removeClass('file-entry--uploading');
                 $fileEntry.removeClass('file-entry--error');
             } else if (status === 'uploading') {
-                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', '');
+                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', '').attr('title', '');
                 $fileEntry.find('.js-filesize').text('');
                 $fileEntry.find('input[type=hidden]').val('');
 
                 $fileEntry.addClass('file-entry--uploading');
                 $fileEntry.removeClass('file-entry--error');
             } else if (status === 'failed') {
-                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', '');
+                $fileEntry.find('.js-filename').text(fileData.filename).attr('href', '').attr('title', fileData.error);
                 $fileEntry.find('.js-filesize').text('');
                 $fileEntry.find('input[type=hidden]').val('');
 
@@ -190,14 +199,19 @@
          */
         var getFileEntryStatus = function ($fileEntry) {
             var jqXHR = $fileEntry.data('jqXHR');
+            var fileData = $fileEntry.data('fileData');
             if (jqXHR) {
-                var state = jqXHR.state();
-                if (state === 'resolved') {
-                    return 'uploaded';
-                } else if (state === 'pending') {
-                    return 'uploading';
-                } else {
+                if (fileData.error) {
                     return 'failed';
+                } else {
+                    var state = jqXHR.state();
+                    if (state === 'resolved') {
+                        return 'uploaded';
+                    } else if (state === 'pending') {
+                        return 'uploading';
+                    } else {
+                        return 'failed';
+                    }
                 }
             } else {
                 return 'uploaded';
