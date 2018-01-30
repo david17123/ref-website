@@ -1,0 +1,99 @@
+.input-text {
+  box-sizing: border-box;
+  display: inline-block;
+  border: solid 1px #cacaca;
+  outline: none;
+  padding: 5px 10px;
+  height: 37px;
+  font-family: "Raleway";
+}
+
+.input-text:focus {
+  border-color: #676767;
+}
+
+.input-text--error {
+  border: solid 1px #ff3434;
+}
+
+.input-button {
+  border: none;
+  background-color: #00a1ff;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px 20px;
+}
+
+.input-button:hover {
+  background-color: #4cbdff;
+}
+
+.login-form {
+  width: 400px;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-element {
+  font-family: "Raleway";
+  margin-bottom: 14px;
+}
+
+.form-element__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-element__input-field input {
+  width: 100%;
+}
+
+.form-element__error-message {
+  display: inline-block;
+  margin-top: 5px;
+  width: 100%;
+  color: #ff3434;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.form-element__remember-checkbox,
+.form-element__remember-label {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-element--buttons-container {
+  margin-top: 28px;
+}
+
+.form-element__button {
+  width: 250px;
+  height: 40px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #ec1b2e;
+  border: none;
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.form-element__button:hover {
+  background-color: #fa4251;
+}
+
+.form-element__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+}
+
+.form-element__link:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=loginRegister.css.map */

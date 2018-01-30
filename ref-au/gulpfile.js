@@ -45,8 +45,8 @@ elixir(function(mix) {
     // Page specific CSS
     mix.sass([
         'component/inputs.scss',
-        'auth/login.scss'
-    ], 'public/css/auth/login.css');
+        'auth/loginRegister.scss'
+    ], 'public/css/auth/loginRegister.css');
 
     mix.sass([
         'lib/slick/slick.scss',

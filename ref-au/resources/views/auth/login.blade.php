@@ -1,7 +1,7 @@
 @extends('defaultLayout')
 
 @push('css')
-    <link rel="stylesheet" type="text/css" href="{{ elixir('css/auth/login.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ elixir('css/auth/loginRegister.css') }}"/>
 @endpush
 
 @section('pageContent')
