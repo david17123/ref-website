@@ -81,7 +81,7 @@ class FooterComposer
                     'date' => $article->created_at
                 ];
 
-                if ($university)
+                if (isset($university) && $university)
                 {
                     $post['url'] = route('readArticleUni', ['article' => $article->id, 'uniUrl' => $university->subdomain]);
                 }
