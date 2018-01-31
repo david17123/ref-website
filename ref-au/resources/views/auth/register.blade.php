@@ -5,7 +5,7 @@
 @endpush
 
 @section('pageContent')
-    <form class="login-form" action="{{ url('/login') }}" method="POST">
+    <form class="login-form" action="{{ url('/register') }}" method="POST">
         {{ csrf_field() }}
 
         <div class="form-element">
